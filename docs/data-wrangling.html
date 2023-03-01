@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>5 Data Wrangling | A Comprehensive Guide to Use R</title>
+<meta name="author" content="Africano BYAMUGISHA">
+<meta name="description" content="5.1 R Data Wrangling Packages While there are tons of R packages out there to help you work with data, we’re going to cover the packages and functions within those packages that you’ll absolutely...">
+<meta name="generator" content="bookdown 0.32 with bs4_book()">
+<meta property="og:title" content="5 Data Wrangling | A Comprehensive Guide to Use R">
+<meta property="og:type" content="book">
+<meta property="og:url" content="https://github.io/africanobyamugisha/data-wrangling.html">
+<meta property="og:image" content="https://github.io/africanobyamugisha/images/flyer.png">
+<meta property="og:description" content="5.1 R Data Wrangling Packages While there are tons of R packages out there to help you work with data, we’re going to cover the packages and functions within those packages that you’ll absolutely...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="5 Data Wrangling | A Comprehensive Guide to Use R">
+<meta name="twitter:description" content="5.1 R Data Wrangling Packages While there are tons of R packages out there to help you work with data, we’re going to cover the packages and functions within those packages that you’ll absolutely...">
+<meta name="twitter:image" content="https://github.io/africanobyamugisha/images/flyer.png">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.2/transition.js"></script><script src="libs/bs3compat-0.4.2/tabs.js"></script><script src="libs/bs3compat-0.4.2/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<link rel="stylesheet" href="bs4_style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">A Comprehensive Guide to Use R</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">*</a></li>
+<li><a class="" href="about-the-author.html">About the Author</a></li>
+<li><a class="" href="about-this-guide.html">About this guide</a></li>
+<li><a class="" href="introduction.html"><span class="header-section-number">1</span> Introduction</a></li>
+<li><a class="" href="getting-started-setting-up.html"><span class="header-section-number">2</span> Getting Started &amp; Setting Up</a></li>
+<li><a class="" href="operators-data-objects.html"><span class="header-section-number">3</span> Operators &amp; Data Objects</a></li>
+<li><a class="" href="working-with-data.html"><span class="header-section-number">4</span> Working With Data</a></li>
+<li><a class="active" href="data-wrangling.html"><span class="header-section-number">5</span> Data Wrangling</a></li>
+<li><a class="" href="data-visualisation.html"><span class="header-section-number">6</span> Data Visualisation</a></li>
+<li><a class="" href="statistics-in-r.html"><span class="header-section-number">7</span> Statistics in R</a></li>
+<li><a class="" href="functions.html"><span class="header-section-number">8</span> Functions</a></li>
+<li><a class="" href="interactive-reporting-shiny-markdowm-quarto.html"><span class="header-section-number">9</span> Interactive Reporting (Shiny, Markdowm, Quarto)</a></li>
+<li><a class="" href="github_r.html"><span class="header-section-number">10</span> Version control with Git and GitHub</a></li>
+<li><a class="" href="survey-sampling.html"><span class="header-section-number">11</span> Survey Sampling</a></li>
+<li><a class="" href="text-mining-for-qualitative-analysis.html"><span class="header-section-number">12</span> Text Mining for Qualitative Analysis</a></li>
+<li><a class="" href="machine-learning.html"><span class="header-section-number">13</span> Machine Learning</a></li>
+<li><a class="" href="additional-resources.html">Additional Resources</a></li>
+</ul>
+
+        <div class="book-extra">
+          
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="data-wrangling" class="section level1">
+<h1>
+<span class="header-section-number">5</span> Data Wrangling<a class="anchor" aria-label="anchor" href="#data-wrangling"><i class="fas fa-link"></i></a>
+</h1>
+<p><img src="images/cheatsheets/data_wrangling_cheatsheet-0000.png" style="width:100.0%"><img src="images/cheatsheets/data_wrangling_cheatsheet-0001.png" style="width:100.0%"></p>
+<div id="r-data-wrangling-packages" class="section level2">
+<h2>
+<span class="header-section-number">5.1</span> R Data Wrangling Packages<a class="anchor" aria-label="anchor" href="#r-data-wrangling-packages"><i class="fas fa-link"></i></a>
+</h2>
+<p>While there are <em>tons</em> of R packages out there to help you work with data, we’re going to cover the packages and functions within those packages that you’ll absolutely want and need to work with when working with data.</p>
+<div id="dplyr" class="section level3">
+<h3>
+<span class="header-section-number">5.1.1</span> <strong><code>dplyr</code></strong><a class="anchor" aria-label="anchor" href="#dplyr"><i class="fas fa-link"></i></a>
+</h3>
+<p>There is a package specifically designed for helping you wrangle your data. This package is called <a href="https://dplyr.tidyverse.org/"><code>dplyr</code></a> and will allow you to easily accomplish many of the data wrangling tasks necessary. Like <code>tidyr</code>, this package is a core package within the tidyverse, and thus it was loaded in for you when you ran <code><a href="https://tidyverse.tidyverse.org">library(tidyverse)</a></code> earlier. We will cover a number of functions that will help you wrangle data using <code>dplyr</code>:</p>
+<ul>
+<li><p><code>%&gt;%</code> - pipe operator for chaining a sequence of operations</p></li>
+<li><p><code><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse()</a></code> - get an overview of what’s included in dataset</p></li>
+<li><p><code><a href="https://dplyr.tidyverse.org/reference/filter.html">filter()</a></code> - filter rows</p></li>
+<li><p><code><a href="https://dplyr.tidyverse.org/reference/select.html">select()</a></code> - select, rename, and reorder columns</p></li>
+<li><p><code><a href="https://dplyr.tidyverse.org/reference/rename.html">rename()</a></code> - rename columns</p></li>
+<li><p><code><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange()</a></code> - reorder rows</p></li>
+<li><p><code><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate()</a></code> - create a new column</p></li>
+<li><p><code><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by()</a></code> - group variables</p></li>
+<li><p><code><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarize()</a></code> - summarize information within a dataset</p></li>
+<li><p><code><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">left_join()</a></code> - combine data across data frame</p></li>
+<li><p><code><a href="https://dplyr.tidyverse.org/reference/count.html">tally()</a></code> - get overall sum of values of specified column(s) or the number of rows of tibble</p></li>
+<li><p><code><a href="https://dplyr.tidyverse.org/reference/count.html">count()</a></code> - get counts of unique values of specified column(s) (shortcut of <code><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by()</a></code> and <code><a href="https://dplyr.tidyverse.org/reference/count.html">tally()</a></code>)</p></li>
+<li><p><code><a href="https://dplyr.tidyverse.org/reference/count.html">add_count()</a></code> - add values of <code><a href="https://dplyr.tidyverse.org/reference/count.html">count()</a></code> as a new column</p></li>
+<li><p><code><a href="https://dplyr.tidyverse.org/reference/count.html">add_tally()</a></code> - add value(s) of <code><a href="https://dplyr.tidyverse.org/reference/count.html">tally()</a></code> as a new column</p></li>
+</ul>
+</div>
+<div id="tidyr" class="section level3">
+<h3>
+<span class="header-section-number">5.1.2</span> <strong><code>tidyr</code></strong><a class="anchor" aria-label="anchor" href="#tidyr"><i class="fas fa-link"></i></a>
+</h3>
+<p>We will also cover the <code>tidyr</code> package. The main functions we’ll cover from <code>tidyr</code> are:</p>
+<ul>
+<li><p><code><a href="https://tidyr.tidyverse.org/reference/unite.html">unite()</a></code> - combine contents of two or more columns into a single column</p></li>
+<li><p><code><a href="https://tidyr.tidyverse.org/reference/separate.html">separate()</a></code> - separate contents of a column into two or more columns</p></li>
+</ul>
+</div>
+<div id="janitor" class="section level3">
+<h3>
+<span class="header-section-number">5.1.3</span> <code>janitor</code><a class="anchor" aria-label="anchor" href="#janitor"><i class="fas fa-link"></i></a>
+</h3>
+<p>The third package we’ll include here is the <code>janitor</code> package. While not a core tidyverse package, this tidyverse-adjacent package provides tools for cleaning messy data. The main functions we’ll cover from janitor are:</p>
+<ul>
+<li><p><code>clean_names()</code> - clean names of a data frame</p></li>
+<li><p><code>tabyl()</code> - get a helpful summary of a variable</p></li>
+<li><p><code>get_dupes()</code> - identify duplicate observations</p></li>
+</ul>
+</div>
+<div id="skimr" class="section level3">
+<h3>
+<span class="header-section-number">5.1.4</span> <code>skimr</code><a class="anchor" aria-label="anchor" href="#skimr"><i class="fas fa-link"></i></a>
+</h3>
+<p>The final package we’ll discuss here is the <code>skimr</code> package. This package provides a quick way to summarize a data.frame or tibble within the tidy data framework. We’ll discuss its most useful function here:</p>
+<ul>
+<li>
+<code><a href="https://docs.ropensci.org/skimr/reference/skim.html">skim()</a></code> - summarize a data frame</li>
+</ul>
+<p>If you have not already installed these packages, you’ll want to be sure these packages are are installed</p>
+<p></p>
+<div class="sourceCode" id="cb44"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"pacman"</span><span class="op">)</span>  <span class="co"># Install pacman package</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="https://github.com/trinker/pacman">"pacman"</a></span><span class="op">)</span>  <span class="co"># Load pacman package</span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/pacman/man/p_load.html">p_load</a></span><span class="op">(</span><span class="va">skimr</span>, <span class="va">tidyr</span>, <span class="va">janitor</span>, <span class="va">dplyr</span><span class="op">)</span></span></code></pre></div>
+<p></p>
+<blockquote>
+<p><span class="underline"><strong>NOTE:</strong></span> The package package provides tools to conveniently manage add-on packages in the R programming language.</p>
+<p>After executing the previous code, we have loaded the four packages.</p>
+<p>The <code>p_load</code> function also checks whether a package is installed already. If the package is <strong>not installed</strong> yet, it is installed <span class="underline">automatically</span> by the <code>pacman</code> package.</p>
+<p>The <code>p_load</code> function basically replaces the Base R library, install.packages, and require functions and allows installing and loading numerous packages simultaneously using much less R code.</p>
+</blockquote>
+</div>
+</div>
+<div id="the-pipe-operator" class="section level2">
+<h2>
+<span class="header-section-number">5.2</span> The Pipe Operator<a class="anchor" aria-label="anchor" href="#the-pipe-operator"><i class="fas fa-link"></i></a>
+</h2>
+<p>Before we get into the important functions within <code>dplyr</code>, it will be very useful to discuss what is known as the <strong>pipe operator</strong>.</p>
+<p>The pipe operator looks like this in R: <code>%&gt;%</code>. Whenever you see the pipe <code>%&gt;%</code>, think of the word “then,”.</p>
+<p>Generally, the pipe operator allows you to chain a number of different functions together in a particular order. If you wanted to take data frame A and carry out function B on it in R, you could depict this with an arrow pointing from A to B:</p>
+<p>In base R syntax, it would be carried out by calling the function B on the data frame object A:</p>
+<div class="sourceCode" id="cb45"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">B</span><span class="op">(</span><span class="va">A</span><span class="op">)</span></span></code></pre></div>
+<p>Alternatively, you could use the pipe operator (<code>%&gt;%</code>):</p>
+<pre><code>A %&gt;% B</code></pre>
+<p>However, often you are not performing just one action on a data frame, but rather you are looking to carry out multiple functions.</p>
+<p>Say that you want to take data frame A and carry out function B, <em>then</em> you want to take the output from that and <em>then</em> carry out function C. Subsequently you want to take the output of that and <em>then</em> carry out function D.</p>
+<p>In R syntax, we would first apply function B to data frame A, then apply function C to this output, then apply function D to this output. This results in the following syntax that is hard to read because multiple calls to functions are nested within each other:</p>
+<pre><code>D(C(B(A)))</code></pre>
+<p>Alternatively, you could use the pipe operator. Each time you want take the output of one function and carry out something new on that output, you will use the pipe operator:</p>
+<pre><code>A %&gt;% B %&gt;% C %&gt;% D</code></pre>
+<p>And, even more readable is when each of these steps is indedented out onto its own individual line of code:</p>
+<pre><code>A %&gt;% 
+  B %&gt;% 
+    C %&gt;%
+      D</code></pre>
+<p>While both of the previous two code examples would provide the same output, the one below is more readable, <span class="underline">which is a large part of why pipes are used. It makes your code more understandable to you and others</span>.</p>
+<p>Below we’ll use this pipe operator a lot. Remember, it takes output from the left hand side and feeds it into the function that comes after the pipe <strong>as the first argument.</strong></p>
+</div>
+<div id="filtering-data" class="section level2">
+<h2>
+<span class="header-section-number">5.3</span> Filtering Data<a class="anchor" aria-label="anchor" href="#filtering-data"><i class="fas fa-link"></i></a>
+</h2>
+<p>When working with a large dataset, you’re often interested in only working with a <strong>portion</strong> of the data at any one time.</p>
+<p>For example, if you had data on people from ages 0 to 100 years old, but you wanted to ask a question that only pertained to children, you would likely want to only work with data from those individuals who were less than 18 years old.</p>
+<p>To do this, you would want to <strong>filter</strong> your dataset to only include data from these select individuals.</p>
+<div class="line-block">Filtering can be done by row or by column.</div>
+<p>For the examples below, we’ll be using a dataset from the <code>ggplot2</code> package called <code>msleep</code>. (You’ll learn more about this package in a later course on data visualization) For now, it’s a core tidyverse package so it’s loaded in along with the other tidyverse packages using <code><a href="https://tidyverse.tidyverse.org">library(tidyverse)</a></code>.)</p>
+<p>This dataset includes sleep times and weights from a number of different mammals. It has 83 rows, with each row including information about a different type of animal, and 11 variables. As each row is a different animal and each column includes information about that animal, this is a <strong>wide</strong> dataset.</p>
+<p>To get an idea of what variables are included in this data frame, you can use <code><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse()</a></code>. This function summarizes how many rows there are (<code>Observations</code>) and how many columns there are (<code>Variables</code>). Additionally, it gives you a glimpse into the type of data contained in each column.</p>
+<p>Specifically, in this dataset, we know that the first column is <code>name</code> and that it contains a character vector (<code>chr</code>) and that the first three entries are “Cheetah,” “Owl monkey,” and “Mountain beaver.” It works similarly to the base R <code><a href="https://rdrr.io/r/base/summary.html">summary()</a></code> function.</p>
+<pre><code><a href="https://ggplot2.tidyverse.org">## take a look at the data
+library(ggplot2)
+glimpse(msleep)</a></code></pre>
+<p>Glimpse of msleep dataset</p>
+<div id="filtering-rows" class="section level3">
+<h3>
+<span class="header-section-number">5.3.1</span> Filtering Rows<a class="anchor" aria-label="anchor" href="#filtering-rows"><i class="fas fa-link"></i></a>
+</h3>
+<p>If you were only interested in learning more about the sleep times of “Primates,” we could filter this dataset to include only data about those mammals that are also Primates. As we can see from <code><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse()</a></code>, this information is contained within the <code>order</code> variable. So to do this within R, we use the following syntax:</p>
+<p></p>
+<div class="sourceCode" id="cb51"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># filter to only include primates</span></span>
+<span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">msleep</span>, <span class="va">order</span> <span class="op">==</span> <span class="st">"Primates"</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## # A tibble: 12 × 11
+##    name    genus vore  order conse…¹ sleep…² sleep…³ sleep…⁴
+##    &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;
+##  1 Owl mo… Aotus omni  Prim… &lt;NA&gt;       17       1.8  NA    
+##  2 Grivet  Cerc… omni  Prim… lc         10       0.7  NA    
+##  3 Patas … Eryt… omni  Prim… lc         10.9     1.1  NA    
+##  4 Galago  Gala… omni  Prim… &lt;NA&gt;        9.8     1.1   0.55 
+##  5 Human   Homo  omni  Prim… &lt;NA&gt;        8       1.9   1.5  
+##  6 Mongoo… Lemur herbi Prim… vu          9.5     0.9  NA    
+##  7 Macaque Maca… omni  Prim… &lt;NA&gt;       10.1     1.2   0.75 
+##  8 Slow l… Nyct… carni Prim… &lt;NA&gt;       11      NA    NA    
+##  9 Chimpa… Pan   omni  Prim… &lt;NA&gt;        9.7     1.4   1.42 
+## 10 Baboon  Papio omni  Prim… &lt;NA&gt;        9.4     1     0.667
+## 11 Potto   Pero… omni  Prim… lc         11      NA    NA    
+## 12 Squirr… Saim… omni  Prim… &lt;NA&gt;        9.6     1.4  NA    
+## # … with 3 more variables: awake &lt;dbl&gt;, brainwt &lt;dbl&gt;,
+## #   bodywt &lt;dbl&gt;, and abbreviated variable names
+## #   ¹​conservation, ²​sleep_total, ³​sleep_rem, ⁴​sleep_cycle</code></pre>
+<div class="sourceCode" id="cb53"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># OR</span></span>
+<span><span class="va">msleep</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">order</span> <span class="op">==</span> <span class="st">"Primates"</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## # A tibble: 12 × 11
+##    name    genus vore  order conse…¹ sleep…² sleep…³ sleep…⁴
+##    &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;
+##  1 Owl mo… Aotus omni  Prim… &lt;NA&gt;       17       1.8  NA    
+##  2 Grivet  Cerc… omni  Prim… lc         10       0.7  NA    
+##  3 Patas … Eryt… omni  Prim… lc         10.9     1.1  NA    
+##  4 Galago  Gala… omni  Prim… &lt;NA&gt;        9.8     1.1   0.55 
+##  5 Human   Homo  omni  Prim… &lt;NA&gt;        8       1.9   1.5  
+##  6 Mongoo… Lemur herbi Prim… vu          9.5     0.9  NA    
+##  7 Macaque Maca… omni  Prim… &lt;NA&gt;       10.1     1.2   0.75 
+##  8 Slow l… Nyct… carni Prim… &lt;NA&gt;       11      NA    NA    
+##  9 Chimpa… Pan   omni  Prim… &lt;NA&gt;        9.7     1.4   1.42 
+## 10 Baboon  Papio omni  Prim… &lt;NA&gt;        9.4     1     0.667
+## 11 Potto   Pero… omni  Prim… lc         11      NA    NA    
+## 12 Squirr… Saim… omni  Prim… &lt;NA&gt;        9.6     1.4  NA    
+## # … with 3 more variables: awake &lt;dbl&gt;, brainwt &lt;dbl&gt;,
+## #   bodywt &lt;dbl&gt;, and abbreviated variable names
+## #   ¹​conservation, ²​sleep_total, ³​sleep_rem, ⁴​sleep_cycle</code></pre>
+<p></p>
+<p><strong>Note that;</strong> we are using the equality <code>==</code> comparison operator that you learned about in the previous <a href="https://africanobyamugisha.github.io/guide_to_R_pragramming/operators-data-objects.html">topic about operators</a>. Also note that we have used the pipe operator to feed the <code>msleep</code> data frame into the <code><a href="https://dplyr.tidyverse.org/reference/filter.html">filter()</a></code> function.</p>
+<p>The reason i urge you to use the piping operators (<code>%&gt;%</code>)! is that the code is highly readable. This is why we use the pipe (<code>%&gt;%</code>)!</p>
+<p>Now, we have a smaller dataset of only 12 mammals (as opposed to the original 83) and we can see that the <code>order</code> variable column only includes “Primates.”</p>
+<p>But, what if we were only interested in Primates who sleep more than 10 hours total per night? This information is in the <code>sleep_total</code> column. Fortunately, <code><a href="https://dplyr.tidyverse.org/reference/filter.html">filter()</a></code> also works on numeric variables.</p>
+<p>To accomplish this, you would use the following syntax, separating the multiple filters you want to apply with a comma:</p>
+<pre><code>msleep %&gt;%
+  filter(order == "Primates" &amp; sleep_total &gt; 10)</code></pre>
+<p>Note that we have used the “greater than” comparison operator with <code>sleep_total</code>.</p>
+<p>Now, we have a dataset focused in on only 5 mammals, all of which are primates who sleep for more than 10 hours a night total.</p>
+<p>We can obtain the same result with the AND <code>&amp;</code> logical operator</p>
+<p></p>
+<div class="sourceCode" id="cb56"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">msleep</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">order</span> <span class="op">==</span> <span class="st">"Primates"</span> <span class="op">&amp;</span> <span class="va">sleep_total</span> <span class="op">&gt;</span> <span class="fl">10</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## # A tibble: 5 × 11
+##   name     genus vore  order conse…¹ sleep…² sleep…³ sleep…⁴
+##   &lt;chr&gt;    &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;
+## 1 Owl mon… Aotus omni  Prim… &lt;NA&gt;       17       1.8   NA   
+## 2 Patas m… Eryt… omni  Prim… lc         10.9     1.1   NA   
+## 3 Macaque  Maca… omni  Prim… &lt;NA&gt;       10.1     1.2    0.75
+## 4 Slow lo… Nyct… carni Prim… &lt;NA&gt;       11      NA     NA   
+## 5 Potto    Pero… omni  Prim… lc         11      NA     NA   
+## # … with 3 more variables: awake &lt;dbl&gt;, brainwt &lt;dbl&gt;,
+## #   bodywt &lt;dbl&gt;, and abbreviated variable names
+## #   ¹​conservation, ²​sleep_total, ³​sleep_rem, ⁴​sleep_cycle</code></pre>
+<p></p>
+<p>Note that the number of <strong>columns</strong> hasn’t changed. All 11 variables are still shown in columns because the function <code><a href="https://dplyr.tidyverse.org/reference/filter.html">filter()</a></code> filters on rows, not columns.</p>
+</div>
+<div id="selecting-columns" class="section level3">
+<h3>
+<span class="header-section-number">5.3.2</span> Selecting Columns<a class="anchor" aria-label="anchor" href="#selecting-columns"><i class="fas fa-link"></i></a>
+</h3>
+<p>While <code><a href="https://dplyr.tidyverse.org/reference/filter.html">filter()</a></code> operates on rows, it is possible to filter your dataset to only include the columns you’re interested in. To select columns so that your dataset only includes variables you’re interested in, you will use <strong><code><a href="https://dplyr.tidyverse.org/reference/select.html">select()</a></code>.</strong></p>
+<p>Let’s start with the code we just wrote to only include primates who sleep a lot. What if we only want to include the first column (the name of the mammal) and the sleep information (included in the columns <code>sleep_total</code>, <code>sleep_rem</code>, and <code>sleep_cycle</code>)?</p>
+<p>We would do this by starting with the code we just used, adding another pipe, and using the function <code><a href="https://dplyr.tidyverse.org/reference/select.html">select()</a></code>. Within <code><a href="https://dplyr.tidyverse.org/reference/select.html">select()</a></code>, we specify which columns we want in our output.</p>
+<p></p>
+<div class="sourceCode" id="cb58"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">msleep</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">order</span> <span class="op">==</span> <span class="st">"Primates"</span>, <span class="va">sleep_total</span> <span class="op">&gt;</span> <span class="fl">10</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">name</span>, <span class="va">sleep_total</span>, <span class="va">sleep_rem</span>, <span class="va">sleep_cycle</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## # A tibble: 5 × 4
+##   name         sleep_total sleep_rem sleep_cycle
+##   &lt;chr&gt;              &lt;dbl&gt;     &lt;dbl&gt;       &lt;dbl&gt;
+## 1 Owl monkey          17         1.8       NA   
+## 2 Patas monkey        10.9       1.1       NA   
+## 3 Macaque             10.1       1.2        0.75
+## 4 Slow loris          11        NA         NA   
+## 5 Potto               11        NA         NA</code></pre>
+<p></p>
+<p>Now, using <code><a href="https://dplyr.tidyverse.org/reference/select.html">select()</a></code> we see that we still have the five rows we filtered to before, but we only have the four columns specified using <code><a href="https://dplyr.tidyverse.org/reference/select.html">select()</a></code>.</p>
+<blockquote>
+<p>Here you can hopefully see the power of the pipe operator to chain together several commands in a row. Without the pipe operator, the full command would look like this below:</p>
+</blockquote>
+<p></p>
+<blockquote>
+<div class="sourceCode" id="cb60"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">msleep</span>, <span class="va">order</span> <span class="op">==</span> <span class="st">"Primates"</span>, <span class="va">sleep_total</span> <span class="op">&gt;</span> <span class="fl">10</span><span class="op">)</span>,</span>
+<span>    <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"name"</span>, <span class="st">"sleep_total"</span>, <span class="st">"sleep_rem"</span>, <span class="st">"sleep_cycle"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## # A tibble: 5 × 4
+##   name         sleep_total sleep_rem sleep_cycle
+##   &lt;chr&gt;              &lt;dbl&gt;     &lt;dbl&gt;       &lt;dbl&gt;
+## 1 Owl monkey          17         1.8       NA   
+## 2 Patas monkey        10.9       1.1       NA   
+## 3 Macaque             10.1       1.2        0.75
+## 4 Slow loris          11        NA         NA   
+## 5 Potto               11        NA         NA</code></pre>
+</blockquote>
+<p>
+&gt;
+&gt; <strong>YOU SEE!!!</strong></p>
+<p><embed src="laugh_emoji.jfif" style="width:15.0%"></embed> Definitely harder to read. We’ll stick with the above approach!</p>
+</div>
+</div>
+<div id="renaming-columns" class="section level2">
+<h2>
+<span class="header-section-number">5.4</span> Renaming Columns<a class="anchor" aria-label="anchor" href="#renaming-columns"><i class="fas fa-link"></i></a>
+</h2>
+<p><code><a href="https://dplyr.tidyverse.org/reference/select.html">select()</a></code> can also be used to rename columns. To do so, you use the syntax: <code>new_column_name = old_column_name</code> within <code>select</code>. For example, to select the same columns and rename them <code>total</code>, <code>rem</code> and <code>cycle</code>, you would use the following syntax:</p>
+<p></p>
+<div class="sourceCode" id="cb62"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">msleep</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">order</span> <span class="op">==</span> <span class="st">"Primates"</span>, <span class="va">sleep_total</span> <span class="op">&gt;</span> <span class="fl">10</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">name</span>, total <span class="op">=</span> <span class="va">sleep_total</span>, rem <span class="op">=</span> <span class="va">sleep_rem</span>, cycle <span class="op">=</span> <span class="va">sleep_cycle</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## # A tibble: 5 × 4
+##   name         total   rem cycle
+##   &lt;chr&gt;        &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+## 1 Owl monkey    17     1.8 NA   
+## 2 Patas monkey  10.9   1.1 NA   
+## 3 Macaque       10.1   1.2  0.75
+## 4 Slow loris    11    NA   NA   
+## 5 Potto         11    NA   NA</code></pre>
+<p></p>
+<p>It’s important to keep in mind that when using <code><a href="https://dplyr.tidyverse.org/reference/select.html">select()</a></code> to rename columns, only the specified columns will be included and renamed in the output. If you, instead, want to change the names of a few columns but return <em>all</em> columns in your output, you’ll want to use <code><a href="https://dplyr.tidyverse.org/reference/rename.html">rename()</a></code>.</p>
+<p>For example, the following, returns a data frame with all 11 columns, where the column names for three columns specified within <code><a href="https://dplyr.tidyverse.org/reference/rename.html">rename()</a></code> function have been renamed.</p>
+<p></p>
+<div class="sourceCode" id="cb64"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">msleep</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">order</span> <span class="op">==</span> <span class="st">"Primates"</span>, <span class="va">sleep_total</span> <span class="op">&gt;</span> <span class="fl">10</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/rename.html">rename</a></span><span class="op">(</span>total <span class="op">=</span> <span class="va">sleep_total</span>, rem <span class="op">=</span> <span class="va">sleep_rem</span>, cycle <span class="op">=</span> <span class="va">sleep_cycle</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## # A tibble: 5 × 11
+##   name     genus vore  order conse…¹ total   rem cycle awake
+##   &lt;chr&gt;    &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+## 1 Owl mon… Aotus omni  Prim… &lt;NA&gt;     17     1.8 NA      7  
+## 2 Patas m… Eryt… omni  Prim… lc       10.9   1.1 NA     13.1
+## 3 Macaque  Maca… omni  Prim… &lt;NA&gt;     10.1   1.2  0.75  13.9
+## 4 Slow lo… Nyct… carni Prim… &lt;NA&gt;     11    NA   NA     13  
+## 5 Potto    Pero… omni  Prim… lc       11    NA   NA     13  
+## # … with 2 more variables: brainwt &lt;dbl&gt;, bodywt &lt;dbl&gt;, and
+## #   abbreviated variable name ¹​conservation</code></pre>
+<p></p>
+</div>
+<div id="reordering" class="section level2">
+<h2>
+<span class="header-section-number">5.5</span> Reordering<a class="anchor" aria-label="anchor" href="#reordering"><i class="fas fa-link"></i></a>
+</h2>
+<p>In addition to filtering rows and columns, often, you’ll want the data arranged in a particular order. It may order the columns in a logical way, or it could be to sort the data so that the data are sorted by value, i.e Ascending OR Descending. All of this can be achieved with a few simple functions.</p>
+<div id="reordering-columns" class="section level4">
+<h4>
+<span class="header-section-number">5.5.0.1</span> Reordering Columns<a class="anchor" aria-label="anchor" href="#reordering-columns"><i class="fas fa-link"></i></a>
+</h4>
+<p>The <code><a href="https://dplyr.tidyverse.org/reference/select.html">select()</a></code> function is powerful. Not only will it filter and rename columns, but it can also be used to reorder your columns. Using our example from above, if you wanted <code>sleep_rem</code> to be the first sleep column and <code>sleep_total</code> to be the last column, all you have to do is reorder them within <code><a href="https://dplyr.tidyverse.org/reference/select.html">select()</a></code>. The output from <code><a href="https://dplyr.tidyverse.org/reference/select.html">select()</a></code> would then be reordered to match the order specified within <code><a href="https://dplyr.tidyverse.org/reference/select.html">select()</a></code>.</p>
+<p></p>
+<div class="sourceCode" id="cb66"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">msleep</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">order</span> <span class="op">==</span> <span class="st">"Primates"</span>, <span class="va">sleep_total</span> <span class="op">&gt;</span> <span class="fl">10</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">name</span>, <span class="va">sleep_rem</span>, <span class="va">sleep_cycle</span>, <span class="va">sleep_total</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## # A tibble: 5 × 4
+##   name         sleep_rem sleep_cycle sleep_total
+##   &lt;chr&gt;            &lt;dbl&gt;       &lt;dbl&gt;       &lt;dbl&gt;
+## 1 Owl monkey         1.8       NA           17  
+## 2 Patas monkey       1.1       NA           10.9
+## 3 Macaque            1.2        0.75        10.1
+## 4 Slow loris        NA         NA           11  
+## 5 Potto             NA         NA           11</code></pre>
+<p></p>
+<p>sleep_rem <code>name</code> will be displayed first followed by <code>sleep_rem</code>, <code>sleep_cycle</code>, and <code>sleep_total</code>, just as it was specified within <code><a href="https://dplyr.tidyverse.org/reference/select.html">select()</a></code>.</p>
+</div>
+<div id="reordering-rows" class="section level4">
+<h4>
+<span class="header-section-number">5.5.0.2</span> Reordering Rows<a class="anchor" aria-label="anchor" href="#reordering-rows"><i class="fas fa-link"></i></a>
+</h4>
+<p>Rows can also be reordered. To reorder a variable in ascending order , you’ll want to use <code><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange()</a></code>. Continuing on from our example above, to now sort our rows by the amount of total sleep each mammal gets, we would use the following syntax:</p>
+<p></p>
+<div class="sourceCode" id="cb68"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">msleep</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">order</span> <span class="op">==</span> <span class="st">"Primates"</span>, <span class="va">sleep_total</span> <span class="op">&gt;</span> <span class="fl">10</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">name</span>, <span class="va">sleep_rem</span>, <span class="va">sleep_cycle</span>, <span class="va">sleep_total</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange</a></span><span class="op">(</span><span class="va">sleep_total</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## # A tibble: 5 × 4
+##   name         sleep_rem sleep_cycle sleep_total
+##   &lt;chr&gt;            &lt;dbl&gt;       &lt;dbl&gt;       &lt;dbl&gt;
+## 1 Macaque            1.2        0.75        10.1
+## 2 Patas monkey       1.1       NA           10.9
+## 3 Slow loris        NA         NA           11  
+## 4 Potto             NA         NA           11  
+## 5 Owl monkey         1.8       NA           17</code></pre>
+<p></p>
+<p>While <code>arrange</code> sorts variables in ascending order, it’s also possible to sort in descending order. To do this you just use <code><a href="https://dplyr.tidyverse.org/reference/desc.html">desc()</a></code> with the following syntax:</p>
+<p></p>
+<div class="sourceCode" id="cb70"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">msleep</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">order</span> <span class="op">==</span> <span class="st">"Primates"</span>, <span class="va">sleep_total</span> <span class="op">&gt;</span> <span class="fl">10</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">name</span>, <span class="va">sleep_rem</span>, <span class="va">sleep_cycle</span>, <span class="va">sleep_total</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange</a></span><span class="op">(</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/desc.html">desc</a></span><span class="op">(</span><span class="va">sleep_total</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## # A tibble: 5 × 4
+##   name         sleep_rem sleep_cycle sleep_total
+##   &lt;chr&gt;            &lt;dbl&gt;       &lt;dbl&gt;       &lt;dbl&gt;
+## 1 Owl monkey         1.8       NA           17  
+## 2 Slow loris        NA         NA           11  
+## 3 Potto             NA         NA           11  
+## 4 Patas monkey       1.1       NA           10.9
+## 5 Macaque            1.2        0.75        10.1</code></pre>
+<p></p>
+<p>By putting <code>sleep_total</code> within <code><a href="https://dplyr.tidyverse.org/reference/desc.html">desc()</a></code>, <code><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange()</a></code> will now sort your data from the primates with the longest total sleep to the shortest.</p>
+<p><code><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange()</a></code> can also be used to order non-numeric variables. For example, <code><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange()</a></code> will sort character vectors alphabetically.</p>
+<p></p>
+<div class="sourceCode" id="cb72"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">msleep</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">order</span> <span class="op">==</span> <span class="st">"Primates"</span>, <span class="va">sleep_total</span> <span class="op">&gt;</span> <span class="fl">10</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">name</span>, <span class="va">sleep_rem</span>, <span class="va">sleep_cycle</span>, <span class="va">sleep_total</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange</a></span><span class="op">(</span><span class="va">name</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## # A tibble: 5 × 4
+##   name         sleep_rem sleep_cycle sleep_total
+##   &lt;chr&gt;            &lt;dbl&gt;       &lt;dbl&gt;       &lt;dbl&gt;
+## 1 Macaque            1.2        0.75        10.1
+## 2 Owl monkey         1.8       NA           17  
+## 3 Patas monkey       1.1       NA           10.9
+## 4 Potto             NA         NA           11  
+## 5 Slow loris        NA         NA           11</code></pre>
+<p></p>
+<p>If you would like to reorder rows based on information in multiple columns, you can specify them separated by commas. This is useful if you have repeated labels in one column and want to sort within a category based on information in another column.</p>
+<p>In the example here, if there were repeated primates, this would sort the repeats based on their total sleep.</p>
+<p></p>
+<div class="sourceCode" id="cb74"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">msleep</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">order</span> <span class="op">==</span> <span class="st">"Primates"</span>, <span class="va">sleep_total</span> <span class="op">&gt;</span> <span class="fl">10</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">name</span>, <span class="va">sleep_rem</span>, <span class="va">sleep_cycle</span>, <span class="va">sleep_total</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange</a></span><span class="op">(</span><span class="va">name</span>, <span class="va">sleep_total</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## # A tibble: 5 × 4
+##   name         sleep_rem sleep_cycle sleep_total
+##   &lt;chr&gt;            &lt;dbl&gt;       &lt;dbl&gt;       &lt;dbl&gt;
+## 1 Macaque            1.2        0.75        10.1
+## 2 Owl monkey         1.8       NA           17  
+## 3 Patas monkey       1.1       NA           10.9
+## 4 Potto             NA         NA           11  
+## 5 Slow loris        NA         NA           11</code></pre>
+<p></p>
+</div>
+</div>
+<div id="creating-new-columns" class="section level2">
+<h2>
+<span class="header-section-number">5.6</span> Creating New Columns<a class="anchor" aria-label="anchor" href="#creating-new-columns"><i class="fas fa-link"></i></a>
+</h2>
+<p>You will often find when working with data that you need an additional column.</p>
+<p>For example, if you had two datasets you wanted to combine, you may want to make a new column in each dataset called <code>dataset</code>. In one dataset you may put <code>datasetA</code> in each row. In the second dataset, you could put <code>datasetB</code>. This way, once you combined the data, you would be able to keep track of which dataset each row came from originally.</p>
+<p>More often, however, you’ll likely want to create a new column that calculates a new variable based on information in a column you already have. For example, in our mammal sleep dataset, <code>sleep_total</code> is in hours. What if you wanted to have that information in minutes? You could create a new column with this very information!</p>
+<p>The function <code><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate()</a></code> was <em>made</em> for <strong>all</strong> of these new-column-creating situations. This function has a lot of capabilities. We’ll cover the basics here.</p>
+<p>Returning to the <code>msleep</code> dataset, after filtering and re-ordering, we can create a new column with <code><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate()</a></code>. Within <code><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate()</a></code>, we will calculate the number of minutes each mammal sleeps by multiplying the number of hours each animal sleeps by 60 minutes.</p>
+<p></p>
+<div class="sourceCode" id="cb76"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">msleep</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">order</span> <span class="op">==</span> <span class="st">"Primates"</span>, <span class="va">sleep_total</span> <span class="op">&gt;</span> <span class="fl">10</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">name</span>, <span class="va">sleep_rem</span>, <span class="va">sleep_cycle</span>, <span class="va">sleep_total</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange</a></span><span class="op">(</span><span class="va">name</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>sleep_total_min <span class="op">=</span> <span class="va">sleep_total</span> <span class="op">*</span> <span class="fl">60</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## # A tibble: 5 × 5
+##   name         sleep_rem sleep_cycle sleep_total sleep_tot…¹
+##   &lt;chr&gt;            &lt;dbl&gt;       &lt;dbl&gt;       &lt;dbl&gt;       &lt;dbl&gt;
+## 1 Macaque            1.2        0.75        10.1         606
+## 2 Owl monkey         1.8       NA           17          1020
+## 3 Patas monkey       1.1       NA           10.9         654
+## 4 Potto             NA         NA           11           660
+## 5 Slow loris        NA         NA           11           660
+## # … with abbreviated variable name ¹​sleep_total_min</code></pre>
+<p></p>
+
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="working-with-data.html"><span class="header-section-number">4</span> Working With Data</a></div>
+<div class="next"><a href="data-visualisation.html"><span class="header-section-number">6</span> Data Visualisation</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#data-wrangling"><span class="header-section-number">5</span> Data Wrangling</a></li>
+<li>
+<a class="nav-link" href="#r-data-wrangling-packages"><span class="header-section-number">5.1</span> R Data Wrangling Packages</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#dplyr"><span class="header-section-number">5.1.1</span> dplyr</a></li>
+<li><a class="nav-link" href="#tidyr"><span class="header-section-number">5.1.2</span> tidyr</a></li>
+<li><a class="nav-link" href="#janitor"><span class="header-section-number">5.1.3</span> janitor</a></li>
+<li><a class="nav-link" href="#skimr"><span class="header-section-number">5.1.4</span> skimr</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#the-pipe-operator"><span class="header-section-number">5.2</span> The Pipe Operator</a></li>
+<li>
+<a class="nav-link" href="#filtering-data"><span class="header-section-number">5.3</span> Filtering Data</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#filtering-rows"><span class="header-section-number">5.3.1</span> Filtering Rows</a></li>
+<li><a class="nav-link" href="#selecting-columns"><span class="header-section-number">5.3.2</span> Selecting Columns</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#renaming-columns"><span class="header-section-number">5.4</span> Renaming Columns</a></li>
+<li><a class="nav-link" href="#reordering"><span class="header-section-number">5.5</span> Reordering</a></li>
+<li><a class="nav-link" href="#creating-new-columns"><span class="header-section-number">5.6</span> Creating New Columns</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+          
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>A Comprehensive Guide to Use R</strong>" was written by Africano BYAMUGISHA. It was last built on 2023-01-05.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer>
+</body>
+</html>
