@@ -7,7 +7,7 @@
 <title>2 Getting Started &amp; Setting Up | A Comprehensive Guide to Use R</title>
 <meta name="author" content="Africano BYAMUGISHA">
 <meta name="description" content="Before we dive into using R, let’s get set up with the necessary software and tools. This section will cover downloading and installing R, as well as an integrated development environment (IDE)...">
-<meta name="generator" content="bookdown 0.32 with bs4_book()">
+<meta name="generator" content="bookdown 0.33 with bs4_book()">
 <meta property="og:title" content="2 Getting Started &amp; Setting Up | A Comprehensive Guide to Use R">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://github.io/africanobyamugisha/getting-started-setting-up.html">
@@ -20,7 +20,9 @@
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.2/transition.js"></script><script src="libs/bs3compat-0.4.2/tabs.js"></script><script src="libs/bs3compat-0.4.2/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
-<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/htmlwidgets-1.6.1/htmlwidgets.js"></script><script src="libs/plotly-binding-4.10.1/plotly.js"></script><script src="libs/typedarray-0.1/typedarray.min.js"></script><link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet">
+<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script><link href="libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet">
+<script src="libs/plotly-main-2.11.1/plotly-latest.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
     
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
   </style>
@@ -55,13 +57,14 @@
 <li><a class="" href="working-with-data.html"><span class="header-section-number">4</span> Working With Data</a></li>
 <li><a class="" href="data-wrangling.html"><span class="header-section-number">5</span> Data Wrangling</a></li>
 <li><a class="" href="data-visualisation.html"><span class="header-section-number">6</span> Data Visualisation</a></li>
-<li><a class="" href="statistics-in-r.html"><span class="header-section-number">7</span> Statistics in R</a></li>
-<li><a class="" href="functions.html"><span class="header-section-number">8</span> Functions</a></li>
-<li><a class="" href="interactive-reporting-shiny-markdowm-quarto.html"><span class="header-section-number">9</span> Interactive Reporting (Shiny, Markdowm, Quarto)</a></li>
-<li><a class="" href="github_r.html"><span class="header-section-number">10</span> Version control with Git and GitHub</a></li>
-<li><a class="" href="survey-sampling.html"><span class="header-section-number">11</span> Survey Sampling</a></li>
-<li><a class="" href="text-mining-for-qualitative-analysis.html"><span class="header-section-number">12</span> Text Mining for Qualitative Analysis</a></li>
-<li><a class="" href="machine-learning.html"><span class="header-section-number">13</span> Machine Learning</a></li>
+<li><a class="" href="practice-plotting-using-ggplot2.html"><span class="header-section-number">7</span> Practice plotting using ggplot2</a></li>
+<li><a class="" href="statistics-in-r.html"><span class="header-section-number">8</span> Statistics in R</a></li>
+<li><a class="" href="functions.html"><span class="header-section-number">9</span> Functions</a></li>
+<li><a class="" href="interactive-reporting-shiny-markdowm-quarto.html"><span class="header-section-number">10</span> Interactive Reporting (Shiny, Markdowm, Quarto)</a></li>
+<li><a class="" href="github_r.html"><span class="header-section-number">11</span> Version control with Git and GitHub</a></li>
+<li><a class="" href="survey-sampling.html"><span class="header-section-number">12</span> Survey Sampling</a></li>
+<li><a class="" href="text-mining-for-qualitative-analysis.html"><span class="header-section-number">13</span> Text Mining for Qualitative Analysis</a></li>
+<li><a class="" href="machine-learning.html"><span class="header-section-number">14</span> Machine Learning</a></li>
 <li><a class="" href="additional-resources.html">Additional Resources</a></li>
 </ul>
 
@@ -70,31 +73,31 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="getting-started-setting-up" class="section level1">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="getting-started-setting-up" class="section level1" number="2">
 <h1>
 <span class="header-section-number">2</span> Getting Started &amp; Setting Up<a class="anchor" aria-label="anchor" href="#getting-started-setting-up"><i class="fas fa-link"></i></a>
 </h1>
 <p>Before we dive into using R, let’s get set up with the necessary software and tools. This section will cover downloading and installing R, as well as an integrated development environment (IDE) such as RStudio. We’ll also cover the basics of working with the R console and executing code.</p>
-<div id="installing-r" class="section level2">
+<div id="installing-r" class="section level2" number="2.1">
 <h2>
 <span class="header-section-number">2.1</span> Installing R<a class="anchor" aria-label="anchor" href="#installing-r"><i class="fas fa-link"></i></a>
 </h2>
 <p>To download R, go to the <strong>CRAN</strong> (Comprehensive R Archive Network) website</p>
 <p><a href="https://cran.rstudio.com/" title="Click to open website">CRAN Website</a></p>
-<p><a href="https://cran.rstudio.com/"><img src="images/cran_site.png" alt="Fig 1: The CRAN Website" style="width:100.0%"></a></p>
+<p><a href="https://cran.rstudio.com/"><img src="images/cran_site.png" style="width:100.0%" alt="Fig 1: The CRAN Website"></a></p>
 <p>Choose to download R for either Linux, Mac or Windows by following the corresponding links as shown in Fig 1, depending on the Operating System of your Laptop Or Desktop.</p>
 <p>The version of R that you should download is called the (<strong>base</strong>) binary. Download and run it to install R. You may see mentions of 64-bit and 32-bit versions of R; if you have a modern computer (which in this case means a computer from 2010 or later), you should go with the 64-bit version.</p>
 </div>
-<div id="installing-r-studio" class="section level2">
+<div id="installing-r-studio" class="section level2" number="2.2">
 <h2>
 <span class="header-section-number">2.2</span> Installing R Studio<a class="anchor" aria-label="anchor" href="#installing-r-studio"><i class="fas fa-link"></i></a>
 </h2>
 <p>You have now installed the R programming language. Working with it is easier with an IDE (<em>Integrated Development Environment)</em>, which allows you to easily write, run and debug your code.</p>
-<p>This book is written for use with the <span class="underline"><em>RStudio IDE</em></span>, but 99.9 % of it will work equally well with other IDE’s, like Emacs with ESS or Jupyter notebooks.</p>
+<p>This book is written for use with the <u><em>RStudio IDE</em></u>, but 99.9 % of it will work equally well with other IDE’s, like Emacs with ESS or Jupyter notebooks.</p>
 <p>R Studio IDE got useful features you’d expect from a coding platform, such as syntax highlighting and tab for suggested code auto-completion. I also like its four-pane workspace, which better manages multiple R windows for typing commands, storing scripts, viewing command histories, viewing visualizations and more.</p>
 <p>To download RStudio, go to the RStudio <a href="https://posit.co/download/rstudio-desktop/" title="Click to Open download page">download page</a>. Click on the link to download the installer for your operating system, and then run it.</p>
 </div>
-<div id="exploring-r-studio-interface" class="section level2">
+<div id="exploring-r-studio-interface" class="section level2" number="2.3">
 <h2>
 <span class="header-section-number">2.3</span> Exploring R Studio Interface<a class="anchor" aria-label="anchor" href="#exploring-r-studio-interface"><i class="fas fa-link"></i></a>
 </h2>
@@ -106,11 +109,11 @@
 <li><p>The window at bottom right shows a plot if you’ve created a data visualization with your R code. There’s a history of previous plots and an option to export a plot to an image file or PDF. This window also shows external packages (R extensions) that are available on your system, files in your working directory and help files when called from the console.</p></li>
 </ol>
 </div>
-<div id="basic-things-to-know" class="section level2">
+<div id="basic-things-to-know" class="section level2" number="2.4">
 <h2>
 <span class="header-section-number">2.4</span> Basic things to know<a class="anchor" aria-label="anchor" href="#basic-things-to-know"><i class="fas fa-link"></i></a>
 </h2>
-<div id="installing-packages" class="section level3">
+<div id="installing-packages" class="section level3" number="2.4.1">
 <h3>
 <span class="header-section-number">2.4.1</span> Installing Packages<a class="anchor" aria-label="anchor" href="#installing-packages"><i class="fas fa-link"></i></a>
 </h3>
@@ -118,7 +121,7 @@
 <p>Do you want to apply some obscure statistical test to your data? Plot your data on a map? Run C++ code in R? Speed up some part of your data handling process? There are R packages for that.</p>
 <p>In fact, with more than 100,000 packages, there are R packages for just about anything that you could possibly want to do. All packages have been contributed by the R community.</p>
 <p>Most R packages are available from CRAN, the official R repository - a network of servers (<em>mirrors</em>). Packages on CRAN are checked before they are published, to make sure that they do what they are supposed to do and don’t contain malicious components. Downloading packages from CRAN is therefore generally considered to be safe.</p>
-<p>In the rest of this guide, we’ll make use of a package called <code>tidyverse</code>, which gives additional features fro data Wrangling. To install the package from CRAN, you can either select <span class="underline"><em>Packages &gt; Install</em></span> on the RStudio bottom right pane and then write tidyverse in the text box in the pop-up window that appears, or use the following line of code in the console or script:</p>
+<p>In the rest of this guide, we’ll make use of a package called <code>tidyverse</code>, which gives additional features fro data Wrangling. To install the package from CRAN, you can either select <u><em>Packages &gt; Install</em></u> on the RStudio bottom right pane and then write tidyverse in the text box in the pop-up window that appears, or use the following line of code in the console or script:</p>
 <p></p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"tidyverse"</span><span class="op">)</span></span></code></pre></div>
@@ -129,7 +132,7 @@
 <pre><code>package ‘ggplot2’ successfully unpacked and MD5 sums checked</code></pre>
 <p>If the installation fails for some reason, there will usually be an error message. You can read more about troubleshooting errors in and there is also a list of common problems when installing packages available on the RStudio support page at <a href="https://support.rstudio.com/hc/en-us/articles/200554786-Problem-Installing-Packages" class="uri">https://support.rstudio.com/hc/en-us/articles/200554786-Problem-Installing-Packages</a>.</p>
 </div>
-<div id="loading-packages" class="section level3">
+<div id="loading-packages" class="section level3" number="2.4.2">
 <h3>
 <span class="header-section-number">2.4.2</span> Loading Packages<a class="anchor" aria-label="anchor" href="#loading-packages"><i class="fas fa-link"></i></a>
 </h3>
@@ -139,7 +142,7 @@
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="https://tidyverse.tidyverse.org">"tidyverse"</a></span><span class="op">)</span></span></code></pre></div>
 <p></p>
 </div>
-<div id="working-directory" class="section level3">
+<div id="working-directory" class="section level3" number="2.4.3">
 <h3>
 <span class="header-section-number">2.4.3</span> Working Directory<a class="anchor" aria-label="anchor" href="#working-directory"><i class="fas fa-link"></i></a>
 </h3>
@@ -158,7 +161,7 @@ look something like:</p>
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/getwd.html">getwd</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <p></p>
 </div>
-<div id="getting-help" class="section level3">
+<div id="getting-help" class="section level3" number="2.4.4">
 <h3>
 <span class="header-section-number">2.4.4</span> Getting Help<a class="anchor" aria-label="anchor" href="#getting-help"><i class="fas fa-link"></i></a>
 </h3>
@@ -166,8 +169,8 @@ look something like:</p>
 <p><strong>The <code><a href="https://rdrr.io/r/utils/help.html">help()</a></code> Function</strong></p>
 <p>To get online help within an R session we use the <code><a href="https://rdrr.io/r/utils/help.html">help()</a></code> function. This will allow us to see the documentation on a function that we are interested in.</p>
 <p>Lets say for example that we wish to to make a sequence. We may read from a blog post or online website that we can do this with a function called <code><a href="https://rdrr.io/r/base/seq.html">seq()</a></code>. Unfortunately for us most people do not really display how to use the functions that they list. Have no fear! R will help:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" title="1">{r eval=<span class="ot">FALSE</span>}</a>
-<a class="sourceLine" id="cb7-2" title="2"><span class="kw">help</span>(seq)</a></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="getting-started-setting-up.html#cb7-1" aria-hidden="true" tabindex="-1"></a>{r eval<span class="ot">=</span><span class="cn">FALSE</span>}</span>
+<span id="cb7-2"><a href="getting-started-setting-up.html#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">help</span>(seq)</span></code></pre></div>
 <p>Many times we do not know exactly which function we can use. In order to ask R for help in this case we can actually search all the packages we have for a keyword or phrase.</p>
 <p>For example if we wanted to know about math symbols we could type the following:</p>
 <p></p>
@@ -211,7 +214,7 @@ look something like:</p>
 <li><p>And many more</p></li>
 </ul>
 </div>
-<div id="keyboard-shortcuts" class="section level3">
+<div id="keyboard-shortcuts" class="section level3" number="2.4.5">
 <h3>
 <span class="header-section-number">2.4.5</span> Keyboard ShortCuts<a class="anchor" aria-label="anchor" href="#keyboard-shortcuts"><i class="fas fa-link"></i></a>
 </h3>
@@ -229,11 +232,11 @@ look something like:</p>
 <p>For more about RStudio features, including a full list of keyboard shortcuts, head to the <a href="https://www.r-project.org/other-docs.html">online documentation.</a></p>
 </div>
 </div>
-<div id="r-files-objects" class="section level2">
+<div id="r-files-objects" class="section level2" number="2.5">
 <h2>
 <span class="header-section-number">2.5</span> R files &amp; Objects<a class="anchor" aria-label="anchor" href="#r-files-objects"><i class="fas fa-link"></i></a>
 </h2>
-<div id="rstudio-projects" class="section level3">
+<div id="rstudio-projects" class="section level3" number="2.5.1">
 <h3>
 <span class="header-section-number">2.5.1</span> <strong>RStudio Projects</strong><a class="anchor" aria-label="anchor" href="#rstudio-projects"><i class="fas fa-link"></i></a>
 </h3>
@@ -245,7 +248,7 @@ look something like:</p>
 </div>
 <p>RStudio Projects are useful when you need to share your work with colleagues. You can send your project file (ending in .Rproj) along with all supporting files, which will make it easier for your colleagues to recreate the working environment and reproduce the results.</p>
 </div>
-<div id="save-your-real-work.-delete-the-rest." class="section level3">
+<div id="save-your-real-work.-delete-the-rest." class="section level3" number="2.5.2">
 <h3>
 <span class="header-section-number">2.5.2</span> <strong>Save Your “Real” Work. Delete the Rest.</strong><a class="anchor" aria-label="anchor" href="#save-your-real-work.-delete-the-rest."><i class="fas fa-link"></i></a>
 </h3>
@@ -254,7 +257,7 @@ look something like:</p>
 <p>Now, each time you open RStudio, you will begin with an empty session. None of the code generated from your previous sessions will be remembered. The R script and datasets can be used to recreate the environment from scratch.</p>
 <p><a href="https://rladiessydney.org/courses/ryouwithme/01-basicbasics-1/#1-3-settings">Other experts agree</a> that <a href="https://r4ds.had.co.nz/workflow-projects.html#what-is-real">not saving your workspace</a> is best practice when using RStudio.</p>
 </div>
-<div id="r-scripts" class="section level3">
+<div id="r-scripts" class="section level3" number="2.5.3">
 <h3>
 <span class="header-section-number">2.5.3</span> <strong>R Scripts</strong><a class="anchor" aria-label="anchor" href="#r-scripts"><i class="fas fa-link"></i></a>
 </h3>
@@ -265,7 +268,7 @@ look something like:</p>
 <hr>
 </div>
 </div>
-<div id="task-1.1" class="section level2">
+<div id="task-1.1" class="section level2" number="2.6">
 <h2>
 <span class="header-section-number">2.6</span> Task 1.1:<a class="anchor" aria-label="anchor" href="#task-1.1"><i class="fas fa-link"></i></a>
 </h2>

@@ -4,23 +4,25 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>9 Interactive Reporting (Shiny, Markdowm, Quarto) | A Comprehensive Guide to Use R</title>
+<title>10 Interactive Reporting (Shiny, Markdowm, Quarto) | A Comprehensive Guide to Use R</title>
 <meta name="author" content="Africano BYAMUGISHA">
 <meta name="description" content="This is A comprehensive guide to use R, that is &amp; will be updated continouslyof new content about R.The Aim is not for Super and Advanced Masterly as is a broad Programming Language; but giving you a path to Advanced Use. the Topics covered include; Getting Started, OPerators, Data Structure,Working withh data, Data Visualisation, Statistical modelling and machine Learning">
-<meta name="generator" content="bookdown 0.32 with bs4_book()">
-<meta property="og:title" content="9 Interactive Reporting (Shiny, Markdowm, Quarto) | A Comprehensive Guide to Use R">
+<meta name="generator" content="bookdown 0.33 with bs4_book()">
+<meta property="og:title" content="10 Interactive Reporting (Shiny, Markdowm, Quarto) | A Comprehensive Guide to Use R">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://github.io/africanobyamugisha/interactive-reporting-shiny-markdowm-quarto.html">
 <meta property="og:image" content="https://github.io/africanobyamugisha/images/flyer.png">
 <meta property="og:description" content="This is A comprehensive guide to use R, that is &amp; will be updated continouslyof new content about R.The Aim is not for Super and Advanced Masterly as is a broad Programming Language; but giving you a path to Advanced Use. the Topics covered include; Getting Started, OPerators, Data Structure,Working withh data, Data Visualisation, Statistical modelling and machine Learning">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="9 Interactive Reporting (Shiny, Markdowm, Quarto) | A Comprehensive Guide to Use R">
+<meta name="twitter:title" content="10 Interactive Reporting (Shiny, Markdowm, Quarto) | A Comprehensive Guide to Use R">
 <meta name="twitter:description" content="This is A comprehensive guide to use R, that is &amp; will be updated continouslyof new content about R.The Aim is not for Super and Advanced Masterly as is a broad Programming Language; but giving you a path to Advanced Use. the Topics covered include; Getting Started, OPerators, Data Structure,Working withh data, Data Visualisation, Statistical modelling and machine Learning">
 <meta name="twitter:image" content="https://github.io/africanobyamugisha/images/flyer.png">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.2/transition.js"></script><script src="libs/bs3compat-0.4.2/tabs.js"></script><script src="libs/bs3compat-0.4.2/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
-<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/htmlwidgets-1.6.1/htmlwidgets.js"></script><script src="libs/plotly-binding-4.10.1/plotly.js"></script><script src="libs/typedarray-0.1/typedarray.min.js"></script><link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet">
+<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script><link href="libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet">
+<script src="libs/plotly-main-2.11.1/plotly-latest.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
     
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
   </style>
@@ -55,13 +57,14 @@
 <li><a class="" href="working-with-data.html"><span class="header-section-number">4</span> Working With Data</a></li>
 <li><a class="" href="data-wrangling.html"><span class="header-section-number">5</span> Data Wrangling</a></li>
 <li><a class="" href="data-visualisation.html"><span class="header-section-number">6</span> Data Visualisation</a></li>
-<li><a class="" href="statistics-in-r.html"><span class="header-section-number">7</span> Statistics in R</a></li>
-<li><a class="" href="functions.html"><span class="header-section-number">8</span> Functions</a></li>
-<li><a class="active" href="interactive-reporting-shiny-markdowm-quarto.html"><span class="header-section-number">9</span> Interactive Reporting (Shiny, Markdowm, Quarto)</a></li>
-<li><a class="" href="github_r.html"><span class="header-section-number">10</span> Version control with Git and GitHub</a></li>
-<li><a class="" href="survey-sampling.html"><span class="header-section-number">11</span> Survey Sampling</a></li>
-<li><a class="" href="text-mining-for-qualitative-analysis.html"><span class="header-section-number">12</span> Text Mining for Qualitative Analysis</a></li>
-<li><a class="" href="machine-learning.html"><span class="header-section-number">13</span> Machine Learning</a></li>
+<li><a class="" href="practice-plotting-using-ggplot2.html"><span class="header-section-number">7</span> Practice plotting using ggplot2</a></li>
+<li><a class="" href="statistics-in-r.html"><span class="header-section-number">8</span> Statistics in R</a></li>
+<li><a class="" href="functions.html"><span class="header-section-number">9</span> Functions</a></li>
+<li><a class="active" href="interactive-reporting-shiny-markdowm-quarto.html"><span class="header-section-number">10</span> Interactive Reporting (Shiny, Markdowm, Quarto)</a></li>
+<li><a class="" href="github_r.html"><span class="header-section-number">11</span> Version control with Git and GitHub</a></li>
+<li><a class="" href="survey-sampling.html"><span class="header-section-number">12</span> Survey Sampling</a></li>
+<li><a class="" href="text-mining-for-qualitative-analysis.html"><span class="header-section-number">13</span> Text Mining for Qualitative Analysis</a></li>
+<li><a class="" href="machine-learning.html"><span class="header-section-number">14</span> Machine Learning</a></li>
 <li><a class="" href="additional-resources.html">Additional Resources</a></li>
 </ul>
 
@@ -70,18 +73,18 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="interactive-reporting-shiny-markdowm-quarto" class="section level1">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="interactive-reporting-shiny-markdowm-quarto" class="section level1" number="10">
 <h1>
-<span class="header-section-number">9</span> Interactive Reporting (Shiny, Markdowm, Quarto)<a class="anchor" aria-label="anchor" href="#interactive-reporting-shiny-markdowm-quarto"><i class="fas fa-link"></i></a>
+<span class="header-section-number">10</span> Interactive Reporting (Shiny, Markdowm, Quarto)<a class="anchor" aria-label="anchor" href="#interactive-reporting-shiny-markdowm-quarto"><i class="fas fa-link"></i></a>
 </h1>
 
 </div>
   <div class="chapter-nav">
-<div class="prev"><a href="functions.html"><span class="header-section-number">8</span> Functions</a></div>
-<div class="next"><a href="github_r.html"><span class="header-section-number">10</span> Version control with Git and GitHub</a></div>
+<div class="prev"><a href="functions.html"><span class="header-section-number">9</span> Functions</a></div>
+<div class="next"><a href="github_r.html"><span class="header-section-number">11</span> Version control with Git and GitHub</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
-      <ul class="nav navbar-nav"><li><a class="nav-link" href="#interactive-reporting-shiny-markdowm-quarto"><span class="header-section-number">9</span> Interactive Reporting (Shiny, Markdowm, Quarto)</a></li></ul>
+      <ul class="nav navbar-nav"><li><a class="nav-link" href="#interactive-reporting-shiny-markdowm-quarto"><span class="header-section-number">10</span> Interactive Reporting (Shiny, Markdowm, Quarto)</a></li></ul>
 
       <div class="book-extra">
         <ul class="list-unstyled">

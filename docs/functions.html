@@ -4,23 +4,25 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>8 Functions | A Comprehensive Guide to Use R</title>
+<title>9 Functions | A Comprehensive Guide to Use R</title>
 <meta name="author" content="Africano BYAMUGISHA">
-<meta name="description" content="8.1 Built In Functions   8.2 User Defined Functions  8.2.1 Categories of user Defined Functions   8.2.2 Function Definition   8.3 Function Call   8.4 Exercise">
-<meta name="generator" content="bookdown 0.32 with bs4_book()">
-<meta property="og:title" content="8 Functions | A Comprehensive Guide to Use R">
+<meta name="description" content="9.1 Built In Functions   9.2 User Defined Functions  9.2.1 Categories of user Defined Functions   9.2.2 Function Definition   9.3 Function Call   9.4 Exercise">
+<meta name="generator" content="bookdown 0.33 with bs4_book()">
+<meta property="og:title" content="9 Functions | A Comprehensive Guide to Use R">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://github.io/africanobyamugisha/functions.html">
 <meta property="og:image" content="https://github.io/africanobyamugisha/images/flyer.png">
-<meta property="og:description" content="8.1 Built In Functions   8.2 User Defined Functions  8.2.1 Categories of user Defined Functions   8.2.2 Function Definition   8.3 Function Call   8.4 Exercise">
+<meta property="og:description" content="9.1 Built In Functions   9.2 User Defined Functions  9.2.1 Categories of user Defined Functions   9.2.2 Function Definition   9.3 Function Call   9.4 Exercise">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="8 Functions | A Comprehensive Guide to Use R">
-<meta name="twitter:description" content="8.1 Built In Functions   8.2 User Defined Functions  8.2.1 Categories of user Defined Functions   8.2.2 Function Definition   8.3 Function Call   8.4 Exercise">
+<meta name="twitter:title" content="9 Functions | A Comprehensive Guide to Use R">
+<meta name="twitter:description" content="9.1 Built In Functions   9.2 User Defined Functions  9.2.1 Categories of user Defined Functions   9.2.2 Function Definition   9.3 Function Call   9.4 Exercise">
 <meta name="twitter:image" content="https://github.io/africanobyamugisha/images/flyer.png">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.2/transition.js"></script><script src="libs/bs3compat-0.4.2/tabs.js"></script><script src="libs/bs3compat-0.4.2/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
-<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/htmlwidgets-1.6.1/htmlwidgets.js"></script><script src="libs/plotly-binding-4.10.1/plotly.js"></script><script src="libs/typedarray-0.1/typedarray.min.js"></script><link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet">
+<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script><link href="libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet">
+<script src="libs/plotly-main-2.11.1/plotly-latest.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
     
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
   </style>
@@ -55,13 +57,14 @@
 <li><a class="" href="working-with-data.html"><span class="header-section-number">4</span> Working With Data</a></li>
 <li><a class="" href="data-wrangling.html"><span class="header-section-number">5</span> Data Wrangling</a></li>
 <li><a class="" href="data-visualisation.html"><span class="header-section-number">6</span> Data Visualisation</a></li>
-<li><a class="" href="statistics-in-r.html"><span class="header-section-number">7</span> Statistics in R</a></li>
-<li><a class="active" href="functions.html"><span class="header-section-number">8</span> Functions</a></li>
-<li><a class="" href="interactive-reporting-shiny-markdowm-quarto.html"><span class="header-section-number">9</span> Interactive Reporting (Shiny, Markdowm, Quarto)</a></li>
-<li><a class="" href="github_r.html"><span class="header-section-number">10</span> Version control with Git and GitHub</a></li>
-<li><a class="" href="survey-sampling.html"><span class="header-section-number">11</span> Survey Sampling</a></li>
-<li><a class="" href="text-mining-for-qualitative-analysis.html"><span class="header-section-number">12</span> Text Mining for Qualitative Analysis</a></li>
-<li><a class="" href="machine-learning.html"><span class="header-section-number">13</span> Machine Learning</a></li>
+<li><a class="" href="practice-plotting-using-ggplot2.html"><span class="header-section-number">7</span> Practice plotting using ggplot2</a></li>
+<li><a class="" href="statistics-in-r.html"><span class="header-section-number">8</span> Statistics in R</a></li>
+<li><a class="active" href="functions.html"><span class="header-section-number">9</span> Functions</a></li>
+<li><a class="" href="interactive-reporting-shiny-markdowm-quarto.html"><span class="header-section-number">10</span> Interactive Reporting (Shiny, Markdowm, Quarto)</a></li>
+<li><a class="" href="github_r.html"><span class="header-section-number">11</span> Version control with Git and GitHub</a></li>
+<li><a class="" href="survey-sampling.html"><span class="header-section-number">12</span> Survey Sampling</a></li>
+<li><a class="" href="text-mining-for-qualitative-analysis.html"><span class="header-section-number">13</span> Text Mining for Qualitative Analysis</a></li>
+<li><a class="" href="machine-learning.html"><span class="header-section-number">14</span> Machine Learning</a></li>
 <li><a class="" href="additional-resources.html">Additional Resources</a></li>
 </ul>
 
@@ -70,58 +73,58 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="functions" class="section level1" style="color: green;">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="functions" class="section level1" number="9" style="color: green;">
 <h1>
-<span class="header-section-number">8</span> Functions<a class="anchor" aria-label="anchor" href="#functions"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9</span> Functions<a class="anchor" aria-label="anchor" href="#functions"><i class="fas fa-link"></i></a>
 </h1>
-<div id="built-in-functions" class="section level2">
+<div id="built-in-functions" class="section level2" number="9.1">
 <h2>
-<span class="header-section-number">8.1</span> Built In Functions<a class="anchor" aria-label="anchor" href="#built-in-functions"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.1</span> Built In Functions<a class="anchor" aria-label="anchor" href="#built-in-functions"><i class="fas fa-link"></i></a>
 </h2>
 </div>
-<div id="user-defined-functions" class="section level2">
+<div id="user-defined-functions" class="section level2" number="9.2">
 <h2>
-<span class="header-section-number">8.2</span> User Defined Functions<a class="anchor" aria-label="anchor" href="#user-defined-functions"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.2</span> User Defined Functions<a class="anchor" aria-label="anchor" href="#user-defined-functions"><i class="fas fa-link"></i></a>
 </h2>
-<div id="categories-of-user-defined-functions" class="section level3">
+<div id="categories-of-user-defined-functions" class="section level3" number="9.2.1">
 <h3>
-<span class="header-section-number">8.2.1</span> Categories of user Defined Functions<a class="anchor" aria-label="anchor" href="#categories-of-user-defined-functions"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.2.1</span> Categories of user Defined Functions<a class="anchor" aria-label="anchor" href="#categories-of-user-defined-functions"><i class="fas fa-link"></i></a>
 </h3>
 </div>
-<div id="function-definition" class="section level3">
+<div id="function-definition" class="section level3" number="9.2.2">
 <h3>
-<span class="header-section-number">8.2.2</span> Function Definition<a class="anchor" aria-label="anchor" href="#function-definition"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.2.2</span> Function Definition<a class="anchor" aria-label="anchor" href="#function-definition"><i class="fas fa-link"></i></a>
 </h3>
 </div>
 </div>
-<div id="function-call" class="section level2">
+<div id="function-call" class="section level2" number="9.3">
 <h2>
-<span class="header-section-number">8.3</span> Function Call<a class="anchor" aria-label="anchor" href="#function-call"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.3</span> Function Call<a class="anchor" aria-label="anchor" href="#function-call"><i class="fas fa-link"></i></a>
 </h2>
 </div>
-<div id="exercise" class="section level2">
+<div id="exercise" class="section level2" number="9.4">
 <h2>
-<span class="header-section-number">8.4</span> Exercise<a class="anchor" aria-label="anchor" href="#exercise"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.4</span> Exercise<a class="anchor" aria-label="anchor" href="#exercise"><i class="fas fa-link"></i></a>
 </h2>
 
 </div>
 </div>
   <div class="chapter-nav">
-<div class="prev"><a href="statistics-in-r.html"><span class="header-section-number">7</span> Statistics in R</a></div>
-<div class="next"><a href="interactive-reporting-shiny-markdowm-quarto.html"><span class="header-section-number">9</span> Interactive Reporting (Shiny, Markdowm, Quarto)</a></div>
+<div class="prev"><a href="statistics-in-r.html"><span class="header-section-number">8</span> Statistics in R</a></div>
+<div class="next"><a href="interactive-reporting-shiny-markdowm-quarto.html"><span class="header-section-number">10</span> Interactive Reporting (Shiny, Markdowm, Quarto)</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#functions"><span class="header-section-number">8</span> Functions</a></li>
-<li><a class="nav-link" href="#built-in-functions"><span class="header-section-number">8.1</span> Built In Functions</a></li>
+<li><a class="nav-link" href="#functions"><span class="header-section-number">9</span> Functions</a></li>
+<li><a class="nav-link" href="#built-in-functions"><span class="header-section-number">9.1</span> Built In Functions</a></li>
 <li>
-<a class="nav-link" href="#user-defined-functions"><span class="header-section-number">8.2</span> User Defined Functions</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#categories-of-user-defined-functions"><span class="header-section-number">8.2.1</span> Categories of user Defined Functions</a></li>
-<li><a class="nav-link" href="#function-definition"><span class="header-section-number">8.2.2</span> Function Definition</a></li>
+<a class="nav-link" href="#user-defined-functions"><span class="header-section-number">9.2</span> User Defined Functions</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#categories-of-user-defined-functions"><span class="header-section-number">9.2.1</span> Categories of user Defined Functions</a></li>
+<li><a class="nav-link" href="#function-definition"><span class="header-section-number">9.2.2</span> Function Definition</a></li>
 </ul>
 </li>
-<li><a class="nav-link" href="#function-call"><span class="header-section-number">8.3</span> Function Call</a></li>
-<li><a class="nav-link" href="#exercise"><span class="header-section-number">8.4</span> Exercise</a></li>
+<li><a class="nav-link" href="#function-call"><span class="header-section-number">9.3</span> Function Call</a></li>
+<li><a class="nav-link" href="#exercise"><span class="header-section-number">9.4</span> Exercise</a></li>
 </ul>
 
       <div class="book-extra">

@@ -7,7 +7,7 @@
 <title>5 Data Wrangling | A Comprehensive Guide to Use R</title>
 <meta name="author" content="Africano BYAMUGISHA">
 <meta name="description" content="5.1 R Data Wrangling Packages While there are tons of R packages out there to help you work with data, we’re going to cover the packages and functions within those packages that you’ll absolutely...">
-<meta name="generator" content="bookdown 0.32 with bs4_book()">
+<meta name="generator" content="bookdown 0.33 with bs4_book()">
 <meta property="og:title" content="5 Data Wrangling | A Comprehensive Guide to Use R">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://github.io/africanobyamugisha/data-wrangling.html">
@@ -20,7 +20,9 @@
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.2/transition.js"></script><script src="libs/bs3compat-0.4.2/tabs.js"></script><script src="libs/bs3compat-0.4.2/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
-<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/htmlwidgets-1.6.1/htmlwidgets.js"></script><script src="libs/plotly-binding-4.10.1/plotly.js"></script><script src="libs/typedarray-0.1/typedarray.min.js"></script><link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet">
+<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script><link href="libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet">
+<script src="libs/plotly-main-2.11.1/plotly-latest.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
     
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
   </style>
@@ -55,13 +57,14 @@
 <li><a class="" href="working-with-data.html"><span class="header-section-number">4</span> Working With Data</a></li>
 <li><a class="active" href="data-wrangling.html"><span class="header-section-number">5</span> Data Wrangling</a></li>
 <li><a class="" href="data-visualisation.html"><span class="header-section-number">6</span> Data Visualisation</a></li>
-<li><a class="" href="statistics-in-r.html"><span class="header-section-number">7</span> Statistics in R</a></li>
-<li><a class="" href="functions.html"><span class="header-section-number">8</span> Functions</a></li>
-<li><a class="" href="interactive-reporting-shiny-markdowm-quarto.html"><span class="header-section-number">9</span> Interactive Reporting (Shiny, Markdowm, Quarto)</a></li>
-<li><a class="" href="github_r.html"><span class="header-section-number">10</span> Version control with Git and GitHub</a></li>
-<li><a class="" href="survey-sampling.html"><span class="header-section-number">11</span> Survey Sampling</a></li>
-<li><a class="" href="text-mining-for-qualitative-analysis.html"><span class="header-section-number">12</span> Text Mining for Qualitative Analysis</a></li>
-<li><a class="" href="machine-learning.html"><span class="header-section-number">13</span> Machine Learning</a></li>
+<li><a class="" href="practice-plotting-using-ggplot2.html"><span class="header-section-number">7</span> Practice plotting using ggplot2</a></li>
+<li><a class="" href="statistics-in-r.html"><span class="header-section-number">8</span> Statistics in R</a></li>
+<li><a class="" href="functions.html"><span class="header-section-number">9</span> Functions</a></li>
+<li><a class="" href="interactive-reporting-shiny-markdowm-quarto.html"><span class="header-section-number">10</span> Interactive Reporting (Shiny, Markdowm, Quarto)</a></li>
+<li><a class="" href="github_r.html"><span class="header-section-number">11</span> Version control with Git and GitHub</a></li>
+<li><a class="" href="survey-sampling.html"><span class="header-section-number">12</span> Survey Sampling</a></li>
+<li><a class="" href="text-mining-for-qualitative-analysis.html"><span class="header-section-number">13</span> Text Mining for Qualitative Analysis</a></li>
+<li><a class="" href="machine-learning.html"><span class="header-section-number">14</span> Machine Learning</a></li>
 <li><a class="" href="additional-resources.html">Additional Resources</a></li>
 </ul>
 
@@ -70,17 +73,17 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="data-wrangling" class="section level1">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="data-wrangling" class="section level1" number="5">
 <h1>
 <span class="header-section-number">5</span> Data Wrangling<a class="anchor" aria-label="anchor" href="#data-wrangling"><i class="fas fa-link"></i></a>
 </h1>
 <p><img src="images/cheatsheets/data_wrangling_cheatsheet-0000.png" style="width:100.0%"><img src="images/cheatsheets/data_wrangling_cheatsheet-0001.png" style="width:100.0%"></p>
-<div id="r-data-wrangling-packages" class="section level2">
+<div id="r-data-wrangling-packages" class="section level2" number="5.1">
 <h2>
 <span class="header-section-number">5.1</span> R Data Wrangling Packages<a class="anchor" aria-label="anchor" href="#r-data-wrangling-packages"><i class="fas fa-link"></i></a>
 </h2>
 <p>While there are <em>tons</em> of R packages out there to help you work with data, we’re going to cover the packages and functions within those packages that you’ll absolutely want and need to work with when working with data.</p>
-<div id="dplyr" class="section level3">
+<div id="dplyr" class="section level3" number="5.1.1">
 <h3>
 <span class="header-section-number">5.1.1</span> <strong><code>dplyr</code></strong><a class="anchor" aria-label="anchor" href="#dplyr"><i class="fas fa-link"></i></a>
 </h3>
@@ -102,7 +105,7 @@
 <li><p><code><a href="https://dplyr.tidyverse.org/reference/count.html">add_tally()</a></code> - add value(s) of <code><a href="https://dplyr.tidyverse.org/reference/count.html">tally()</a></code> as a new column</p></li>
 </ul>
 </div>
-<div id="tidyr" class="section level3">
+<div id="tidyr" class="section level3" number="5.1.2">
 <h3>
 <span class="header-section-number">5.1.2</span> <strong><code>tidyr</code></strong><a class="anchor" aria-label="anchor" href="#tidyr"><i class="fas fa-link"></i></a>
 </h3>
@@ -112,7 +115,7 @@
 <li><p><code><a href="https://tidyr.tidyverse.org/reference/separate.html">separate()</a></code> - separate contents of a column into two or more columns</p></li>
 </ul>
 </div>
-<div id="janitor" class="section level3">
+<div id="janitor" class="section level3" number="5.1.3">
 <h3>
 <span class="header-section-number">5.1.3</span> <code>janitor</code><a class="anchor" aria-label="anchor" href="#janitor"><i class="fas fa-link"></i></a>
 </h3>
@@ -123,7 +126,7 @@
 <li><p><code>get_dupes()</code> - identify duplicate observations</p></li>
 </ul>
 </div>
-<div id="skimr" class="section level3">
+<div id="skimr" class="section level3" number="5.1.4">
 <h3>
 <span class="header-section-number">5.1.4</span> <code>skimr</code><a class="anchor" aria-label="anchor" href="#skimr"><i class="fas fa-link"></i></a>
 </h3>
@@ -137,17 +140,17 @@
 <div class="sourceCode" id="cb44"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"pacman"</span><span class="op">)</span>  <span class="co"># Install pacman package</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="https://github.com/trinker/pacman">"pacman"</a></span><span class="op">)</span>  <span class="co"># Load pacman package</span></span>
-<span><span class="fu"><a href="https://rdrr.io/pkg/pacman/man/p_load.html">p_load</a></span><span class="op">(</span><span class="va">skimr</span>, <span class="va">tidyr</span>, <span class="va">janitor</span>, <span class="va">dplyr</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu">p_load</span><span class="op">(</span><span class="va">skimr</span>, <span class="va">tidyr</span>, <span class="va">janitor</span>, <span class="va">dplyr</span><span class="op">)</span></span></code></pre></div>
 <p></p>
 <blockquote>
-<p><span class="underline"><strong>NOTE:</strong></span> The package package provides tools to conveniently manage add-on packages in the R programming language.</p>
+<p><u><strong>NOTE:</strong></u> The package package provides tools to conveniently manage add-on packages in the R programming language.</p>
 <p>After executing the previous code, we have loaded the four packages.</p>
-<p>The <code>p_load</code> function also checks whether a package is installed already. If the package is <strong>not installed</strong> yet, it is installed <span class="underline">automatically</span> by the <code>pacman</code> package.</p>
+<p>The <code>p_load</code> function also checks whether a package is installed already. If the package is <strong>not installed</strong> yet, it is installed <u>automatically</u> by the <code>pacman</code> package.</p>
 <p>The <code>p_load</code> function basically replaces the Base R library, install.packages, and require functions and allows installing and loading numerous packages simultaneously using much less R code.</p>
 </blockquote>
 </div>
 </div>
-<div id="the-pipe-operator" class="section level2">
+<div id="the-pipe-operator" class="section level2" number="5.2">
 <h2>
 <span class="header-section-number">5.2</span> The Pipe Operator<a class="anchor" aria-label="anchor" href="#the-pipe-operator"><i class="fas fa-link"></i></a>
 </h2>
@@ -170,10 +173,10 @@
   B %&gt;% 
     C %&gt;%
       D</code></pre>
-<p>While both of the previous two code examples would provide the same output, the one below is more readable, <span class="underline">which is a large part of why pipes are used. It makes your code more understandable to you and others</span>.</p>
+<p>While both of the previous two code examples would provide the same output, the one below is more readable, <u>which is a large part of why pipes are used. It makes your code more understandable to you and others</u>.</p>
 <p>Below we’ll use this pipe operator a lot. Remember, it takes output from the left hand side and feeds it into the function that comes after the pipe <strong>as the first argument.</strong></p>
 </div>
-<div id="filtering-data" class="section level2">
+<div id="filtering-data" class="section level2" number="5.3">
 <h2>
 <span class="header-section-number">5.3</span> Filtering Data<a class="anchor" aria-label="anchor" href="#filtering-data"><i class="fas fa-link"></i></a>
 </h2>
@@ -189,7 +192,7 @@
 library(ggplot2)
 glimpse(msleep)</a></code></pre>
 <p>Glimpse of msleep dataset</p>
-<div id="filtering-rows" class="section level3">
+<div id="filtering-rows" class="section level3" number="5.3.1">
 <h3>
 <span class="header-section-number">5.3.1</span> Filtering Rows<a class="anchor" aria-label="anchor" href="#filtering-rows"><i class="fas fa-link"></i></a>
 </h3>
@@ -267,7 +270,7 @@ glimpse(msleep)</a></code></pre>
 <p></p>
 <p>Note that the number of <strong>columns</strong> hasn’t changed. All 11 variables are still shown in columns because the function <code><a href="https://dplyr.tidyverse.org/reference/filter.html">filter()</a></code> filters on rows, not columns.</p>
 </div>
-<div id="selecting-columns" class="section level3">
+<div id="selecting-columns" class="section level3" number="5.3.2">
 <h3>
 <span class="header-section-number">5.3.2</span> Selecting Columns<a class="anchor" aria-label="anchor" href="#selecting-columns"><i class="fas fa-link"></i></a>
 </h3>
@@ -309,10 +312,11 @@ glimpse(msleep)</a></code></pre>
 <p>
 &gt;
 &gt; <strong>YOU SEE!!!</strong></p>
-<p><embed src="images/laugh_emoji.png" style="width:15.0%"></embed> Definitely harder to read. We’ll stick with the above approach!</p>
+<div class="inline-figure">
+<img src="laugh_emoji.jfif" style="width:15.0%"> Definitely harder to read. We’ll stick with the above approach!</div>
 </div>
 </div>
-<div id="renaming-columns" class="section level2">
+<div id="renaming-columns" class="section level2" number="5.4">
 <h2>
 <span class="header-section-number">5.4</span> Renaming Columns<a class="anchor" aria-label="anchor" href="#renaming-columns"><i class="fas fa-link"></i></a>
 </h2>
@@ -350,12 +354,12 @@ glimpse(msleep)</a></code></pre>
 ## #   abbreviated variable name ¹​conservation</code></pre>
 <p></p>
 </div>
-<div id="reordering" class="section level2">
+<div id="reordering" class="section level2" number="5.5">
 <h2>
 <span class="header-section-number">5.5</span> Reordering<a class="anchor" aria-label="anchor" href="#reordering"><i class="fas fa-link"></i></a>
 </h2>
 <p>In addition to filtering rows and columns, often, you’ll want the data arranged in a particular order. It may order the columns in a logical way, or it could be to sort the data so that the data are sorted by value, i.e Ascending OR Descending. All of this can be achieved with a few simple functions.</p>
-<div id="reordering-columns" class="section level4">
+<div id="reordering-columns" class="section level4" number="5.5.0.1">
 <h4>
 <span class="header-section-number">5.5.0.1</span> Reordering Columns<a class="anchor" aria-label="anchor" href="#reordering-columns"><i class="fas fa-link"></i></a>
 </h4>
@@ -376,7 +380,7 @@ glimpse(msleep)</a></code></pre>
 <p></p>
 <p>sleep_rem <code>name</code> will be displayed first followed by <code>sleep_rem</code>, <code>sleep_cycle</code>, and <code>sleep_total</code>, just as it was specified within <code><a href="https://dplyr.tidyverse.org/reference/select.html">select()</a></code>.</p>
 </div>
-<div id="reordering-rows" class="section level4">
+<div id="reordering-rows" class="section level4" number="5.5.0.2">
 <h4>
 <span class="header-section-number">5.5.0.2</span> Reordering Rows<a class="anchor" aria-label="anchor" href="#reordering-rows"><i class="fas fa-link"></i></a>
 </h4>
@@ -448,7 +452,7 @@ glimpse(msleep)</a></code></pre>
 <p></p>
 </div>
 </div>
-<div id="creating-new-columns" class="section level2">
+<div id="creating-new-columns" class="section level2" number="5.6">
 <h2>
 <span class="header-section-number">5.6</span> Creating New Columns<a class="anchor" aria-label="anchor" href="#creating-new-columns"><i class="fas fa-link"></i></a>
 </h2>
