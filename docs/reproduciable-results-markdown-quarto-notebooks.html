@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>10 Reproduciable Results (Markdown, Quarto &amp; Notebooks) | A Comprehensive Guide to Use R</title>
+<meta name="author" content="Africano BYAMUGISHA">
+<meta name="description" content="Welcome to this chapter on reproducible results in R! In this chapter, we will explore the different tools and techniques that you can use to ensure that your data analysis workflows are not only...">
+<meta name="generator" content="bookdown 0.33 with bs4_book()">
+<meta property="og:title" content="10 Reproduciable Results (Markdown, Quarto &amp; Notebooks) | A Comprehensive Guide to Use R">
+<meta property="og:type" content="book">
+<meta property="og:url" content="https://github.io/africanobyamugisha/reproduciable-results-markdown-quarto-notebooks.html">
+<meta property="og:image" content="https://github.io/africanobyamugisha/images/flyer.png">
+<meta property="og:description" content="Welcome to this chapter on reproducible results in R! In this chapter, we will explore the different tools and techniques that you can use to ensure that your data analysis workflows are not only...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="10 Reproduciable Results (Markdown, Quarto &amp; Notebooks) | A Comprehensive Guide to Use R">
+<meta name="twitter:description" content="Welcome to this chapter on reproducible results in R! In this chapter, we will explore the different tools and techniques that you can use to ensure that your data analysis workflows are not only...">
+<meta name="twitter:image" content="https://github.io/africanobyamugisha/images/flyer.png">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.2/transition.js"></script><script src="libs/bs3compat-0.4.2/tabs.js"></script><script src="libs/bs3compat-0.4.2/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/htmlwidgets-1.6.1/htmlwidgets.js"></script><script src="libs/plotly-binding-4.10.1/plotly.js"></script><script src="libs/typedarray-0.1/typedarray.min.js"></script><link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet">
+<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script><link href="libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet">
+<script src="libs/plotly-main-2.11.1/plotly-latest.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<link rel="stylesheet" href="bs4_style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">A Comprehensive Guide to Use R</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">*</a></li>
+<li><a class="" href="about-the-author.html">About the Author</a></li>
+<li><a class="" href="about-this-guide.html">About this guide</a></li>
+<li><a class="" href="introduction.html"><span class="header-section-number">1</span> Introduction</a></li>
+<li><a class="" href="getting-started-setting-up.html"><span class="header-section-number">2</span> Getting Started &amp; Setting Up</a></li>
+<li><a class="" href="operators-data-objects.html"><span class="header-section-number">3</span> Operators &amp; Data Objects</a></li>
+<li><a class="" href="working-with-data.html"><span class="header-section-number">4</span> Working With Data</a></li>
+<li><a class="" href="data-wrangling.html"><span class="header-section-number">5</span> Data Wrangling</a></li>
+<li><a class="" href="data-visualisation.html"><span class="header-section-number">6</span> Data Visualisation</a></li>
+<li><a class="" href="statistics-in-r.html"><span class="header-section-number">7</span> Statistics in R</a></li>
+<li><a class="" href="functions.html"><span class="header-section-number">8</span> Functions</a></li>
+<li><a class="" href="r-shiny.html"><span class="header-section-number">9</span> R Shiny</a></li>
+<li><a class="active" href="reproduciable-results-markdown-quarto-notebooks.html"><span class="header-section-number">10</span> Reproduciable Results (Markdown, Quarto &amp; Notebooks)</a></li>
+<li><a class="" href="github_r.html"><span class="header-section-number">11</span> Version control with Git and GitHub</a></li>
+<li><a class="" href="additional-resources.html">Additional Resources</a></li>
+</ul>
+
+        <div class="book-extra">
+          
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="reproduciable-results-markdown-quarto-notebooks" class="section level1" number="10">
+<h1>
+<span class="header-section-number">10</span> Reproduciable Results (Markdown, Quarto &amp; Notebooks)<a class="anchor" aria-label="anchor" href="#reproduciable-results-markdown-quarto-notebooks"><i class="fas fa-link"></i></a>
+</h1>
+<div class="inline-figure"><img src="images/rmd.png" style="width:70.0%"></div>
+<p>Welcome to this chapter on reproducible results in R! In this chapter, we will explore the different tools and techniques that you can use to ensure that your data analysis workflows are <strong>not only accurate but also reproducible</strong>. We’ll be covering Markdown, Quarto, and Notebooks , so you can get a comprehensive understanding of each one.</p>
+<div class="inline-figure"><img src="images/note.png"></div>
+<blockquote>
+<ul>
+<li><p><strong><em>Although we will cover all three tools - R Markdown, R Notebooks, and Quarto - we will put a particular emphasis on R Markdown. This is because R Markdown is one of the most widely used for creating reproducible documents and presentations in R.</em></strong></p></li>
+<li><p><strong><em>Most Importantly! Knowing how to use R Markdown can be a great foundation for learning and using R Notebooks and Quarto. This is because R Markdown is often considered the simplest and most user-friendly of the three tools, making it an excellent starting point for those new to reproducible data analysis. Once you have a solid understanding of R Markdown, you’ll likely find it easier to pick up the more advanced features of R Notebooks and Quarto. Plus, since R Markdown documents can easily be converted to R Notebooks or Quarto files, having a strong understanding of R Markdown can make it easier to transition to the other tools. So, even if you ultimately decide to use a different tool for your particular use case, learning R Markdown is definitely a great starting point.</em></strong></p></li>
+</ul>
+</blockquote>
+<div id="section-2" class="section level2" number="10.1">
+<h2>
+<span class="header-section-number">10.1</span> <a class="anchor" aria-label="anchor" href="#section-2"><i class="fas fa-link"></i></a>
+</h2>
+<p>Why Reproducibility</p>
+<p>Before we dive into the specifics, let’s take a step back and ask why reproducibility is so important in the first place. In today’s data-driven world, many important decisions are made based on data analyses. But how can we be sure that these analyses are accurate and reliable? One way to increase confidence in our results is to make sure that our analyses are reproducible. This means that anyone can take our code and data, run it themselves, and get the same results that we did. Not only does this increase confidence in our results, but it also makes it easier to share our work with others and build on it collaboratively.</p>
+<p>So, let’s start by exploring R Markdown, one of the most popular tools for creating reproducible documents and presentations in R. With R Markdown, you can combine code, text, and figures in a single document, making it easy to create a narrative around your analysis. We’ll show you how to create simple documents, as well as more complex reports with multiple outputs.</p>
+<p>Next up, we’ll dive into R Notebooks, another powerful tool for creating reproducible analyses. With R Notebooks, you can create interactive documents that allow readers to explore your data and code in real-time.</p>
+<p>Finally, we’ll introduce you to Quarto, a newer tool for creating reproducible reports and documents. Quarto builds on the strengths of both R Markdown and Notebooks, allowing you to create complex, interactive reports with a variety of outputs.</p>
+<p>Throughout the chapter, we’ll provide examples and best practices for using each tool, as well as tips and tricks for making your analyses more reproducible. By the end of this chapter, you’ll have a solid understanding of the different tools available for creating reproducible results in R, and be able to choose the best tool for your specific needs.</p>
+<p>So let’s get started and dive into the world of reproducible data analysis in R!</p>
+</div>
+<div id="the-visual-editor" class="section level2" number="10.2">
+<h2>
+<span class="header-section-number">10.2</span> <img src="images/tip.png"> The Visual Editor<a class="anchor" aria-label="anchor" href="#the-visual-editor"><i class="fas fa-link"></i></a>
+</h2>
+<p>If you’re not comfortable with writing Markdown or LaTeX code, don’t worry - there is a visual editor available for R Markdown, Quarto, and R Notebooks. This editor provide a point-and-click interface that makes it easier to create and edit your documents. <u><strong>Isn’t that nice ?!…</strong></u></p>
+<p><img src="images/did-you-know-smiley.png" style="width:50.0%"> Starting with <strong>R Studio 1.4</strong> (i.e. release of January 2021 and later ), the IDE includes a visual markdown editor that works on any markdown-based document, such as <code>.md</code> or <code>.Rmd</code> or <code>.Qmd</code> files.</p>
+<ul>
+<li><p>Visual editing mode provides a better experience when writing reports and analyses.</p></li>
+<li><p>You can see changes in real-time and preview what your document looks like without re-knitting.</p></li>
+<li><p>In addition, the visual markdown editor provides extensive support for citations, scientific and technical writing features, outline navigation, and more.</p></li>
+</ul>
+<p><u>Let me walk you through several features of visual editing mode.</u></p>
+<p>To switch into the visual mode for a markdown document:</p>
+<ul>
+<li><p>In <code>RStudio v2022.02</code>, click the “Visual” button located on the left side of the editor toolbar.</p></li>
+<li><p>In earlier versions, click the compass icon located on the right side of the editor toolbar.</p></li>
+</ul>
+<p>Alternatively, use the <code>Ctrl + Shift + F4</code> keyboard shortcut.</p>
+<div class="inline-figure"><img src="%3Cp%3E%3Ca%20href=%22https://posit.co/blog/exploring-rstudio-visual-markdown-editor/?wvideo=am9337b81b%22%3E%3Cimg%20src=%22https://embed-ssl.wistia.com/deliveries/e9fc35d23e706e92181184e8979878a3c5fd299f.jpg?image_play_button_size=2x&amp;image_crop_resized=960x486&amp;image_play_button=1&amp;image_play_button_color=4287c7e0%22%20width=%22400%22%20height=%22228.75%22%20style=%22width:%20400px;%20height:%20228.75px;%22%3E%3C/a%3E%3C/p%3E%3Cp%3E%3Ca%20href=%22https://posit.co/blog/exploring-rstudio-visual-markdown-editor/?wvideo=am9337b81b%22%3EExploring%20RStudio%E2%80%99s%20Visual%20Markdown%20Editor%3C/a%3E%3C/p%3E"></div>
+<p>You can customize various editor settings. Go to <code>Tools</code> -&gt; <code>Global Options</code> -&gt; <code>R Markdown</code> -&gt; <code>Visual</code> to choose your options, such as:</p>
+<ul>
+<li><p>Whether your new documents use the visual markdown editor by default.</p></li>
+<li><p>Whether the document outline shows by default.</p></li>
+<li><p>How to wrap text in the document.</p></li>
+</ul>
+<div class="inline-figure"><img src="images/visual_editor_tools.png" style="width:70.0%"></div>
+</div>
+<div id="r-markdown" class="section level2" number="10.3">
+<h2>
+<span class="header-section-number">10.3</span> R Markdown<a class="anchor" aria-label="anchor" href="#r-markdown"><i class="fas fa-link"></i></a>
+</h2>
+</div>
+<div id="document" class="section level2" number="10.4">
+<h2>
+<span class="header-section-number">10.4</span> Document<a class="anchor" aria-label="anchor" href="#document"><i class="fas fa-link"></i></a>
+</h2>
+</div>
+<div id="presentation" class="section level2" number="10.5">
+<h2>
+<span class="header-section-number">10.5</span> Presentation<a class="anchor" aria-label="anchor" href="#presentation"><i class="fas fa-link"></i></a>
+</h2>
+</div>
+<div id="r-notebooks" class="section level2" number="10.6">
+<h2>
+<span class="header-section-number">10.6</span> R Notebooks<a class="anchor" aria-label="anchor" href="#r-notebooks"><i class="fas fa-link"></i></a>
+</h2>
+</div>
+<div id="quarto" class="section level2" number="10.7">
+<h2>
+<span class="header-section-number">10.7</span> Quarto<a class="anchor" aria-label="anchor" href="#quarto"><i class="fas fa-link"></i></a>
+</h2>
+
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="r-shiny.html"><span class="header-section-number">9</span> R Shiny</a></div>
+<div class="next"><a href="github_r.html"><span class="header-section-number">11</span> Version control with Git and GitHub</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#reproduciable-results-markdown-quarto-notebooks"><span class="header-section-number">10</span> Reproduciable Results (Markdown, Quarto &amp; Notebooks)</a></li>
+<li><a class="nav-link" href="#section-2"><span class="header-section-number">10.1</span></a></li>
+<li><a class="nav-link" href="#the-visual-editor"><span class="header-section-number">10.2</span>  The Visual Editor</a></li>
+<li><a class="nav-link" href="#r-markdown"><span class="header-section-number">10.3</span> R Markdown</a></li>
+<li><a class="nav-link" href="#document"><span class="header-section-number">10.4</span> Document</a></li>
+<li><a class="nav-link" href="#presentation"><span class="header-section-number">10.5</span> Presentation</a></li>
+<li><a class="nav-link" href="#r-notebooks"><span class="header-section-number">10.6</span> R Notebooks</a></li>
+<li><a class="nav-link" href="#quarto"><span class="header-section-number">10.7</span> Quarto</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+          
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>A Comprehensive Guide to Use R</strong>" was written by Africano BYAMUGISHA. It was last built on 2023-01-05.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer>
+</body>
+</html>

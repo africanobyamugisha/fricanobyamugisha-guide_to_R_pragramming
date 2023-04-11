@@ -4,25 +4,26 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>9 Functions | A Comprehensive Guide to Use R</title>
+<title>8 Functions | A Comprehensive Guide to Use R</title>
 <meta name="author" content="Africano BYAMUGISHA">
-<meta name="description" content="9.1 Built In Functions   9.2 User Defined Functions  9.2.1 Categories of user Defined Functions   9.2.2 Function Definition   9.3 Function Call   9.4 Exercise">
+<meta name="description" content="R is a functional programming language, meaning that everything you do is basically built on functions. However, moving beyond simply using pre-built functions to writing your own functions is...">
 <meta name="generator" content="bookdown 0.33 with bs4_book()">
-<meta property="og:title" content="9 Functions | A Comprehensive Guide to Use R">
+<meta property="og:title" content="8 Functions | A Comprehensive Guide to Use R">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://github.io/africanobyamugisha/functions.html">
 <meta property="og:image" content="https://github.io/africanobyamugisha/images/flyer.png">
-<meta property="og:description" content="9.1 Built In Functions   9.2 User Defined Functions  9.2.1 Categories of user Defined Functions   9.2.2 Function Definition   9.3 Function Call   9.4 Exercise">
+<meta property="og:description" content="R is a functional programming language, meaning that everything you do is basically built on functions. However, moving beyond simply using pre-built functions to writing your own functions is...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="9 Functions | A Comprehensive Guide to Use R">
-<meta name="twitter:description" content="9.1 Built In Functions   9.2 User Defined Functions  9.2.1 Categories of user Defined Functions   9.2.2 Function Definition   9.3 Function Call   9.4 Exercise">
+<meta name="twitter:title" content="8 Functions | A Comprehensive Guide to Use R">
+<meta name="twitter:description" content="R is a functional programming language, meaning that everything you do is basically built on functions. However, moving beyond simply using pre-built functions to writing your own functions is...">
 <meta name="twitter:image" content="https://github.io/africanobyamugisha/images/flyer.png">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.2/transition.js"></script><script src="libs/bs3compat-0.4.2/tabs.js"></script><script src="libs/bs3compat-0.4.2/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
 <script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/htmlwidgets-1.6.1/htmlwidgets.js"></script><script src="libs/plotly-binding-4.10.1/plotly.js"></script><script src="libs/typedarray-0.1/typedarray.min.js"></script><link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet">
 <script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script><link href="libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet">
-<script src="libs/plotly-main-2.11.1/plotly-latest.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+<script src="libs/plotly-main-2.11.1/plotly-latest.min.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
     
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
   </style>
@@ -57,14 +58,11 @@
 <li><a class="" href="working-with-data.html"><span class="header-section-number">4</span> Working With Data</a></li>
 <li><a class="" href="data-wrangling.html"><span class="header-section-number">5</span> Data Wrangling</a></li>
 <li><a class="" href="data-visualisation.html"><span class="header-section-number">6</span> Data Visualisation</a></li>
-<li><a class="" href="practice-plotting-using-ggplot2.html"><span class="header-section-number">7</span> Practice plotting using ggplot2</a></li>
-<li><a class="" href="statistics-in-r.html"><span class="header-section-number">8</span> Statistics in R</a></li>
-<li><a class="active" href="functions.html"><span class="header-section-number">9</span> Functions</a></li>
-<li><a class="" href="interactive-reporting-shiny-markdowm-quarto.html"><span class="header-section-number">10</span> Interactive Reporting (Shiny, Markdowm, Quarto)</a></li>
+<li><a class="" href="statistics-in-r.html"><span class="header-section-number">7</span> Statistics in R</a></li>
+<li><a class="active" href="functions.html"><span class="header-section-number">8</span> Functions</a></li>
+<li><a class="" href="reproducible-results-markdown-quarto-notebooks.html"><span class="header-section-number">9</span> Reproducible Results (Markdown, Quarto &amp; Notebooks)</a></li>
+<li><a class="" href="r-shiny.html"><span class="header-section-number">10</span> R Shiny</a></li>
 <li><a class="" href="github_r.html"><span class="header-section-number">11</span> Version control with Git and GitHub</a></li>
-<li><a class="" href="survey-sampling.html"><span class="header-section-number">12</span> Survey Sampling</a></li>
-<li><a class="" href="text-mining-for-qualitative-analysis.html"><span class="header-section-number">13</span> Text Mining for Qualitative Analysis</a></li>
-<li><a class="" href="machine-learning.html"><span class="header-section-number">14</span> Machine Learning</a></li>
 <li><a class="" href="additional-resources.html">Additional Resources</a></li>
 </ul>
 
@@ -73,58 +71,417 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="functions" class="section level1" number="9" style="color: green;">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="functions" class="section level1" number="8">
 <h1>
-<span class="header-section-number">9</span> Functions<a class="anchor" aria-label="anchor" href="#functions"><i class="fas fa-link"></i></a>
+<span class="header-section-number">8</span> Functions<a class="anchor" aria-label="anchor" href="#functions"><i class="fas fa-link"></i></a>
 </h1>
-<div id="built-in-functions" class="section level2" number="9.1">
+<div class="inline-figure"><img src="images/code_function.jpg" style="width:85.0%"></div>
+<p>R is a functional programming language, meaning that everything you do is basically built on functions. However, moving beyond simply using pre-built functions to writing your own functions is when your capabilities really start to take off and your code development/writing takes on a new level of efficiency.</p>
+<p>Functions allow you to reduce code duplication by automating a generalized task to be applied recursively. Whenever you catch yourself <strong>repeating a function or copy and pasting code</strong> there is a good change that you should write a function to eliminate the redundancies.</p>
+<p>Unfortunately, due to their abstractness, grasping the idea of writing functions (let alone writing them well) can take some time. However, in this chapter i will provide you with the basic knowledge of how functions operate in R to get you started on the right path and sample codes</p>
+<div id="learning-objectives" class="section level2" number="8.1">
 <h2>
-<span class="header-section-number">9.1</span> Built In Functions<a class="anchor" aria-label="anchor" href="#built-in-functions"><i class="fas fa-link"></i></a>
+<span class="header-section-number">8.1</span> Learning objectives<a class="anchor" aria-label="anchor" href="#learning-objectives"><i class="fas fa-link"></i></a>
 </h2>
+<p>By the end of this lesson you will be able to:</p>
+<ul>
+<li><p>Identify when you should re-write code into a function.</p></li>
+<li><p>Understand the general components of functions.</p></li>
+<li><p>Write functions to automate a generalized task</p></li>
+</ul>
 </div>
-<div id="user-defined-functions" class="section level2" number="9.2">
+<div id="when-to-write-functions" class="section level2" number="8.2">
 <h2>
-<span class="header-section-number">9.2</span> User Defined Functions<a class="anchor" aria-label="anchor" href="#user-defined-functions"><i class="fas fa-link"></i></a>
+<span class="header-section-number">8.2</span> When to write functions<a class="anchor" aria-label="anchor" href="#when-to-write-functions"><i class="fas fa-link"></i></a>
 </h2>
-<div id="categories-of-user-defined-functions" class="section level3" number="9.2.1">
+<blockquote>
+<p><strong>NOTE:</strong></p>
+<p>This section is taken directly from <a href="http://r4ds.had.co.nz/">R for Data Science</a> by Garrett Grolemund and Hadley Wickham and is a great example of how to first start thinking about functions.</p>
+</blockquote>
+<p>You should consider writing a function whenever you’ve copied and pasted a block of code more than twice (i.e. you now have three copies of the same code). For example, take a look at this code. What does it do?</p>
+<p></p>
+<div class="sourceCode" id="cb173"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># jusrt creating a dummy variable</span></span>
+<span><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span>a <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="fl">10</span><span class="op">)</span>, b <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="fl">10</span><span class="op">)</span>, c <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="fl">10</span><span class="op">)</span>,</span>
+<span>    d <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="fl">10</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="co"># normalising the variables i.e rescale each column to 0-1</span></span>
+<span><span class="co"># using min - max method.</span></span>
+<span><span class="va">df</span><span class="op">$</span><span class="va">a</span> <span class="op">&lt;-</span> <span class="op">(</span><span class="va">df</span><span class="op">$</span><span class="va">a</span> <span class="op">-</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">min</a></span><span class="op">(</span><span class="va">df</span><span class="op">$</span><span class="va">a</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span><span class="op">/</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="va">df</span><span class="op">$</span><span class="va">a</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="op">-</span></span>
+<span>    <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">min</a></span><span class="op">(</span><span class="va">df</span><span class="op">$</span><span class="va">a</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">df</span><span class="op">$</span><span class="va">b</span> <span class="op">&lt;-</span> <span class="op">(</span><span class="va">df</span><span class="op">$</span><span class="va">b</span> <span class="op">-</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">min</a></span><span class="op">(</span><span class="va">df</span><span class="op">$</span><span class="va">b</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span><span class="op">/</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="va">df</span><span class="op">$</span><span class="va">a</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="op">-</span></span>
+<span>    <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">min</a></span><span class="op">(</span><span class="va">df</span><span class="op">$</span><span class="va">b</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">df</span><span class="op">$</span><span class="va">c</span> <span class="op">&lt;-</span> <span class="op">(</span><span class="va">df</span><span class="op">$</span><span class="va">c</span> <span class="op">-</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">min</a></span><span class="op">(</span><span class="va">df</span><span class="op">$</span><span class="va">c</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span><span class="op">/</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="va">df</span><span class="op">$</span><span class="va">c</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="op">-</span></span>
+<span>    <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">min</a></span><span class="op">(</span><span class="va">df</span><span class="op">$</span><span class="va">c</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">df</span><span class="op">$</span><span class="va">d</span> <span class="op">&lt;-</span> <span class="op">(</span><span class="va">df</span><span class="op">$</span><span class="va">d</span> <span class="op">-</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">min</a></span><span class="op">(</span><span class="va">df</span><span class="op">$</span><span class="va">d</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span><span class="op">/</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="va">df</span><span class="op">$</span><span class="va">d</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="op">-</span></span>
+<span>    <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">min</a></span><span class="op">(</span><span class="va">df</span><span class="op">$</span><span class="va">d</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<p></p>
+<p>But did you spot the mistake? I made an error when copying-and-pasting the code for <code>df$b</code>: I forgot to change an <code>a</code> to a <code>b</code>. Extracting repeated code out into a function is a good idea because it prevents you from making this type of mistake.</p>
+<ul>
+<li><p>To write a function you need to first analyze the code. <strong>How many inputs does it have?</strong> <em>This code only has one input: <code>df$a</code>. (i.e. the variable)</em></p></li>
+<li><p>Also note that there is some duplication in this code. We’re using the <code>min</code> of the variables two times, but it makes sense to do it in one step</p></li>
+</ul>
+<p>Below is the function:</p>
+<p></p>
+<div class="sourceCode" id="cb174"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">rescale_var</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">var</span><span class="op">)</span> <span class="op">{</span></span>
+<span>    <span class="va">minimum</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">min</a></span><span class="op">(</span><span class="va">var</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span>    <span class="va">maximum</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="va">var</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span>    <span class="va">var_new</span> <span class="op">&lt;-</span> <span class="op">(</span><span class="va">var</span> <span class="op">-</span> <span class="va">minimum</span><span class="op">)</span><span class="op">/</span><span class="op">(</span><span class="va">maximum</span> <span class="op">-</span> <span class="va">minimum</span><span class="op">)</span></span>
+<span>    <span class="kw"><a href="https://rdrr.io/r/base/function.html">return</a></span><span class="op">(</span><span class="va">var_new</span><span class="op">)</span></span>
+<span><span class="op">}</span></span></code></pre></div>
+<p></p>
+<p>Using the function / function call:</p>
+<p></p>
+<div class="sourceCode" id="cb175"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df</span><span class="op">$</span><span class="va">a</span> <span class="op">&lt;-</span> <span class="fu">rescale_var</span><span class="op">(</span><span class="va">df</span><span class="op">$</span><span class="va">a</span><span class="op">)</span></span>
+<span><span class="va">df</span><span class="op">$</span><span class="va">b</span> <span class="op">&lt;-</span> <span class="fu">rescale_var</span><span class="op">(</span><span class="va">df</span><span class="op">$</span><span class="va">b</span><span class="op">)</span></span>
+<span><span class="va">df</span><span class="op">$</span><span class="va">c</span> <span class="op">&lt;-</span> <span class="fu">rescale_var</span><span class="op">(</span><span class="va">df</span><span class="op">$</span><span class="va">c</span><span class="op">)</span></span>
+<span><span class="va">df</span><span class="op">$</span><span class="va">d</span> <span class="op">&lt;-</span> <span class="fu">rescale_var</span><span class="op">(</span><span class="va">df</span><span class="op">$</span><span class="va">d</span><span class="op">)</span></span></code></pre></div>
+<p></p>
+<p>What if the variables are many? You might not want to Re - write the function many times; hence you can use loop to ease your work; As shown below :-</p>
+<p></p>
+<div class="sourceCode" id="cb176"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw">for</span> <span class="op">(</span><span class="va">name</span> <span class="kw">in</span> <span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="va">df</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
+<span>    <span class="va">df</span><span class="op">$</span><span class="va">name</span> <span class="op">&lt;-</span> <span class="fu">rescale_var</span><span class="op">(</span><span class="va">df</span><span class="op">$</span><span class="va">name</span><span class="op">)</span></span>
+<span><span class="op">}</span></span></code></pre></div>
+<p></p>
+<div class="inline-figure"><img src="images/good_job_emoji.png" style="width:40.0%"></div>
+<p>Isn’t that so good that you can automate the repeative code line, which reduces errors, Its time to understand how functions work in R and we write your own functions</p>
+</div>
+<div id="function-components" class="section level2" number="8.3">
+<h2>
+<span class="header-section-number">8.3</span> <strong>Function components</strong><a class="anchor" aria-label="anchor" href="#function-components"><i class="fas fa-link"></i></a>
+</h2>
+<p>All R functions have three parts:</p>
+<ul>
+<li><p>the <code><a href="https://rdrr.io/r/base/body.html">body()</a></code>, the code inside the function.</p></li>
+<li><p>the <code><a href="https://rdrr.io/r/base/formals.html">formals()</a></code>, the list of arguments which controls how you can call the function.</p></li>
+<li><p>the <code><a href="https://rdrr.io/r/base/environment.html">environment()</a></code>, the “map” of the location of the function’s variables.</p></li>
+</ul>
+<p>When you print a function in R, it shows you these three important components. If the environment isn’t displayed, it means that the function was created in the global environment.</p>
+</div>
+<div id="built-in-functions" class="section level2" number="8.4">
+<h2>
+<span class="header-section-number">8.4</span> Built In Functions<a class="anchor" aria-label="anchor" href="#built-in-functions"><i class="fas fa-link"></i></a>
+</h2>
+<p>The built-in function in the R programming language is the functions that are already existing or pre-defined within an R framework. The built-in functions enables you to program in the R language easily and simpler. R language provides its user with a rich set of pre-defined functions to make their computation more efficient as well as minimize their programming time.</p>
+<p>In r programming language the built-in functions are categorized furthers as following</p>
+<ol style="list-style-type: decimal">
+<li><p>Math function </p></li>
+<li><p>Character function</p></li>
+<li><p>Statistical probability</p></li>
+<li><p>Other statistical functions</p></li>
+</ol>
+<div class="inline-figure"><img src="images/inbuilt_functions.png" style="width:80.0%"></div>
+<div id="math-functions" class="section level3" number="8.4.1">
 <h3>
-<span class="header-section-number">9.2.1</span> Categories of user Defined Functions<a class="anchor" aria-label="anchor" href="#categories-of-user-defined-functions"><i class="fas fa-link"></i></a>
+<span class="header-section-number">8.4.1</span> Math functions<a class="anchor" aria-label="anchor" href="#math-functions"><i class="fas fa-link"></i></a>
 </h3>
+<div class="inline-table"><table class="table table-sm">
+<colgroup>
+<col width="27%">
+<col width="72%">
+</colgroup>
+<thead><tr class="header">
+<th align="left">Built-in function</th>
+<th align="left">Description</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>abs(x)</code></td>
+<td align="left">It returns the absolute value of input x</td>
+</tr>
+<tr class="even">
+<td align="left"><code>sqrt(x)</code></td>
+<td align="left">It returns the square root of input x</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>ceiling(x)</code></td>
+<td align="left">It returns the smallest integer which is larger than or equal to x.</td>
+</tr>
+<tr class="even">
+<td align="left"><code>floor(x)</code></td>
+<td align="left">It returns the largest integer, which is smaller than or equal to x.</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>trunc(x)</code></td>
+<td align="left">It returns the truncate value of input x.</td>
+</tr>
+<tr class="even">
+<td align="left"><code>round(x, digits=n)</code></td>
+<td align="left">It returns round value of input x.</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>cos(x), sin(x), tan(x)</code></td>
+<td align="left">It returns cos(x), sin(x) , tan(x) value of input x</td>
+</tr>
+<tr class="even">
+<td align="left"><code>log(x)</code></td>
+<td align="left">It returns natural logarithm of input x</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>log10(x)</code></td>
+<td align="left">It returns common logarithm of input x</td>
+</tr>
+<tr class="even">
+<td align="left"><code>exp(x)</code></td>
+<td align="left">It returns exponent</td>
+</tr>
+</tbody>
+</table></div>
 </div>
-<div id="function-definition" class="section level3" number="9.2.2">
+<div id="character-functions" class="section level3" number="8.4.2">
 <h3>
-<span class="header-section-number">9.2.2</span> Function Definition<a class="anchor" aria-label="anchor" href="#function-definition"><i class="fas fa-link"></i></a>
+<span class="header-section-number">8.4.2</span> Character functions<a class="anchor" aria-label="anchor" href="#character-functions"><i class="fas fa-link"></i></a>
 </h3>
+<div class="inline-table"><table class="table table-sm">
+<colgroup>
+<col width="27%">
+<col width="72%">
+</colgroup>
+<thead><tr class="header">
+<th align="left">Built-in function</th>
+<th align="left">Description</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>tolower(x)</code></td>
+<td align="left">It is used to convert the string into lower case.</td>
+</tr>
+<tr class="even">
+<td align="left"><code>toupper(x)</code></td>
+<td align="left">
+<br>
+It is used to convert the string into upper case.</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>strsplit(x, split))</code></td>
+<td align="left">It splits the elements of character vector x at split point.</td>
+</tr>
+<tr class="even">
+<td align="left"><code>paste(..., sep="")</code></td>
+<td align="left">Concatenate strings after using <em>sep</em> string to seperate them.</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>sub(pattern,replacement, x,ignore.case=FALSE,fixed=FALSE)</code></td>
+<td align="left">Find <em>pattern</em> in <em>x</em> and replace with <em>replacement</em> text. If fixed=FALSE then <em>pattern</em> is a regular expression<a href="http://regexlib.com/CheatSheet.aspx"><strong>.</strong></a><br>
+If fixed = T then <em>pattern</em> is a text string.</td>
+</tr>
+<tr class="even">
+<td align="left"><code>grep(pattern, x , ignore.case=FALSE, fixed=FALSE)</code></td>
+<td align="left">It searches for pattern in x.</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>substr(x, start=n1,stop=n2)</code></td>
+<td align="left">It is used to extract substrings in a character vector.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div id="statistical-functions" class="section level3" number="8.4.3">
+<h3>
+<span class="header-section-number">8.4.3</span> Statistical functions<a class="anchor" aria-label="anchor" href="#statistical-functions"><i class="fas fa-link"></i></a>
+</h3>
+<div class="inline-table"><table class="table table-sm">
+<colgroup>
+<col width="30%">
+<col width="69%">
+</colgroup>
+<thead><tr class="header">
+<th align="left">Built-in function</th>
+<th align="left">Description</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>mean(x, trim=0,na.rm=FALSE)</code></td>
+<td align="left">Calculates the average or mean of a set of numbers Simply calculate mean of object x.</td>
+</tr>
+<tr class="even">
+<td align="left"><code>sd(x)</code></td>
+<td align="left">It returns standard deviation of an object.</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>median(x)</code></td>
+<td align="left">It returns median</td>
+</tr>
+<tr class="even">
+<td align="left"><code>range(x)</code></td>
+<td align="left">It returns range</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>sum(x)</code></td>
+<td align="left">It returns sum.</td>
+</tr>
+<tr class="even">
+<td align="left"><code>diff(x, lag=1)</code></td>
+<td align="left">It returns differences with lag indicating which lag to use.</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>min(x)</code></td>
+<td align="left">It returns minimum value of object.</td>
+</tr>
+<tr class="even">
+<td align="left"><code>max(x)</code></td>
+<td align="left">It returns maximum value of object.</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>scale(x, center=TRUE, scale= TRUE)</code></td>
+<td align="left">Column center or standardize a matrix.</td>
+</tr>
+</tbody>
+</table></div>
 </div>
 </div>
-<div id="function-call" class="section level2" number="9.3">
+<div id="user-defined-functions" class="section level2" number="8.5">
 <h2>
-<span class="header-section-number">9.3</span> Function Call<a class="anchor" aria-label="anchor" href="#function-call"><i class="fas fa-link"></i></a>
+<span class="header-section-number">8.5</span> User Defined Functions<a class="anchor" aria-label="anchor" href="#user-defined-functions"><i class="fas fa-link"></i></a>
 </h2>
+<p>These are functions specific to what a user wants and once created they can be used like the built-in functions.</p>
+<p><strong>User defined Functions Components</strong></p>
+<p>The different parts of a function are −</p>
+<ul>
+<li><p><strong>Function Name</strong> − This is the actual name of the function. It is stored in R environment as an object with this name.</p></li>
+<li><p><strong>Arguments</strong> − An argument is a placeholder. When a function is invoked, you pass a value to the argument. Arguments are optional; that is, a function may contain no arguments. Also arguments can have default values.</p></li>
+<li><p><strong>Function Body</strong> − The function body contains a collection of statements that defines what the function does.</p></li>
+<li><p><strong>Return Value</strong> − The return value of a function is the last expression in the function body to be evaluated.</p></li>
+</ul>
+<div id="function-definition" class="section level3" number="8.5.1">
+<h3>
+<span class="header-section-number">8.5.1</span> Function Definition<a class="anchor" aria-label="anchor" href="#function-definition"><i class="fas fa-link"></i></a>
+</h3>
+<p>An R function is created by using the keyword <strong>function</strong>. The basic syntax of an R function definition is as follows</p>
+<p></p>
+<div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb177-1"><a href="functions.html#cb177-1" aria-hidden="true" tabindex="-1"></a>function_name <span class="ot">&lt;-</span> <span class="cf">function</span>(arg_1, arg_2, ...) {</span>
+<span id="cb177-2"><a href="functions.html#cb177-2" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb177-3"><a href="functions.html#cb177-3" aria-hidden="true" tabindex="-1"></a>   Function body </span>
+<span id="cb177-4"><a href="functions.html#cb177-4" aria-hidden="true" tabindex="-1"></a>   </span>
+<span id="cb177-5"><a href="functions.html#cb177-5" aria-hidden="true" tabindex="-1"></a>   return value</span>
+<span id="cb177-6"><a href="functions.html#cb177-6" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<p></p>
 </div>
-<div id="exercise" class="section level2" number="9.4">
+</div>
+<div id="sample-of-user-defined-functions" class="section level2" number="8.6">
 <h2>
-<span class="header-section-number">9.4</span> Exercise<a class="anchor" aria-label="anchor" href="#exercise"><i class="fas fa-link"></i></a>
+<span class="header-section-number">8.6</span> Sample of user Defined Functions<a class="anchor" aria-label="anchor" href="#sample-of-user-defined-functions"><i class="fas fa-link"></i></a>
 </h2>
+<div id="function-1" class="section level3" number="8.6.1">
+<h3>
+<span class="header-section-number">8.6.1</span> Function 1:<a class="anchor" aria-label="anchor" href="#function-1"><i class="fas fa-link"></i></a>
+</h3>
+<p></p>
+<div class="sourceCode" id="cb178"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Function Definition</span></span>
+<span><span class="va">check</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="op">{</span></span>
+<span>    <span class="kw">if</span> <span class="op">(</span><span class="va">x</span><span class="op"><a href="https://rdrr.io/r/base/Arithmetic.html">%%</a></span><span class="fl">3</span> <span class="op">==</span> <span class="fl">0</span><span class="op">)</span> <span class="op">{</span></span>
+<span>        <span class="va">result</span> <span class="op">&lt;-</span> <span class="st">"the number is divisible by three"</span></span>
+<span>    <span class="op">}</span> <span class="kw">else</span> <span class="op">{</span></span>
+<span>        <span class="va">result</span> <span class="op">=</span> <span class="st">"the number is not divisible by three"</span></span>
+<span>    <span class="op">}</span></span>
+<span>    <span class="va">result</span></span>
+<span><span class="op">}</span></span>
+<span><span class="co"># Function Call</span></span>
+<span><span class="fu">check</span><span class="op">(</span><span class="fl">23</span><span class="op">)</span></span></code></pre></div>
+<p></p>
+</div>
+<div id="function-2" class="section level3" number="8.6.2">
+<h3>
+<span class="header-section-number">8.6.2</span> Function 2:<a class="anchor" aria-label="anchor" href="#function-2"><i class="fas fa-link"></i></a>
+</h3>
+<p></p>
+<div class="sourceCode" id="cb179"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Function to calculate the average of a vector of numbers</span></span>
+<span><span class="va">calculate_average</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">numbers</span><span class="op">)</span> <span class="op">{</span></span>
+<span>    <span class="va">average</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">numbers</span><span class="op">)</span><span class="op">/</span><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">numbers</span><span class="op">)</span></span>
+<span>    <span class="kw"><a href="https://rdrr.io/r/base/function.html">return</a></span><span class="op">(</span><span class="va">average</span><span class="op">)</span></span>
+<span><span class="op">}</span></span>
+<span><span class="co"># Example usage/function call</span></span>
+<span><span class="va">vector1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">3</span>, <span class="fl">5</span>, <span class="fl">7</span>, <span class="fl">9</span>, <span class="fl">11</span><span class="op">)</span></span>
+<span><span class="va">average1</span> <span class="op">&lt;-</span> <span class="fu">calculate_average</span><span class="op">(</span><span class="va">vector1</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="va">average1</span><span class="op">)</span></span>
+<span><span class="va">vector2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">2.5</span>, <span class="fl">3.7</span>, <span class="fl">6.9</span>, <span class="fl">8.2</span>, <span class="fl">9.6</span><span class="op">)</span></span>
+<span><span class="va">average2</span> <span class="op">&lt;-</span> <span class="fu">calculate_average</span><span class="op">(</span><span class="va">vector2</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="va">average2</span><span class="op">)</span></span></code></pre></div>
+<p></p>
+</div>
+</div>
+<div id="function-call" class="section level2" number="8.7">
+<h2>
+<span class="header-section-number">8.7</span> Function Call<a class="anchor" aria-label="anchor" href="#function-call"><i class="fas fa-link"></i></a>
+</h2>
+<p><strong>Every operation in R is a function call</strong></p>
+<blockquote>
+<p>“To understand computations in R, two slogans are helpful:</p>
+<ul>
+<li><p>Everything that exists is an object.</p></li>
+<li><p>Everything that happens is a function call.”</p></li>
+</ul>
+<p>— John Chambers</p>
+</blockquote>
+<p>Once you have created a function, how do you call it? Where can you call the function?</p>
+<p>You can call a function from anywhere in the <strong>environment</strong> in which the function is declared. We will read more about global and local environments and scopes in a later section.</p>
+<p>To call a function, we simply have to use the function’s name and provide appropriate arguments. For example:</p>
+<p></p>
+<div class="sourceCode" id="cb180"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">function_name</span><span class="op">(</span><span class="va">arguments</span><span class="op">)</span></span></code></pre></div>
+<p></p>
+<p>When calling a function you can specify arguments by position, by complete name, or by partial name. Arguments are matched first by exact name (perfect matching), then by prefix matching, and finally by position.</p>
+<p>Generally, you only want to use positional matching for the first one or two arguments; they will be the most commonly used, and most readers will know what they are.</p>
+<p>Avoid using positional matching for less commonly used arguments, and only use readable abbreviations with partial matching. Named arguments should always come after unnamed arguments. If a function uses <code>...</code> (discussed in more detail below), you can only specify arguments listed after <code>...</code> with their full name.</p>
+<p>These are good calls:</p>
+<p></p>
+<div class="sourceCode" id="cb181"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">10</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">10</span>, trim <span class="op">=</span> <span class="fl">0.05</span><span class="op">)</span></span></code></pre></div>
+<p></p>
+<p>This is probably overkill:</p>
+<p></p>
+<div class="sourceCode" id="cb182"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">10</span><span class="op">)</span></span></code></pre></div>
+<p></p>
+<p>And these are just confusing:</p>
+<p></p>
+<div class="sourceCode" id="cb183"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">10</span>, n <span class="op">=</span> <span class="cn">T</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">10</span>, <span class="cn">FALSE</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">10</span>, <span class="fl">0.05</span><span class="op">)</span></span></code></pre></div>
+<p></p>
+</div>
+<div id="tasks-5" class="section level2" number="8.8">
+<h2>
+<span class="header-section-number">8.8</span> Tasks<a class="anchor" aria-label="anchor" href="#tasks-5"><i class="fas fa-link"></i></a>
+</h2>
+<p>Write a function to calculate the roots of a quadratic equation, given the coeffiicients</p>
 
 </div>
 </div>
   <div class="chapter-nav">
-<div class="prev"><a href="statistics-in-r.html"><span class="header-section-number">8</span> Statistics in R</a></div>
-<div class="next"><a href="interactive-reporting-shiny-markdowm-quarto.html"><span class="header-section-number">10</span> Interactive Reporting (Shiny, Markdowm, Quarto)</a></div>
+<div class="prev"><a href="statistics-in-r.html"><span class="header-section-number">7</span> Statistics in R</a></div>
+<div class="next"><a href="reproducible-results-markdown-quarto-notebooks.html"><span class="header-section-number">9</span> Reproducible Results (Markdown, Quarto &amp; Notebooks)</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#functions"><span class="header-section-number">9</span> Functions</a></li>
-<li><a class="nav-link" href="#built-in-functions"><span class="header-section-number">9.1</span> Built In Functions</a></li>
+<li><a class="nav-link" href="#functions"><span class="header-section-number">8</span> Functions</a></li>
+<li><a class="nav-link" href="#learning-objectives"><span class="header-section-number">8.1</span> Learning objectives</a></li>
+<li><a class="nav-link" href="#when-to-write-functions"><span class="header-section-number">8.2</span> When to write functions</a></li>
+<li><a class="nav-link" href="#function-components"><span class="header-section-number">8.3</span> Function components</a></li>
 <li>
-<a class="nav-link" href="#user-defined-functions"><span class="header-section-number">9.2</span> User Defined Functions</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#categories-of-user-defined-functions"><span class="header-section-number">9.2.1</span> Categories of user Defined Functions</a></li>
-<li><a class="nav-link" href="#function-definition"><span class="header-section-number">9.2.2</span> Function Definition</a></li>
+<a class="nav-link" href="#built-in-functions"><span class="header-section-number">8.4</span> Built In Functions</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#math-functions"><span class="header-section-number">8.4.1</span> Math functions</a></li>
+<li><a class="nav-link" href="#character-functions"><span class="header-section-number">8.4.2</span> Character functions</a></li>
+<li><a class="nav-link" href="#statistical-functions"><span class="header-section-number">8.4.3</span> Statistical functions</a></li>
 </ul>
 </li>
-<li><a class="nav-link" href="#function-call"><span class="header-section-number">9.3</span> Function Call</a></li>
-<li><a class="nav-link" href="#exercise"><span class="header-section-number">9.4</span> Exercise</a></li>
+<li>
+<a class="nav-link" href="#user-defined-functions"><span class="header-section-number">8.5</span> User Defined Functions</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#function-definition"><span class="header-section-number">8.5.1</span> Function Definition</a></li></ul>
+</li>
+<li>
+<a class="nav-link" href="#sample-of-user-defined-functions"><span class="header-section-number">8.6</span> Sample of user Defined Functions</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#function-1"><span class="header-section-number">8.6.1</span> Function 1:</a></li>
+<li><a class="nav-link" href="#function-2"><span class="header-section-number">8.6.2</span> Function 2:</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#function-call"><span class="header-section-number">8.7</span> Function Call</a></li>
+<li><a class="nav-link" href="#tasks-5"><span class="header-section-number">8.8</span> Tasks</a></li>
 </ul>
 
       <div class="book-extra">

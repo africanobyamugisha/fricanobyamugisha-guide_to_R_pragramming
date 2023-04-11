@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>10 R Shiny | A Comprehensive Guide to Use R</title>
+<meta name="author" content="Africano BYAMUGISHA">
+<meta name="description" content="10.1 Introduction Shiny (Chang et al. 2021) is a web application framework for R that enables to build interactive web applications. The R shiny Cheatsheet can be found HERE The Big Concept...">
+<meta name="generator" content="bookdown 0.33 with bs4_book()">
+<meta property="og:title" content="10 R Shiny | A Comprehensive Guide to Use R">
+<meta property="og:type" content="book">
+<meta property="og:url" content="https://github.io/africanobyamugisha/r-shiny.html">
+<meta property="og:image" content="https://github.io/africanobyamugisha/images/flyer.png">
+<meta property="og:description" content="10.1 Introduction Shiny (Chang et al. 2021) is a web application framework for R that enables to build interactive web applications. The R shiny Cheatsheet can be found HERE The Big Concept...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="10 R Shiny | A Comprehensive Guide to Use R">
+<meta name="twitter:description" content="10.1 Introduction Shiny (Chang et al. 2021) is a web application framework for R that enables to build interactive web applications. The R shiny Cheatsheet can be found HERE The Big Concept...">
+<meta name="twitter:image" content="https://github.io/africanobyamugisha/images/flyer.png">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.2/transition.js"></script><script src="libs/bs3compat-0.4.2/tabs.js"></script><script src="libs/bs3compat-0.4.2/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/htmlwidgets-1.6.1/htmlwidgets.js"></script><script src="libs/plotly-binding-4.10.1/plotly.js"></script><script src="libs/typedarray-0.1/typedarray.min.js"></script><link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet">
+<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script><link href="libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet">
+<script src="libs/plotly-main-2.11.1/plotly-latest.min.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<link rel="stylesheet" href="bs4_style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">A Comprehensive Guide to Use R</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">*</a></li>
+<li><a class="" href="about-the-author.html">About the Author</a></li>
+<li><a class="" href="about-this-guide.html">About this guide</a></li>
+<li><a class="" href="introduction.html"><span class="header-section-number">1</span> Introduction</a></li>
+<li><a class="" href="getting-started-setting-up.html"><span class="header-section-number">2</span> Getting Started &amp; Setting Up</a></li>
+<li><a class="" href="operators-data-objects.html"><span class="header-section-number">3</span> Operators &amp; Data Objects</a></li>
+<li><a class="" href="working-with-data.html"><span class="header-section-number">4</span> Working With Data</a></li>
+<li><a class="" href="data-wrangling.html"><span class="header-section-number">5</span> Data Wrangling</a></li>
+<li><a class="" href="data-visualisation.html"><span class="header-section-number">6</span> Data Visualisation</a></li>
+<li><a class="" href="statistics-in-r.html"><span class="header-section-number">7</span> Statistics in R</a></li>
+<li><a class="" href="functions.html"><span class="header-section-number">8</span> Functions</a></li>
+<li><a class="" href="reproducible-results-markdown-quarto-notebooks.html"><span class="header-section-number">9</span> Reproducible Results (Markdown, Quarto &amp; Notebooks)</a></li>
+<li><a class="active" href="r-shiny.html"><span class="header-section-number">10</span> R Shiny</a></li>
+<li><a class="" href="github_r.html"><span class="header-section-number">11</span> Version control with Git and GitHub</a></li>
+<li><a class="" href="additional-resources.html">Additional Resources</a></li>
+</ul>
+
+        <div class="book-extra">
+          
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="r-shiny" class="section level1" number="10">
+<h1>
+<span class="header-section-number">10</span> R Shiny<a class="anchor" aria-label="anchor" href="#r-shiny"><i class="fas fa-link"></i></a>
+</h1>
+<div id="introduction-1" class="section level2" number="10.1">
+<h2>
+<span class="header-section-number">10.1</span> <strong>Introduction</strong><a class="anchor" aria-label="anchor" href="#introduction-1"><i class="fas fa-link"></i></a>
+</h2>
+<p><strong>Shiny</strong> (<a href="https://shiny.rstudio.com/">Chang et al. 2021</a>) is a web application framework for R that enables to build interactive web applications.</p>
+<p>The R shiny Cheatsheet can be found <a href="https://shiny.rstudio.com/images/shiny-cheatsheet.pdf" title="Click to Open">HERE</a></p>
+<blockquote>
+<p><strong>The Big Concept</strong></p>
+<p>Interact. Analyze. Communicate.</p>
+<p>Take a fresh, interactive approach to telling your data story with Shiny. Let users interact with your data and your analysis. And do it all with R.</p>
+</blockquote>
+<p>If you’ve never used Shiny before, welcome! Shiny is an R package that allows you to easily create rich, interactive web apps. Shiny allows you to take your work in R and share it through a web browser .</p>
+<blockquote>
+<p>In the past, creating web apps was hard for most R users because:-</p>
+<p>You need a deep knowledge of web technologies like HTML, CSS, JavaScript, server configuration.</p>
+</blockquote>
+<p>How do Data Analysts and Scientists use R :-</p>
+<ul>
+<li><p>To create dashboards that track important high-level performance indicators, while facilitating drill down into metrics that need more investigation.</p></li>
+<li><p>To replace hundreds of pages of PDFs with interactive apps that allow the user to jump to the exact slice of the results that they care about.</p></li>
+<li><p>To communicate complex models to a non-technical audience with informative visualisations and interactive sensitivity analysis.</p></li>
+<li><p>To provide self-service data analysis for common workflows, replacing email requests with a Shiny app that allows people to upload their own data and perform standard analyses. You can make R analyses available to users with no programming skills. e.g. <a href="https://afrinet-analytics.shinyapps.io/HKAnalyser/">This App</a></p></li>
+</ul>
+<p>In short, Shiny gives you the ability to pass on some of your R superpowers to anyone who can use the internet to access the web.</p>
+<p>To create Shiny apps, there is no web development experience required, although greater flexibility and customization can be achieved by using HTML, CSS or JavaScript.</p>
+<p>While there is a wealth of material available on the internet to help you get started with Shiny, it can be difficult to see how everything fits together. This guide will take a fairly predominantly live coding approach, rather than a lecture-only approach.</p>
+<p>This section will teach you the basics of Shiny app programming, giving you skills that will form the basis of almost any app you want to build. By the end of the section, you will have created a custom shiny app.</p>
+<div id="some-sample-of-live-shiny-apps" class="section level3" number="10.1.1">
+<h3>
+<span class="header-section-number">10.1.1</span> Some sample of Live Shiny Apps<a class="anchor" aria-label="anchor" href="#some-sample-of-live-shiny-apps"><i class="fas fa-link"></i></a>
+</h3>
+<p>The following are some diverse examples of Shiny apps :-</p>
+<ul>
+<li><p><a href="https://pearldatafirm.com/tint" title="Click to open app"><strong>Pearl Tap Into Twitter:</strong></a> This dashboard is part of the <a href="https://pearldatafirm.com/">Pearl Data Firm</a> Ecosystem, This dashboard can be used to monitor your twitter marketing campiagns.</p></li>
+<li><p><a href="https://africanobyamugisha.github.io/portfolio/whatsapp-chat-analyser/" title="Click to view App"><strong>R Shiny Whatsapp Chat Analyser Tool:</strong></a>This is an Interactive R shiny Application that enables upload of a your chat from whatsapp, and generates visualizations and descriptive statistics to help track, analyze, and to gain deeper insight in your chats.</p></li>
+<li><p><a href="https://africanobyamugisha.github.io/portfolio/cestats/" title="Click to Open"><strong>Charcoal Equivalent Statistics:</strong></a> An application tool to estimate the equivalent grid power and number of trees that would replace a given percentage of heating functions done by charcoal.</p></li>
+<li><p><a href="https://africanobyamugisha.github.io/portfolio/hkanalyser/" title="Click to Open"><strong>HK Data Analyzer:</strong></a> An Interactive R shiny Application that enables upload of a data set based on HK Data template, and generates visualizations and descriptive statistics to help track, analyze and gain insights.</p></li>
+<li><p><a href="https://byamugisha-africano.shinyapps.io/shiny-enterprise-dashboard/" title="Click to open"><strong>Shiny Enterprise Dashboard:</strong></a> A more advanced Shiny Application</p></li>
+<li><p>And Many More</p></li>
+</ul>
+</div>
+<div id="what-experience-do-i-need" class="section level3" number="10.1.2">
+<h3>
+<span class="header-section-number">10.1.2</span> <strong>What experience do I need?</strong><a class="anchor" aria-label="anchor" href="#what-experience-do-i-need"><i class="fas fa-link"></i></a>
+</h3>
+<p>You need to have basic familiarity with R, including <a href="https://africanobyamugisha.github.io/guide_to_R_pragramming/working-with-data.html">data import</a>, <a href="https://africanobyamugisha.github.io/guide_to_R_pragramming/data-wrangling.html" title="The process of preparing data for visualisation and statistical analysis.">data processing</a>, <a href="https://africanobyamugisha.github.io/guide_to_R_pragramming/data-visualisation.html">visualization</a>, and <a href="https://psyteachr.github.io/glossary/f#function" title="A named section of code that can be reused.">functions</a> and <a href="https://africanobyamugisha.github.io/guide_to_R_pragramming/functions.html">control structures</a> (e.g., if/else). Instruction will be done using <a href="https://africanobyamugisha.github.io/guide_to_R_pragramming/getting-started-setting-up.html#exploring-r-studio-interface" title="An integrated development environment (IDE) that helps you process R code.">RStudio</a>.</p>
+<p>Some familiarity with <strong><code>ggplot2</code></strong> and <strong><code>dplyr</code></strong> would be useful. You definitely do not need to be an expert coder, but the following code should not be challenging to understand.</p>
+<p>If you want to brush up on your R , <a href="https://africanobyamugisha.github.io/guide_to_R_pragramming/index.html">this self study guide provides</a> a comprehensive overview.</p>
+<p>In this section you will learn about :-</p>
+<ul>
+<li><p>The basic principles to build a Shiny app.</p></li>
+<li><p>How to build the user interface and server parts of a shiny app</p></li>
+<li><p>How to create reactivity.</p></li>
+<li><p>How to design a basic layout for the user interface</p></li>
+<li><p>How to share with others you application.</p></li>
+</ul>
+<p>Therefore, this section is designed to take you from knowing nothing about Shiny to being able to develop shiny apps to help you share your analysis in an interactive way.</p>
+<p>However,More advanced topics such as customization of reactions and appearance of the app can be found in the <a href="http://shiny.rstudio.com/tutorial/">Shiny tutorials website</a>. Examples of more advanced Shiny apps can be seen in the <a href="http://shiny.rstudio.com/gallery">Shiny gallery</a>.</p>
+</div>
+</div>
+<div id="structure-of-a-shiny-app" class="section level2" number="10.2">
+<h2>
+<span class="header-section-number">10.2</span> Structure Of a shiny App<a class="anchor" aria-label="anchor" href="#structure-of-a-shiny-app"><i class="fas fa-link"></i></a>
+</h2>
+<div id="basic-file-structures" class="section level3" number="10.2.1">
+<h3>
+<span class="header-section-number">10.2.1</span> <strong>Basic file structures</strong><a class="anchor" aria-label="anchor" href="#basic-file-structures"><i class="fas fa-link"></i></a>
+</h3>
+<p>To understand <code>shiny</code>, we first need to understand how the file structure of an app works!</p>
+<blockquote>
+<p><strong>Note:</strong></p>
+<p>You need to make a brand new directory before we start. This can actually be made easier by choosing <em>New project</em> in <em>Rstudio</em>, and choosing <em>Shiny Web Application</em>. This will create the basic structure of a shiny app for you.</p>
+</blockquote>
+<p>When opening this project, you’ll notice there is a <code>.R</code> file already present called <em>app.R</em>. It is <em>essential</em> that we have one of two basic file structures:</p>
+<ol style="list-style-type: decimal">
+<li><p>One file called <em>app.R</em>, <em>or</em></p></li>
+<li><p>Two files, one called <em>ui.R</em> and the other <em>server.R</em></p></li>
+</ol>
+<p>However, i personally prefer and recommend a two files structure.</p>
+<blockquote>
+<ul>
+<li><p>The two files help you not to have a length code in one file, hence avoiding longer scrolling,</p></li>
+<li><p>Also makes following up your code workflow especially if the code is extensive, AND</p></li>
+<li>
+<p>most of the Shiny apps I come accross seem to follow the convention of using differente files.</p>
+<p><strong>BUT</strong>, does is make any difference, technically?</p>
+</li>
+</ul>
+</blockquote>
+</div>
+</div>
+<div id="building-the-ui" class="section level2" number="10.3">
+<h2>
+<span class="header-section-number">10.3</span> <strong>Building the UI</strong><a class="anchor" aria-label="anchor" href="#building-the-ui"><i class="fas fa-link"></i></a>
+</h2>
+<p>Since you have creating your first basic shiny App, Let’s now explore the details that make your UI more have more functionality.</p>
+<p>In this sub section , we are going to focus on the front end, and look at a number of the inputs and outputs provided by Shiny. These gives you the ability to capture many types of data and display many types of R output.</p>
+<p>Not that there are very many shiny extensions for advanced added functionality that we may not look at here such as <a href="https://github.com/dreamRs/shinyWidgets">shinyWidgets</a>, <a href="https://github.com/daattali/colourpicker">colorpicker</a>, etc. There is a comprehensive, actively-maintained list of other packages extensions <a href="https://github.com/nanxstats/awesome-shiny-extensions">HERE</a>.</p>
+<div id="inputs" class="section level3" number="10.3.1">
+<h3>
+<span class="header-section-number">10.3.1</span> <strong>Inputs</strong><a class="anchor" aria-label="anchor" href="#inputs"><i class="fas fa-link"></i></a>
+</h3>
+<p>The following are standard Shiny input widgets (click the image below to view a live app demostration)</p>
+<div class="inline-table"><table class="table table-sm">
+<colgroup>
+<col width="31%">
+<col width="68%">
+</colgroup>
+<thead><tr class="header">
+<th align="left"><strong>function</strong></th>
+<th align="left"><strong>widget</strong></th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>actionButton</code></td>
+<td align="left">Action Button</td>
+</tr>
+<tr class="even">
+<td align="left"><code>checkboxGroupInput</code></td>
+<td align="left">A group of check boxes</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>checkboxInput</code></td>
+<td align="left">A single check box</td>
+</tr>
+<tr class="even">
+<td align="left"><code>dateInput</code></td>
+<td align="left">A calendar to aid date selection</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>dateRangeInput</code></td>
+<td align="left">A pair of calendars for selecting a date range</td>
+</tr>
+<tr class="even">
+<td align="left"><code>fileInput</code></td>
+<td align="left">A file upload control wizard</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>helpText</code></td>
+<td align="left">Help text that can be added to an input form</td>
+</tr>
+<tr class="even">
+<td align="left"><code>numericInput</code></td>
+<td align="left">A field to enter numbers</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>radioButtons</code></td>
+<td align="left">A set of radio buttons</td>
+</tr>
+<tr class="even">
+<td align="left"><code>selectInput</code></td>
+<td align="left">A box with choices to select from</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>sliderInput</code></td>
+<td align="left">A slider bar</td>
+</tr>
+<tr class="even">
+<td align="left"><code>submitButton</code></td>
+<td align="left">A submit button</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>textInput</code></td>
+<td align="left">A field to enter text</td>
+</tr>
+</tbody>
+</table></div>
+<p><a href="https://byamugisha-africano.shinyapps.io/Basic-Input-Widgets/"><img src="images/basic-input-widgets.png" style="width:100.0%"></a></p>
+<div id="adding-an-input-widget-to-the-app" class="section level4" number="10.3.1.1">
+<h4>
+<span class="header-section-number">10.3.1.1</span> <strong>Adding an Input widget to the app</strong><a class="anchor" aria-label="anchor" href="#adding-an-input-widget-to-the-app"><i class="fas fa-link"></i></a>
+</h4>
+<p>All input functions functions have the same format;-</p>
+<ul>
+<li>
+<p><code>inputId</code>. This is the <u><strong>unique</strong></u> identifier used to connect the UI with the SERVER. if your UI has an input with ID <code>"amount"</code>, the server function will access it with <code>input$amount</code>.</p>
+<blockquote>
+<p>Note that the <code>inputId</code> must be a simple text that follow the rules of indentifies i.e.</p>
+<ul>
+<li><p>unique</p></li>
+<li><p>contains only letters, numbers, and underscores (no spaces, dashes, periods, or other special characters allowed!).</p></li>
+</ul>
+</blockquote>
+</li>
+<li><p><code>label</code>. This is used to create a human-readable label for the control. Shiny doesn’t place any restrictions on this string, but you’ll need to carefully think about it to make sure that your app is usable by humans!</p></li>
+<li>
+<p><code>value</code>, Enables you set the default value.</p>
+<div class="line-block">Note that: The other remaining arguments are unique to each input function</div>
+</li>
+</ul>
+<p>Some Examples of Inputs</p>
+</div>
+<div id="inputting-a-text" class="section level4" number="10.3.1.2">
+<h4>
+<span class="header-section-number">10.3.1.2</span> <strong>Inputting a text</strong><a class="anchor" aria-label="anchor" href="#inputting-a-text"><i class="fas fa-link"></i></a>
+</h4>
+<p>Collect small amounts of text with <a href="https://rdrr.io/pkg/shiny/man/textInput.html"><code>textInput()</code></a>, passwords with <a href="https://rdrr.io/pkg/shiny/man/passwordInput.html">passwordInput()</a>, and paragraphs of text with <a href="https://rdrr.io/pkg/shiny/man/textAreaInput.html"><code>textAreaInput()</code></a>.</p>
+<p></p>
+<div class="sourceCode" id="cb221"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">fluidRow</span><span class="op">(</span><span class="fu">textInput</span><span class="op">(</span><span class="st">"username"</span>, <span class="st">"Enter user Name?"</span><span class="op">)</span>, <span class="fu">passwordInput</span><span class="op">(</span><span class="st">"password"</span>,</span>
+<span>    <span class="st">"Enter password?"</span><span class="op">)</span>, <span class="fu">textAreaInput</span><span class="op">(</span><span class="st">"describe"</span>, <span class="st">"In One Sentence,Describe yourself"</span>,</span>
+<span>    rows <span class="op">=</span> <span class="fl">4</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<p></p>
+<div class="inline-figure"><img src="images/input_text.PNG" style="width:40.0%"></div>
+</div>
+<div id="inputting-numeric-inputs" class="section level4" number="10.3.1.3">
+<h4>
+<span class="header-section-number">10.3.1.3</span> <strong>Inputting numeric inputs</strong><a class="anchor" aria-label="anchor" href="#inputting-numeric-inputs"><i class="fas fa-link"></i></a>
+</h4>
+<p>To collect numeric values, create a text box with <a href="https://rdrr.io/pkg/shiny/man/numericInput.html"><code>numericInput()</code></a> or a slider with <a href="https://rdrr.io/pkg/shiny/man/sliderInput.html"><code>sliderInput()</code></a>.</p>
+<p></p>
+<div class="sourceCode" id="cb222"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">fluidPage</span><span class="op">(</span><span class="fu">numericInput</span><span class="op">(</span><span class="st">"age"</span>, <span class="st">"What is your Age"</span>, value <span class="op">=</span> <span class="fl">0</span>,</span>
+<span>    min <span class="op">=</span> <span class="fl">0</span>, max <span class="op">=</span> <span class="fl">120</span><span class="op">)</span>, <span class="fu">sliderInput</span><span class="op">(</span><span class="st">"rate"</span>, <span class="st">"Out of 10, How do you rate your R skills"</span>,</span>
+<span>    value <span class="op">=</span> <span class="fl">5</span>, min <span class="op">=</span> <span class="fl">0</span>, max <span class="op">=</span> <span class="fl">10</span><span class="op">)</span>, <span class="fu">sliderInput</span><span class="op">(</span><span class="st">"score"</span>, <span class="st">"What was your Score in R test"</span>,</span>
+<span>    value <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">50</span><span class="op">)</span>, min <span class="op">=</span> <span class="fl">0</span>, max <span class="op">=</span> <span class="fl">100</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<p></p>
+<div class="inline-figure"><img src="images/input_numeric.PNG" style="width:30.0%"></div>
+<p>Sliders are extremely customization and there are many ways to tweak their appearance. See <a href="https://rdrr.io/pkg/shiny/man/sliderInput.html"><code>?sliderInput</code></a> and <a href="https://shiny.rstudio.com/articles/sliders.html" class="uri">https://shiny.rstudio.com/articles/sliders.html</a> for more details.</p>
+</div>
+<div id="inputting-dates" class="section level4" number="10.3.1.4">
+<h4>
+<span class="header-section-number">10.3.1.4</span> <strong>Inputting Dates</strong><a class="anchor" aria-label="anchor" href="#inputting-dates"><i class="fas fa-link"></i></a>
+</h4>
+<p>Collect a single day with <a href="https://rdrr.io/pkg/shiny/man/dateInput.html"><code>dateInput()</code></a> or a range of two days with <a href="https://rdrr.io/pkg/shiny/man/dateRangeInput.html"><code>dateRangeInput()</code></a>. These provide a convenient calendar picker, and additional arguments like <code>datesdisabled</code> and <code>daysofweekdisabled</code> allow you to restrict the set of valid inputs.</p>
+<p></p>
+<div class="sourceCode" id="cb223"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">fluidRow</span><span class="op">(</span><span class="fu">dateInput</span><span class="op">(</span><span class="st">"dob"</span>, <span class="st">"Enter you date of birth?"</span><span class="op">)</span>, <span class="fu">dateRangeInput</span><span class="op">(</span><span class="st">"start_course"</span>,</span>
+<span>    <span class="st">"When do you expect to Practce R?"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<p></p>
+<div class="inline-figure"><img src="images/input_date.PNG" style="width:50.0%"></div>
+<p>Date format, language, and the day on which the week starts defaults to US standards. If you are creating an app with an international audience, set <code>format</code>, <code>language</code>, and <code>weekstart</code> so that the dates are natural to your users.</p>
+</div>
+<div id="inputting-from-choices" class="section level4" number="10.3.1.5">
+<h4>
+<span class="header-section-number">10.3.1.5</span> <strong>Inputting from choices</strong><a class="anchor" aria-label="anchor" href="#inputting-from-choices"><i class="fas fa-link"></i></a>
+</h4>
+<p>There are two different approaches to allow the user to choose from a prespecified set of options: <a href="https://rdrr.io/pkg/shiny/man/selectInput.html"><code>selectInput()</code></a> and <a href="https://rdrr.io/pkg/shiny/man/radioButtons.html"><code>radioButtons()</code></a>.</p>
+<p></p>
+<div class="sourceCode" id="cb224"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">selectInput</span><span class="op">(</span>inputId <span class="op">=</span> <span class="st">"language1"</span>, label <span class="op">=</span> <span class="st">"Which Language are you most proficient?"</span>,</span>
+<span>    choices <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"R"</span>, <span class="st">"Python"</span>, <span class="st">"C"</span>, <span class="st">"C++"</span>, <span class="st">"SQL"</span>, <span class="st">"HTML"</span>, <span class="st">"JavaScript"</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="fu">radioButtons</span><span class="op">(</span>inputId <span class="op">=</span> <span class="st">"language2"</span>, label <span class="op">=</span> <span class="st">"What other languages do you Know?"</span>,</span>
+<span>    choices <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"R"</span>, <span class="st">"Python"</span>, <span class="st">"C"</span>, <span class="st">"C++"</span>, <span class="st">"SQL"</span>, <span class="st">"HTML"</span>, <span class="st">"JavaScript"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<p></p>
+<div class="inline-figure"><img src="images/input_radio.PNG" style="width:50.0%"></div>
+<p>Radio buttons have two nice features: they show all possible options, making them suitable for short lists, and via the <code>choiceNames</code>/<code>choiceValues</code> arguments, they can display options other than plain text. <code>choiceNames</code> determines what is shown to the user; <code>choiceValues</code> determines what is returned in your server function.</p>
+<p></p>
+<div class="sourceCode" id="cb225"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">radioButtons</span><span class="op">(</span><span class="st">"status"</span>, <span class="st">"How are you?"</span>, choiceNames <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="st">"angry"</span>,</span>
+<span>    <span class="st">"happy"</span>, <span class="st">"sad"</span><span class="op">)</span>, choiceValues <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">3</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<p></p>
+<p>If you have a very large set of possible options, you may want to use “server-side” <a href="https://rdrr.io/pkg/shiny/man/selectInput.html"><code>selectInput()</code></a> so that the complete set of possible options are not embedded in the UI (which can make it slow to load), but instead sent as needed by the server. You can learn more about this advanced topic at <a href="https://shiny.rstudio.com/articles/selectize.html#server-side-selectize" class="uri">https://shiny.rstudio.com/articles/selectize.html#server-side-selectize</a>.</p>
+<p>There’s no way to select multiple values with radio buttons, but there’s an alternative that’s conceptually similar: <a href="https://rdrr.io/pkg/shiny/man/checkboxGroupInput.html"><code>checkboxGroupInput()</code></a>.</p>
+<p></p>
+<div class="sourceCode" id="cb226"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">checkboxGroupInput</span><span class="op">(</span>inputId <span class="op">=</span> <span class="st">"skills_known"</span>, label <span class="op">=</span> <span class="fu">h3</span><span class="op">(</span><span class="st">"Select the packages you know"</span><span class="op">)</span>,</span>
+<span>    choices <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>shiny <span class="op">=</span> <span class="fl">1</span>, tidyverse <span class="op">=</span> <span class="fl">2</span>, rhino <span class="op">=</span> <span class="fl">3</span>, ggplot2 <span class="op">=</span> <span class="fl">4</span>,</span>
+<span>        lubridate <span class="op">=</span> <span class="fl">5</span>, htmltools <span class="op">=</span> <span class="fl">6</span>, others <span class="op">=</span> <span class="fl">7</span><span class="op">)</span>, selected <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span></code></pre></div>
+<p></p>
+<div class="inline-figure"><img src="images/input_group.PNG" style="width:50.0%"></div>
+</div>
+<div id="file-uploads" class="section level4" number="10.3.1.6">
+<h4>
+<span class="header-section-number">10.3.1.6</span> <strong>File uploads</strong><a class="anchor" aria-label="anchor" href="#file-uploads"><i class="fas fa-link"></i></a>
+</h4>
+<p>Allow the user to upload a file with <code>fileInput()</code></p>
+<p></p>
+<div class="sourceCode" id="cb227"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">fileInput</span><span class="op">(</span>inputId <span class="op">=</span> <span class="st">"data_upload"</span>, label <span class="op">=</span> <span class="st">"Upload your data"</span>,</span>
+<span>    <span class="cn">NULL</span><span class="op">)</span></span></code></pre></div>
+<p></p>
+<p><a href="https://rdrr.io/pkg/shiny/man/fileInput.html"><code>fileInput()</code></a> requires special handling on the server side, and is discussed in detail latyer in th section.</p>
+</div>
+<div id="action-buttons" class="section level4" number="10.3.1.7">
+<h4>
+<span class="header-section-number">10.3.1.7</span> <strong>Action buttons</strong><a class="anchor" aria-label="anchor" href="#action-buttons"><i class="fas fa-link"></i></a>
+</h4>
+<p>Let the user perform an action with <a href="https://rdrr.io/pkg/shiny/man/actionButton.html"><code>actionButton()</code></a> or <a href="https://rdrr.io/pkg/shiny/man/actionButton.html"><code>actionLink()</code></a>:</p>
+<p></p>
+<div class="sourceCode" id="cb228"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">fluidRow</span><span class="op">(</span><span class="fu">actionButton</span><span class="op">(</span><span class="st">"view_data"</span>, <span class="st">"Click me to View Data"</span><span class="op">)</span>,</span>
+<span>    <span class="fu">actionButton</span><span class="op">(</span><span class="st">"model"</span>, <span class="st">"Run Model"</span>, icon <span class="op">=</span> <span class="fu">icon</span><span class="op">(</span><span class="st">"cogs"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<p></p>
+<div class="inline-figure"><img src="images/input_button.PNG" style="width:69.0%"></div>
+<p>Actions links and buttons are most naturally paired with <a href="https://rdrr.io/pkg/shiny/man/observeEvent.html"><code>observeEvent()</code></a> or <a href="https://rdrr.io/pkg/shiny/man/observeEvent.html"><code>eventReactive()</code></a> in your server function.</p>
+<p>You can customise the appearance using the <code>class</code> argument by using one of <code>"btn-primary"</code>, <code>"btn-success"</code>, <code>"btn-info"</code>, <code>"btn-warning"</code>, or <code>"btn-danger"</code>. You can also change the size with <code>"btn-lg"</code>, <code>"btn-sm"</code>, <code>"btn-xs"</code>. Finally, you can make buttons span the entire width of the element they are embedded within using <code>"btn-block"</code>.</p>
+<p></p>
+<div class="sourceCode" id="cb229"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">fluidRow</span><span class="op">(</span><span class="fu">actionButton</span><span class="op">(</span><span class="st">"view_data2"</span>, <span class="st">"Click me to View Data"</span>,</span>
+<span>    class <span class="op">=</span> <span class="st">"btn-warning"</span><span class="op">)</span>, <span class="fu">actionButton</span><span class="op">(</span><span class="st">"model2"</span>, <span class="st">"Run Model"</span>,</span>
+<span>    icon <span class="op">=</span> <span class="fu">icon</span><span class="op">(</span><span class="st">"cogs"</span><span class="op">)</span>, class <span class="op">=</span> <span class="st">"btn-info"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<p></p>
+<div class="inline-figure"><img src="images/input_button2.PNG" style="width:60.0%"></div>
+<p>The <code>class</code> argument works by setting the <code>class</code> attribute of the underlying HTML, which affects how the element is styled. To see other options, you can read the documentation for Bootstrap, the CSS design system used by Shiny: <a href="http://bootstrapdocs.com/v3.3.6/docs/css/#buttons" class="uri">http://bootstrapdocs.com/v3.3.6/docs/css/#buttons</a>.</p>
+</div>
+</div>
+<div id="outputs" class="section level3" number="10.3.2">
+<h3>
+<span class="header-section-number">10.3.2</span> <strong>Outputs</strong><a class="anchor" aria-label="anchor" href="#outputs"><i class="fas fa-link"></i></a>
+</h3>
+<p>Outputs in the UI create placeholders that are later filled by the server function.</p>
+<p>Shiny provides a family of functions that turn R objects into output for your user interface. Each function creates a specific type of output.</p>
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th align="left"><strong>Output function</strong></th>
+<th align="left"><strong>Creates</strong></th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>dataTableOutput</code></td>
+<td align="left">DataTable</td>
+</tr>
+<tr class="even">
+<td align="left"><code>htmlOutput</code></td>
+<td align="left">raw HTML</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>imageOutput</code></td>
+<td align="left">image</td>
+</tr>
+<tr class="even">
+<td align="left"><code>plotOutput</code></td>
+<td align="left">plot</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>tableOutput</code></td>
+<td align="left">table</td>
+</tr>
+<tr class="even">
+<td align="left"><code>textOutput</code></td>
+<td align="left">text</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>uiOutput</code></td>
+<td align="left">raw HTML</td>
+</tr>
+<tr class="even">
+<td align="left"><code>verbatimTextOutput</code></td>
+<td align="left">text</td>
+</tr>
+</tbody>
+</table></div>
+<p>Like inputs, outputs take a unique ID as their first argument, if your UI specification creates an output with ID <code>"plot"</code>, you’ll access it in the server function with <code>output$plot</code>.</p>
+<div id="text-output" class="section level4" number="10.3.2.1">
+<h4>
+<span class="header-section-number">10.3.2.1</span> <strong>Text Output</strong><a class="anchor" aria-label="anchor" href="#text-output"><i class="fas fa-link"></i></a>
+</h4>
+<p>Output regular text with <a href="https://rdrr.io/pkg/shiny/man/textOutput.html"><code>textOutput()</code></a> and fixed code and console output with <a href="https://rdrr.io/pkg/shiny/man/textOutput.html"><code>verbatimTextOutput()</code></a>.</p>
+</div>
+<div id="tables-output" class="section level4" number="10.3.2.2">
+<h4>
+<span class="header-section-number">10.3.2.2</span> <strong>Tables Output</strong><a class="anchor" aria-label="anchor" href="#tables-output"><i class="fas fa-link"></i></a>
+</h4>
+<p>There are two options for displaying data frames in tables:</p>
+<ul>
+<li><p><a href="https://rdrr.io/pkg/shiny/man/renderTable.html"><code>tableOutput()</code></a> and <a href="https://rdrr.io/pkg/shiny/man/renderTable.html"><code>renderTable()</code></a> render a static table of data, showing all the data at once.</p></li>
+<li><p><a href="https://rdrr.io/pkg/shiny/man/renderDataTable.html"><code>dataTableOutput()</code></a> and <a href="https://rdrr.io/pkg/shiny/man/renderDataTable.html"><code>renderDataTable()</code></a> render a dynamic table, showing a fixed number of rows along with controls to change which rows are visible.</p></li>
+</ul>
+<p><a href="https://rdrr.io/pkg/shiny/man/renderTable.html"><code>tableOutput()</code></a> is most useful for small, fixed summaries (e.g. model coefficients); <a href="https://rdrr.io/pkg/shiny/man/renderDataTable.html"><code>dataTableOutput()</code></a> is most appropriate if you want to expose a complete data frame to the user.</p>
+</div>
+<div id="plot-output" class="section level4" number="10.3.2.3">
+<h4>
+<span class="header-section-number">10.3.2.3</span> <strong>Plot Output</strong><a class="anchor" aria-label="anchor" href="#plot-output"><i class="fas fa-link"></i></a>
+</h4>
+<p>You can display any type of R graphic with <a href="https://rdrr.io/pkg/shiny/man/plotOutput.html"><code>plotOutput()</code></a> and <a href="https://rdrr.io/pkg/shiny/man/renderPlot.html"><code>renderPlot()</code></a>:</p>
+</div>
+<div id="downloads" class="section level4" number="10.3.2.4">
+<h4>
+<span class="header-section-number">10.3.2.4</span> <strong>Downloads</strong><a class="anchor" aria-label="anchor" href="#downloads"><i class="fas fa-link"></i></a>
+</h4>
+<p>You can let the user download a file with <a href="https://rdrr.io/pkg/shiny/man/downloadButton.html"><code>downloadButton()</code></a> or <a href="https://rdrr.io/pkg/shiny/man/downloadButton.html"><code>downloadLink()</code></a>.</p>
+</div>
+</div>
+<div id="html-content" class="section level3" number="10.3.3">
+<h3>
+<span class="header-section-number">10.3.3</span> <strong>HTML content</strong><a class="anchor" aria-label="anchor" href="#html-content"><i class="fas fa-link"></i></a>
+</h3>
+<p>The appearance of a Shiny app can be customized by using HTML content such as text and images. We can add HTML content with the <a href="https://rdrr.io/pkg/htmltools/man/builder.html"><code>shiny::tags</code></a> object. <code>tags</code> is a list of functions that build specific HTML content. The names of the tag functions can be seen with <code>names(tags)</code>. Some examples of tag functions, their HTML equivalents, and the output they create are the following:</p>
+<ul>
+<li><p><a href="https://rdrr.io/pkg/htmltools/man/builder.html"><code>h1()</code></a>: <code>&lt;h1&gt;</code> first level header,</p></li>
+<li><p><a href="https://rdrr.io/pkg/htmltools/man/builder.html"><code>h2()</code></a>: <code>&lt;h2&gt;</code> second level header,</p></li>
+<li><p><a href="https://rdrr.io/pkg/htmltools/man/builder.html"><code>strong()</code></a>: <code>&lt;strong&gt;</code> bold text,</p></li>
+<li><p><a href="https://rdrr.io/pkg/htmltools/man/builder.html"><code>em()</code></a>: <code>&lt;em&gt;</code> italicized text,</p></li>
+<li><p><a href="https://rdrr.io/pkg/htmltools/man/builder.html"><code>a()</code></a>: <code>&lt;a&gt;</code> link to a webpage,</p></li>
+<li><p><a href="https://rdrr.io/pkg/htmltools/man/builder.html"><code>img()</code></a>: <code>&lt;img&gt;</code> image,</p></li>
+<li><p><a href="https://rdrr.io/pkg/htmltools/man/builder.html"><code>br()</code></a>: <code>&lt;br&gt;</code> line break,</p></li>
+<li><p><a href="https://rdrr.io/pkg/htmltools/man/builder.html"><code>hr()</code></a>: <code>&lt;hr&gt;</code> horizontal line,</p></li>
+<li><p><code>div</code>: <code>&lt;div&gt;</code> division of text with a uniform style.</p></li>
+</ul>
+<p>We can use any of these tag functions by subsetting the <code>tags</code> list. For example, to create a first level header we can write <code>tags$h1("Header 1")</code>, to create a link to a webpage we can write <code>tags$a(href = "www.webpage.com", "Click here")</code>, and to create a section in an HTML document we can use <code>tags$div()</code>.</p>
+<p>Some of the tag functions have equivalent helper functions that make accessing them easier. For example, the <a href="https://rdrr.io/pkg/htmltools/man/builder.html"><code>h1()</code></a> function is a wrapper for <code>tags$h1()</code>, <a href="https://rdrr.io/pkg/htmltools/man/builder.html"><code>a()</code></a> is equivalent to <code>tags$a()</code>, and <a href="https://rdrr.io/pkg/htmltools/man/builder.html"><code>div()</code></a> is equivalent to <code>tags$div()</code>. However, most of the tag functions do not have equivalent helpers because they share a name with a common R function.</p>
+<p>We can also include an HTML code different from the one that is provided by the tag functions. To do that, we need to pass a character string of raw HTML code to the <a href="https://rdrr.io/pkg/htmltools/man/HTML.html"><code>HTML()</code></a> function: <code>tags$div(HTML("&lt;strong&gt; Raw HTML &lt;/strong&gt;"))</code>. Additional information about tag functions can be found in <a href="https://shiny.rstudio.com/articles/html-tags.html">Customize your UI with HTML</a> and the <a href="https://shiny.rstudio.com/articles/tag-glossary.html">Shiny HTML Tags Glossary</a>.</p>
+</div>
+<div id="layouts" class="section level3" number="10.3.4">
+<h3>
+<span class="header-section-number">10.3.4</span> Layouts<a class="anchor" aria-label="anchor" href="#layouts"><i class="fas fa-link"></i></a>
+</h3>
+<p>Shiny includes a number of facilities for laying out the components of an application. They include :</p>
+<ol style="list-style-type: decimal">
+<li><p>A <code>sidebarLayout()</code>: for placing a <code>sidebarPanel()</code> of inputs alongside a <code>mainPanel()</code> output content.</p></li>
+<li><p>Custom layouts using Shiny’s grid layout system (i.e., <code>fluidRow()</code> &amp; <code>column()</code>).</p></li>
+<li><p>Segmenting layouts using the <code>tabsetPanel()</code> and <code>navlistPanel()</code> functions.</p></li>
+<li><p>Creating applications with multiple top-level components using the <code>navbarPage()</code> function.</p></li>
+</ol>
+<p>The outlook can be customized manually or by applying application themes, check out the <a href="https://shiny.rstudio.com/articles/themes.html">application themes article here</a> .</p>
+<div id="sidbar-layout" class="section level4" number="10.3.4.1">
+<h4>
+<span class="header-section-number">10.3.4.1</span> <strong>Sidbar Layout</strong><a class="anchor" aria-label="anchor" href="#sidbar-layout"><i class="fas fa-link"></i></a>
+</h4>
+<p>This layout provides a sidebar for inputs and a large main area for output:</p>
+<p></p>
+<div class="sourceCode" id="cb230"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">fluidPage</span><span class="op">(</span><span class="fu">titlePanel</span><span class="op">(</span><span class="st">"Side bar Layout!"</span><span class="op">)</span>, <span class="fu">sidebarLayout</span><span class="op">(</span><span class="fu">sidebarPanel</span><span class="op">(</span><span class="op">)</span>,</span>
+<span>    <span class="fu">mainPanel</span><span class="op">(</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<p></p>
+<p><strong>Grid Layout</strong></p>
+<p>The familiar <code>sidebarLayout()</code> described above makes use of Shiny’s lower-level grid layout functions. Rows are created by the <code>fluidRow()</code> function and include columns defined by the <code>column()</code> function. Column widths are based on the Bootstrap 12-wide grid system, so should add up to 12 within a <code>fluidRow()</code> container.</p>
+<p>To illustrate, here’s the sidebar layout implemented using the <code>fluidRow()</code>, <code>column()</code> and <code>wellPanel()</code> functions:</p>
+<p></p>
+<div class="sourceCode" id="cb231"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">fluidPage</span><span class="op">(</span><span class="fu">titlePanel</span><span class="op">(</span><span class="st">"Crid Layout"</span><span class="op">)</span>, <span class="fu">fluidRow</span><span class="op">(</span><span class="fu">column</span><span class="op">(</span><span class="fl">4</span>, <span class="fu">wellPanel</span><span class="op">(</span><span class="fu">sliderInput</span><span class="op">(</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>,</span>
+<span>    <span class="fu">column</span><span class="op">(</span><span class="fl">8</span>, <span class="op">)</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<p></p>
+</div>
+<div id="tabsets" class="section level4" number="10.3.4.2">
+<h4>
+<span class="header-section-number">10.3.4.2</span> <strong>Tabsets</strong><a class="anchor" aria-label="anchor" href="#tabsets"><i class="fas fa-link"></i></a>
+</h4>
+<p>Often applications need to subdivide their user-interface into discrete sections. This can be accomplished using the <code>tabsetPanel()</code> function.</p>
+<p></p>
+<div class="sourceCode" id="cb232"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">fluidPage</span><span class="op">(</span><span class="fu">titlePanel</span><span class="op">(</span><span class="st">"Tabset layout"</span><span class="op">)</span>, <span class="fu">sidebarLayout</span><span class="op">(</span><span class="fu">sidebarPanel</span><span class="op">(</span><span class="op">)</span>,</span>
+<span>    <span class="fu">mainPanel</span><span class="op">(</span><span class="fu">tabsetPanel</span><span class="op">(</span><span class="fu">tabPanel</span><span class="op">(</span><span class="st">"tab1"</span><span class="op">)</span>, <span class="fu">tabPanel</span><span class="op">(</span><span class="st">"tab2"</span><span class="op">)</span>,</span>
+<span>        <span class="fu">tabPanel</span><span class="op">(</span><span class="st">"tab3"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<p></p>
+</div>
+<div id="navlists" class="section level4" number="10.3.4.3">
+<h4>
+<span class="header-section-number">10.3.4.3</span> <strong>Navlists</strong><a class="anchor" aria-label="anchor" href="#navlists"><i class="fas fa-link"></i></a>
+</h4>
+<p>When you have more than a handful of tabPanels the <code>navlistPanel()</code> may be a good alternative to <code>tabsetPanel()</code>. A navlist presents the various components as a sidebar list rather than using tabs. It also supports section heading and separators for longer lists.</p>
+<p></p>
+<div class="sourceCode" id="cb233"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">fluidPage</span><span class="op">(</span><span class="fu">titlePanel</span><span class="op">(</span><span class="st">"Navigation Lists"</span><span class="op">)</span>, <span class="fu">navlistPanel</span><span class="op">(</span><span class="st">"Header 1.1"</span>,</span>
+<span>    <span class="fu">tabPanel</span><span class="op">(</span><span class="st">"list 1"</span><span class="op">)</span>, <span class="fu">tabPanel</span><span class="op">(</span><span class="st">"list 2"</span><span class="op">)</span>, <span class="st">"Header 1.2"</span>, <span class="fu">tabPanel</span><span class="op">(</span><span class="st">"list 3"</span><span class="op">)</span>,</span>
+<span>    <span class="fu">tabPanel</span><span class="op">(</span><span class="st">"list 4"</span><span class="op">)</span>, <span class="st">"-----"</span>, <span class="fu">tabPanel</span><span class="op">(</span><span class="st">"list 5"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<p></p>
+<p><strong>Navbar Pages</strong></p>
+<p>You may want to create a Shiny application that consists of multiple distinct sub-components (each with their own sidebar, tabsets, or other layout constructs). The <code>navbarPage()</code> function creates an application with a standard Bootstrap <a href="http://getbootstrap.com/components/#navbar">Navbar</a> at the top.</p>
+<p></p>
+<div class="sourceCode" id="cb234"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">navbarPage</span><span class="op">(</span><span class="st">"Navbarpage"</span>, <span class="fu">tabPanel</span><span class="op">(</span><span class="st">"page 1"</span><span class="op">)</span>, <span class="fu">tabPanel</span><span class="op">(</span><span class="st">"page 2"</span><span class="op">)</span>,</span>
+<span>    <span class="fu">tabPanel</span><span class="op">(</span><span class="st">"page 3"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<p></p>
+<p><strong>Secondary Navigation</strong></p>
+<p>You can add a second level of navigation to the page by using the <code>navbarMenu()</code> function. This adds a menu to the top level navbar which can in turn refer to additional tabPanels.</p>
+<p></p>
+<div class="sourceCode" id="cb235"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">navbarPage</span><span class="op">(</span><span class="st">"Sub components Layout"</span>, <span class="fu">tabPanel</span><span class="op">(</span><span class="st">"Component 1"</span><span class="op">)</span>,</span>
+<span>    <span class="fu">tabPanel</span><span class="op">(</span><span class="st">"Component 2"</span><span class="op">)</span>, <span class="fu">navbarMenu</span><span class="op">(</span><span class="st">"More"</span>, <span class="fu">tabPanel</span><span class="op">(</span><span class="st">"Sub-Component 1"</span><span class="op">)</span>,</span>
+<span>        <span class="fu">tabPanel</span><span class="op">(</span><span class="st">"Sub-Component 2"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<p></p>
+</div>
+<div id="shiny-dashboard." class="section level4" number="10.3.4.4">
+<h4>
+<span class="header-section-number">10.3.4.4</span> Shiny Dashboard.<a class="anchor" aria-label="anchor" href="#shiny-dashboard."><i class="fas fa-link"></i></a>
+</h4>
+<p>A dashboard has three parts: a header, a sidebar, and a body. Here’s the most minimal possible UI for a dashboard page.</p>
+<p>You can learn more about customizing dashboards <a href="https://rstudio.github.io/shinydashboard/structure.html" title="Click to Open">HERE</a></p>
+<p></p>
+<div class="sourceCode" id="cb236"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co">## ui.R ##</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://rstudio.github.io/shinydashboard/">shinydashboard</a></span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/shinydashboard/man/dashboardPage.html">dashboardPage</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/shinydashboard/man/dashboardHeader.html">dashboardHeader</a></span><span class="op">(</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/pkg/shinydashboard/man/dashboardSidebar.html">dashboardSidebar</a></span><span class="op">(</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/pkg/shinydashboard/man/dashboardBody.html">dashboardBody</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<p></p>
+<p><strong>HTML content</strong></p>
+<p>The appearance of a Shiny app can be customized by using HTML content such as text and images. We can add HTML content with the <a href="https://rdrr.io/pkg/htmltools/man/builder.html"><code>shiny::tags</code></a> object. <code>tags</code> is a list of functions that build specific HTML content. The names of the tag functions can be seen with <code>names(tags)</code>. Some examples of tag functions, and the output they create include:</p>
+<ul>
+<li><p><a href="https://rdrr.io/pkg/htmltools/man/builder.html"><code>h1()</code></a>: first level header,</p></li>
+<li><p><a href="https://rdrr.io/pkg/htmltools/man/builder.html"><code>h2()</code></a>: second level header,</p></li>
+<li><p><a href="https://rdrr.io/pkg/htmltools/man/builder.html"><code>strong()</code></a>: bold text,</p></li>
+<li><p><a href="https://rdrr.io/pkg/htmltools/man/builder.html"><code>em()</code></a>: italicized text,</p></li>
+<li><p><a href="https://rdrr.io/pkg/htmltools/man/builder.html"><code>a()</code></a>: link to a webpage,</p></li>
+<li><p><a href="https://rdrr.io/pkg/htmltools/man/builder.html"><code>img()</code></a>: image,</p></li>
+<li><p><a href="https://rdrr.io/pkg/htmltools/man/builder.html"><code>br()</code></a>: line break,</p></li>
+<li><p><a href="https://rdrr.io/pkg/htmltools/man/builder.html"><code>hr()</code></a>: horizontal line,</p></li>
+<li><p><code>div()</code>: division of text with a uniform style.</p></li>
+</ul>
+<p>We can use any of these tag functions by subsetting the <code>tags</code> list. For example,</p>
+<ul>
+<li><p>to create a first level header we can write <code>tags$h1("Header 1")</code>,</p></li>
+<li><p>to create a link to a webpage we can write <code>tags$a(href = "www.webpage.com", "Click here")</code>,</p></li>
+<li><p>to create a section in an HTML document we can use <code>tags$div()</code>.</p></li>
+</ul>
+<p>The <a href="https://rdrr.io/pkg/htmltools/man/builder.html"><code>h1()</code></a> function is a wrapper for <code>tags$h1()</code>, <a href="https://rdrr.io/pkg/htmltools/man/builder.html"><code>a()</code></a> is equivalent to <code>tags$a()</code>, and <a href="https://rdrr.io/pkg/htmltools/man/builder.html"><code>div()</code></a> is equivalent to <code>tags$div()</code>. However, most of the tag functions do not have equivalent helpers because they share a name with a common R function.</p>
+<p>Additional information about tag functions can be found in <a href="https://shiny.rstudio.com/articles/html-tags.html">Customize your UI with HTML and the Shiny HTML Tags Glossary.</a></p>
+</div>
+</div>
+</div>
+<div id="sharing-shiny-apps" class="section level2" number="10.4">
+<h2>
+<span class="header-section-number">10.4</span> <strong>Sharing Shiny apps</strong><a class="anchor" aria-label="anchor" href="#sharing-shiny-apps"><i class="fas fa-link"></i></a>
+</h2>
+<p>Now that you can develop a shiny app, you probably wondering how to share it with others - this is the main <u>advantage</u> of shiny after all</p>
+<p>There are two options to share a Shiny app with other users.</p>
+<ol style="list-style-type: decimal">
+<li><p>You can directly share the R scripts we used to create the Shiny app with them locally or may be version control platforms like GITHUB, Learn more about usng Github with R <a href="https://africanobyamugisha.github.io/guide_to_R_pragramming/github_r.html" title="Click to open">HERE</a>. (<u>If they know how to use R and are OK with it, and also for code reviews</u>), or</p></li>
+<li><p>We can host the Shiny app as a webpage with its own URL.</p></li>
+</ol>
+<p><strong>With this option, other users do not need to have R installed which permits the use of the app by people without R knowledge.</strong> We can host the Shiny app as a webpage on its own server, or we can host it using one of the several ways RStudio offers such as <a href="https://www.shinyapps.io/">Shinyapps.io</a> and <a href="https://www.rstudio.com/products/shiny/shiny-server/">Shiny Server</a>. Information about these options can be obtained by visiting the Shiny hosting and deployment <a href="https://shiny.rstudio.com/deploy/">website</a>.</p>
+<ul>
+<li><div>
+<ul>
+<li>
+<em>shinyapps.io</em>: this is the easiest place to publish shiny apps, as it has the smallest amount of configuration work needed, and has some free, but limited licenses.</li>
+</ul>
+</div></li>
+</ul>
+<!-- --><ul>
+<li><div>
+<ul>
+<li>
+<em>RStudio Connect</em>: this is a far more powerful version of an R server, that can perform many operations, including publishing shiny apps. It is however, harder to use, and less recommended for first-time users.</li>
+</ul>
+</div></li>
+</ul>
+<p>For personal use, i reccomend the R shiny server <a href="https://www.shinyapps.io/" style="font-size: 12pt;">Shinyapps.io</a> .</p>
+<p><a href="https://www.shinyapps.io/">shinyapps.io</a> is a shared hosting environment managed by RStudio. Both free and paid tiers are available. This hosting platform is most commonly used in non-enterprise environments.</p>
+<div id="steps-to-deploy-on-shinyapps.io" class="section level3" number="10.4.1">
+<h3>
+<span class="header-section-number">10.4.1</span> <strong>Steps to deploy on <a href="https://www.shinyapps.io/">shinyapps.io</a></strong><a class="anchor" aria-label="anchor" href="#steps-to-deploy-on-shinyapps.io"><i class="fas fa-link"></i></a>
+</h3>
+<ol style="list-style-type: decimal">
+<li><p>should make sure our app is suitable for publishing on a server. In your app, you should restart your R session, and ensure that it runs without running any extra code. This is important, as an app that requires package loading, or data reading not defined in your app code won’t run on a server. Also note that you can’t have any <em>explicit</em> file paths in your app - these will be invalid in the server setting.</p></li>
+<li><p><em>Signing up for account on shinyapps.io</em></p></li>
+<li><p>Once you have your account, you can navigate to the tokens page under <em>Accounts</em>. Here you will want to add a new token - this will be used to deploy your app.</p></li>
+<li><p>You can deploy you app following the steps <a href="https://statsandr.com/blog/how-to-publish-shiny-app-example-with-shinyapps-io/" title="Click to Open">HERE</a>. The steps mentioned above are very detailed.</p></li>
+</ol>
+</div>
+</div>
+<div id="lets-buid-a-shiny-app-together" class="section level2" number="10.5">
+<h2>
+<span class="header-section-number">10.5</span> Lets buid a Shiny App together<a class="anchor" aria-label="anchor" href="#lets-buid-a-shiny-app-together"><i class="fas fa-link"></i></a>
+</h2>
+</div>
+<div id="recommended-extension-packages" class="section level2" number="10.6">
+<h2>
+<span class="header-section-number">10.6</span> <strong>Recommended extension packages</strong><a class="anchor" aria-label="anchor" href="#recommended-extension-packages"><i class="fas fa-link"></i></a>
+</h2>
+<p>The following represents a selection of high quality shiny extensions that can help you get a lot more out of shiny :-</p>
+<ul>
+<li><p><strong>shinyWidgets</strong> - this package gives you many many more widgets that can be used in your app. Run <code>shinyWidgets::shinyWidgetsGallery()</code> to see a selection of available widgets with this package. See examples <a href="https://github.com/dreamRs/shinyWidgets/blob/master/README.md">here</a></p></li>
+<li><p><strong>shinyjs</strong> - this is an excellent package that gives the user the ability to greatly extend shiny’s utility via a series of javascript. The applications of this package range from very simple to highly advanced, but you might want to first use it to manipulate the ui in simple ways, like hiding/showing elements, or enabling/disabling buttons. Find out more <a href="https://deanattali.com/shinyjs/basic">here</a></p></li>
+<li><p><strong>shinydashboard</strong> - this package massively expands the available ui that can be used in shiny, specifically letting the user create a complex dashboard with a variety of complex layouts. See more <a href="https://rstudio.github.io/shinydashboard/">here</a></p></li>
+<li><p><strong>shinydashboardPlus</strong> - get even more features out of the <strong>shinydashboard</strong> framework! See more <a href="https://rinterface.github.io/shinydashboardPlus/articles/shinydashboardPlus.html">here</a></p></li>
+<li><p><strong>shinythemes</strong> - change the default css theme for your shiny app with a wide range of preset templates! See more <a href="https://rstudio.github.io/shinythemes/">here</a></p></li>
+</ul>
+<p>There are also a number of packages that can be used to create interactive outputs that are shiny compatible.</p>
+<ul>
+<li><p><strong>DT</strong> is semi-incorporated into base-shiny, but provides a great set of functions to create interactive tables.</p></li>
+<li><p><strong>plotly</strong> is a package for creating interactive plots that the user can manipulate in app. You can also convert your plot to interactive versions via <a href="https://rdrr.io/pkg/plotly/man/ggplotly.html"><code>plotly::ggplotly()</code></a>! As alternatives, <strong>dygraphs</strong> and <strong>highcharter</strong> are also excellent.</p></li>
+</ul>
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="reproducible-results-markdown-quarto-notebooks.html"><span class="header-section-number">9</span> Reproducible Results (Markdown, Quarto &amp; Notebooks)</a></div>
+<div class="next"><a href="github_r.html"><span class="header-section-number">11</span> Version control with Git and GitHub</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#r-shiny"><span class="header-section-number">10</span> R Shiny</a></li>
+<li>
+<a class="nav-link" href="#introduction-1"><span class="header-section-number">10.1</span> Introduction</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#some-sample-of-live-shiny-apps"><span class="header-section-number">10.1.1</span> Some sample of Live Shiny Apps</a></li>
+<li><a class="nav-link" href="#what-experience-do-i-need"><span class="header-section-number">10.1.2</span> What experience do I need?</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#structure-of-a-shiny-app"><span class="header-section-number">10.2</span> Structure Of a shiny App</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#basic-file-structures"><span class="header-section-number">10.2.1</span> Basic file structures</a></li></ul>
+</li>
+<li>
+<a class="nav-link" href="#building-the-ui"><span class="header-section-number">10.3</span> Building the UI</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#inputs"><span class="header-section-number">10.3.1</span> Inputs</a></li>
+<li><a class="nav-link" href="#outputs"><span class="header-section-number">10.3.2</span> Outputs</a></li>
+<li><a class="nav-link" href="#html-content"><span class="header-section-number">10.3.3</span> HTML content</a></li>
+<li><a class="nav-link" href="#layouts"><span class="header-section-number">10.3.4</span> Layouts</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#sharing-shiny-apps"><span class="header-section-number">10.4</span> Sharing Shiny apps</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#steps-to-deploy-on-shinyapps.io"><span class="header-section-number">10.4.1</span> Steps to deploy on shinyapps.io</a></li></ul>
+</li>
+<li><a class="nav-link" href="#lets-buid-a-shiny-app-together"><span class="header-section-number">10.5</span> Lets buid a Shiny App together</a></li>
+<li><a class="nav-link" href="#recommended-extension-packages"><span class="header-section-number">10.6</span> Recommended extension packages</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+          
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>A Comprehensive Guide to Use R</strong>" was written by Africano BYAMUGISHA. It was last built on 2023-01-05.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer>
+</body>
+</html>

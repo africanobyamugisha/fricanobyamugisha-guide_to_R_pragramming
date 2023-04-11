@@ -6,23 +6,24 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>5 Data Wrangling | A Comprehensive Guide to Use R</title>
 <meta name="author" content="Africano BYAMUGISHA">
-<meta name="description" content="5.1 R Data Wrangling Packages While there are tons of R packages out there to help you work with data, we’re going to cover the packages and functions within those packages that you’ll absolutely...">
+<meta name="description" content="Data you import will rarely be in a format necessary for analysis, and you will need to manipulate it before exploring the questions you are interested in. This may take more time than doing the...">
 <meta name="generator" content="bookdown 0.33 with bs4_book()">
 <meta property="og:title" content="5 Data Wrangling | A Comprehensive Guide to Use R">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://github.io/africanobyamugisha/data-wrangling.html">
 <meta property="og:image" content="https://github.io/africanobyamugisha/images/flyer.png">
-<meta property="og:description" content="5.1 R Data Wrangling Packages While there are tons of R packages out there to help you work with data, we’re going to cover the packages and functions within those packages that you’ll absolutely...">
+<meta property="og:description" content="Data you import will rarely be in a format necessary for analysis, and you will need to manipulate it before exploring the questions you are interested in. This may take more time than doing the...">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="5 Data Wrangling | A Comprehensive Guide to Use R">
-<meta name="twitter:description" content="5.1 R Data Wrangling Packages While there are tons of R packages out there to help you work with data, we’re going to cover the packages and functions within those packages that you’ll absolutely...">
+<meta name="twitter:description" content="Data you import will rarely be in a format necessary for analysis, and you will need to manipulate it before exploring the questions you are interested in. This may take more time than doing the...">
 <meta name="twitter:image" content="https://github.io/africanobyamugisha/images/flyer.png">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.2/transition.js"></script><script src="libs/bs3compat-0.4.2/tabs.js"></script><script src="libs/bs3compat-0.4.2/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
 <script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/htmlwidgets-1.6.1/htmlwidgets.js"></script><script src="libs/plotly-binding-4.10.1/plotly.js"></script><script src="libs/typedarray-0.1/typedarray.min.js"></script><link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet">
 <script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script><link href="libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet">
-<script src="libs/plotly-main-2.11.1/plotly-latest.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+<script src="libs/plotly-main-2.11.1/plotly-latest.min.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
     
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
   </style>
@@ -57,14 +58,11 @@
 <li><a class="" href="working-with-data.html"><span class="header-section-number">4</span> Working With Data</a></li>
 <li><a class="active" href="data-wrangling.html"><span class="header-section-number">5</span> Data Wrangling</a></li>
 <li><a class="" href="data-visualisation.html"><span class="header-section-number">6</span> Data Visualisation</a></li>
-<li><a class="" href="practice-plotting-using-ggplot2.html"><span class="header-section-number">7</span> Practice plotting using ggplot2</a></li>
-<li><a class="" href="statistics-in-r.html"><span class="header-section-number">8</span> Statistics in R</a></li>
-<li><a class="" href="functions.html"><span class="header-section-number">9</span> Functions</a></li>
-<li><a class="" href="interactive-reporting-shiny-markdowm-quarto.html"><span class="header-section-number">10</span> Interactive Reporting (Shiny, Markdowm, Quarto)</a></li>
+<li><a class="" href="statistics-in-r.html"><span class="header-section-number">7</span> Statistics in R</a></li>
+<li><a class="" href="functions.html"><span class="header-section-number">8</span> Functions</a></li>
+<li><a class="" href="reproducible-results-markdown-quarto-notebooks.html"><span class="header-section-number">9</span> Reproducible Results (Markdown, Quarto &amp; Notebooks)</a></li>
+<li><a class="" href="r-shiny.html"><span class="header-section-number">10</span> R Shiny</a></li>
 <li><a class="" href="github_r.html"><span class="header-section-number">11</span> Version control with Git and GitHub</a></li>
-<li><a class="" href="survey-sampling.html"><span class="header-section-number">12</span> Survey Sampling</a></li>
-<li><a class="" href="text-mining-for-qualitative-analysis.html"><span class="header-section-number">13</span> Text Mining for Qualitative Analysis</a></li>
-<li><a class="" href="machine-learning.html"><span class="header-section-number">14</span> Machine Learning</a></li>
 <li><a class="" href="additional-resources.html">Additional Resources</a></li>
 </ul>
 
@@ -77,7 +75,24 @@
 <h1>
 <span class="header-section-number">5</span> Data Wrangling<a class="anchor" aria-label="anchor" href="#data-wrangling"><i class="fas fa-link"></i></a>
 </h1>
-<p><img src="images/cheatsheets/data_wrangling_cheatsheet-0000.png" style="width:100.0%"><img src="images/cheatsheets/data_wrangling_cheatsheet-0001.png" style="width:100.0%"></p>
+<div class="inline-figure"><img src="images/data%20wrangling.jpg" style="width:95.0%"></div>
+<p>Data you import will rarely be in a format necessary for analysis, and you will need to manipulate it before exploring the questions you are interested in. This may take more time than doing the analysis itself! In this section, we will learn some basic techniques for manipulating, managing, and wrangling with our data in R. Specifically, we will rely on the <a href="https://vita.had.co.nz/papers/tidy-data.pdf">philosophy of “tidy data” as articulated by Hadley Wickham.</a></p>
+<p>According to Wickham, data is “tidy” when it meets three key criteria:</p>
+<ol style="list-style-type: decimal">
+<li><p>Each observation is in a row.</p></li>
+<li><p>Each variable is in a column.</p></li>
+<li><p>Each value has its own cell.</p></li>
+</ol>
+<p>Being observant of these criteria allows us to recognize when data is organized or unorganized. It also provides us a standardized schema and set of tools for cleaning up.</p>
+<p>some of the most common ways that datasets are “<strong>messy</strong>:”</p>
+<ul>
+<li><p>Column headers are values, not variable names.</p></li>
+<li><p>Multiple variables are stored in one column.</p></li>
+<li><p>Variables are stored in both rows and columns.</p></li>
+<li><p>Multiple types of observational units are stored in the same table.</p></li>
+<li><p>A single observational unit is stored in multiple tables.</p></li>
+</ul>
+<p>Find the cheat sheet <a href="https://github.com/africanobyamugisha/cheatsheets/blob/main/data-wrangling-cheatsheet.pdf" title="Ckick to view the cheat sheet"><strong>HERE</strong></a></p>
 <div id="r-data-wrangling-packages" class="section level2" number="5.1">
 <h2>
 <span class="header-section-number">5.1</span> R Data Wrangling Packages<a class="anchor" aria-label="anchor" href="#r-data-wrangling-packages"><i class="fas fa-link"></i></a>
@@ -158,21 +173,39 @@
 <p>The pipe operator looks like this in R: <code>%&gt;%</code>. Whenever you see the pipe <code>%&gt;%</code>, think of the word “then,”.</p>
 <p>Generally, the pipe operator allows you to chain a number of different functions together in a particular order. If you wanted to take data frame A and carry out function B on it in R, you could depict this with an arrow pointing from A to B:</p>
 <p>In base R syntax, it would be carried out by calling the function B on the data frame object A:</p>
+<p></p>
 <div class="sourceCode" id="cb45"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">B</span><span class="op">(</span><span class="va">A</span><span class="op">)</span></span></code></pre></div>
+<p></p>
 <p>Alternatively, you could use the pipe operator (<code>%&gt;%</code>):</p>
-<pre><code>A %&gt;% B</code></pre>
+<p></p>
+<div class="sourceCode" id="cb46"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">A</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>    <span class="va">B</span></span></code></pre></div>
+<p></p>
 <p>However, often you are not performing just one action on a data frame, but rather you are looking to carry out multiple functions.</p>
 <p>Say that you want to take data frame A and carry out function B, <em>then</em> you want to take the output from that and <em>then</em> carry out function C. Subsequently you want to take the output of that and <em>then</em> carry out function D.</p>
 <p>In R syntax, we would first apply function B to data frame A, then apply function C to this output, then apply function D to this output. This results in the following syntax that is hard to read because multiple calls to functions are nested within each other:</p>
-<pre><code>D(C(B(A)))</code></pre>
+<p></p>
+<div class="sourceCode" id="cb47"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/deriv.html">D</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/zC.html">C</a></span><span class="op">(</span><span class="fu">B</span><span class="op">(</span><span class="va">A</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<p></p>
 <p>Alternatively, you could use the pipe operator. Each time you want take the output of one function and carry out something new on that output, you will use the pipe operator:</p>
-<pre><code>A %&gt;% B %&gt;% C %&gt;% D</code></pre>
-<p>And, even more readable is when each of these steps is indedented out onto its own individual line of code:</p>
-<pre><code>A %&gt;% 
-  B %&gt;% 
-    C %&gt;%
-      D</code></pre>
+<p></p>
+<div class="sourceCode" id="cb48"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">A</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>    <span class="va">B</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>    <span class="va">C</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>    <span class="va">D</span></span></code></pre></div>
+<p></p>
+<p>And, even more readable is when each of these steps is indented out onto its own individual line of code:</p>
+<p></p>
+<div class="sourceCode" id="cb49"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">A</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>    <span class="va">B</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>    <span class="va">C</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>    <span class="va">D</span></span></code></pre></div>
+<p></p>
 <p>While both of the previous two code examples would provide the same output, the one below is more readable, <u>which is a large part of why pipes are used. It makes your code more understandable to you and others</u>.</p>
 <p>Below we’ll use this pipe operator a lot. Remember, it takes output from the left hand side and feeds it into the function that comes after the pipe <strong>as the first argument.</strong></p>
 </div>
@@ -188,9 +221,25 @@
 <p>This dataset includes sleep times and weights from a number of different mammals. It has 83 rows, with each row including information about a different type of animal, and 11 variables. As each row is a different animal and each column includes information about that animal, this is a <strong>wide</strong> dataset.</p>
 <p>To get an idea of what variables are included in this data frame, you can use <code><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse()</a></code>. This function summarizes how many rows there are (<code>Observations</code>) and how many columns there are (<code>Variables</code>). Additionally, it gives you a glimpse into the type of data contained in each column.</p>
 <p>Specifically, in this dataset, we know that the first column is <code>name</code> and that it contains a character vector (<code>chr</code>) and that the first three entries are “Cheetah,” “Owl monkey,” and “Mountain beaver.” It works similarly to the base R <code><a href="https://rdrr.io/r/base/summary.html">summary()</a></code> function.</p>
-<pre><code><a href="https://ggplot2.tidyverse.org">## take a look at the data
-library(ggplot2)
-glimpse(msleep)</a></code></pre>
+<p></p>
+<div class="sourceCode" id="cb50"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co">## take a look at the data</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse</a></span><span class="op">(</span><span class="va">msleep</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## Rows: 83
+## Columns: 11
+## $ name         &lt;chr&gt; "Cheetah", "Owl monkey", "Mountain be…
+## $ genus        &lt;chr&gt; "Acinonyx", "Aotus", "Aplodontia", "B…
+## $ vore         &lt;chr&gt; "carni", "omni", "herbi", "omni", "he…
+## $ order        &lt;chr&gt; "Carnivora", "Primates", "Rodentia", …
+## $ conservation &lt;chr&gt; "lc", NA, "nt", "lc", "domesticated",…
+## $ sleep_total  &lt;dbl&gt; 12.1, 17.0, 14.4, 14.9, 4.0, 14.4, 8.…
+## $ sleep_rem    &lt;dbl&gt; NA, 1.8, 2.4, 2.3, 0.7, 2.2, 1.4, NA,…
+## $ sleep_cycle  &lt;dbl&gt; NA, NA, NA, 0.1333333, 0.6666667, 0.7…
+## $ awake        &lt;dbl&gt; 11.9, 7.0, 9.6, 9.1, 20.0, 9.6, 15.3,…
+## $ brainwt      &lt;dbl&gt; NA, 0.01550, NA, 0.00029, 0.42300, NA…
+## $ bodywt       &lt;dbl&gt; 50.000, 0.480, 1.350, 0.019, 600.000,…</code></pre>
+<p></p>
 <p>Glimpse of msleep dataset</p>
 <div id="filtering-rows" class="section level3" number="5.3.1">
 <h3>
@@ -198,7 +247,7 @@ glimpse(msleep)</a></code></pre>
 </h3>
 <p>If you were only interested in learning more about the sleep times of “Primates,” we could filter this dataset to include only data about those mammals that are also Primates. As we can see from <code><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse()</a></code>, this information is contained within the <code>order</code> variable. So to do this within R, we use the following syntax:</p>
 <p></p>
-<div class="sourceCode" id="cb51"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb52"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># filter to only include primates</span></span>
 <span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">msleep</span>, <span class="va">order</span> <span class="op">==</span> <span class="st">"Primates"</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## # A tibble: 12 × 11
@@ -219,7 +268,7 @@ glimpse(msleep)</a></code></pre>
 ## # … with 3 more variables: awake &lt;dbl&gt;, brainwt &lt;dbl&gt;,
 ## #   bodywt &lt;dbl&gt;, and abbreviated variable names
 ## #   ¹​conservation, ²​sleep_total, ³​sleep_rem, ⁴​sleep_cycle</code></pre>
-<div class="sourceCode" id="cb53"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb54"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># OR</span></span>
 <span><span class="va">msleep</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">order</span> <span class="op">==</span> <span class="st">"Primates"</span><span class="op">)</span></span></code></pre></div>
@@ -247,13 +296,27 @@ glimpse(msleep)</a></code></pre>
 <p>Now, we have a smaller dataset of only 12 mammals (as opposed to the original 83) and we can see that the <code>order</code> variable column only includes “Primates.”</p>
 <p>But, what if we were only interested in Primates who sleep more than 10 hours total per night? This information is in the <code>sleep_total</code> column. Fortunately, <code><a href="https://dplyr.tidyverse.org/reference/filter.html">filter()</a></code> also works on numeric variables.</p>
 <p>To accomplish this, you would use the following syntax, separating the multiple filters you want to apply with a comma:</p>
-<pre><code>msleep %&gt;%
-  filter(order == "Primates" &amp; sleep_total &gt; 10)</code></pre>
+<p></p>
+<div class="sourceCode" id="cb56"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">msleep</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">order</span> <span class="op">==</span> <span class="st">"Primates"</span> <span class="op">&amp;</span> <span class="va">sleep_total</span> <span class="op">&gt;</span> <span class="fl">10</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## # A tibble: 5 × 11
+##   name     genus vore  order conse…¹ sleep…² sleep…³ sleep…⁴
+##   &lt;chr&gt;    &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;
+## 1 Owl mon… Aotus omni  Prim… &lt;NA&gt;       17       1.8   NA   
+## 2 Patas m… Eryt… omni  Prim… lc         10.9     1.1   NA   
+## 3 Macaque  Maca… omni  Prim… &lt;NA&gt;       10.1     1.2    0.75
+## 4 Slow lo… Nyct… carni Prim… &lt;NA&gt;       11      NA     NA   
+## 5 Potto    Pero… omni  Prim… lc         11      NA     NA   
+## # … with 3 more variables: awake &lt;dbl&gt;, brainwt &lt;dbl&gt;,
+## #   bodywt &lt;dbl&gt;, and abbreviated variable names
+## #   ¹​conservation, ²​sleep_total, ³​sleep_rem, ⁴​sleep_cycle</code></pre>
+<p></p>
 <p>Note that we have used the “greater than” comparison operator with <code>sleep_total</code>.</p>
 <p>Now, we have a dataset focused in on only 5 mammals, all of which are primates who sleep for more than 10 hours a night total.</p>
 <p>We can obtain the same result with the AND <code>&amp;</code> logical operator</p>
 <p></p>
-<div class="sourceCode" id="cb56"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb58"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">msleep</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">order</span> <span class="op">==</span> <span class="st">"Primates"</span> <span class="op">&amp;</span> <span class="va">sleep_total</span> <span class="op">&gt;</span> <span class="fl">10</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## # A tibble: 5 × 11
@@ -278,7 +341,7 @@ glimpse(msleep)</a></code></pre>
 <p>Let’s start with the code we just wrote to only include primates who sleep a lot. What if we only want to include the first column (the name of the mammal) and the sleep information (included in the columns <code>sleep_total</code>, <code>sleep_rem</code>, and <code>sleep_cycle</code>)?</p>
 <p>We would do this by starting with the code we just used, adding another pipe, and using the function <code><a href="https://dplyr.tidyverse.org/reference/select.html">select()</a></code>. Within <code><a href="https://dplyr.tidyverse.org/reference/select.html">select()</a></code>, we specify which columns we want in our output.</p>
 <p></p>
-<div class="sourceCode" id="cb58"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb60"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">msleep</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">order</span> <span class="op">==</span> <span class="st">"Primates"</span>, <span class="va">sleep_total</span> <span class="op">&gt;</span> <span class="fl">10</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">name</span>, <span class="va">sleep_total</span>, <span class="va">sleep_rem</span>, <span class="va">sleep_cycle</span><span class="op">)</span></span></code></pre></div>
@@ -297,7 +360,7 @@ glimpse(msleep)</a></code></pre>
 </blockquote>
 <p></p>
 <blockquote>
-<div class="sourceCode" id="cb60"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb62"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">msleep</span>, <span class="va">order</span> <span class="op">==</span> <span class="st">"Primates"</span>, <span class="va">sleep_total</span> <span class="op">&gt;</span> <span class="fl">10</span><span class="op">)</span>,</span>
 <span>    <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"name"</span>, <span class="st">"sleep_total"</span>, <span class="st">"sleep_rem"</span>, <span class="st">"sleep_cycle"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## # A tibble: 5 × 4
@@ -312,8 +375,8 @@ glimpse(msleep)</a></code></pre>
 <p>
 &gt;
 &gt; <strong>YOU SEE!!!</strong></p>
-<div class="inline-figure">
-<img src="laugh_emoji.jfif" style="width:15.0%"> Definitely harder to read. We’ll stick with the above approach!</div>
+<div class="inline-figure"><img src="images/laugh_emoji.png"></div>
+<p>Definitely harder to read. We’ll stick with the above approach!</p>
 </div>
 </div>
 <div id="renaming-columns" class="section level2" number="5.4">
@@ -322,7 +385,7 @@ glimpse(msleep)</a></code></pre>
 </h2>
 <p><code><a href="https://dplyr.tidyverse.org/reference/select.html">select()</a></code> can also be used to rename columns. To do so, you use the syntax: <code>new_column_name = old_column_name</code> within <code>select</code>. For example, to select the same columns and rename them <code>total</code>, <code>rem</code> and <code>cycle</code>, you would use the following syntax:</p>
 <p></p>
-<div class="sourceCode" id="cb62"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb64"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">msleep</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">order</span> <span class="op">==</span> <span class="st">"Primates"</span>, <span class="va">sleep_total</span> <span class="op">&gt;</span> <span class="fl">10</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">name</span>, total <span class="op">=</span> <span class="va">sleep_total</span>, rem <span class="op">=</span> <span class="va">sleep_rem</span>, cycle <span class="op">=</span> <span class="va">sleep_cycle</span><span class="op">)</span></span></code></pre></div>
@@ -338,7 +401,7 @@ glimpse(msleep)</a></code></pre>
 <p>It’s important to keep in mind that when using <code><a href="https://dplyr.tidyverse.org/reference/select.html">select()</a></code> to rename columns, only the specified columns will be included and renamed in the output. If you, instead, want to change the names of a few columns but return <em>all</em> columns in your output, you’ll want to use <code><a href="https://dplyr.tidyverse.org/reference/rename.html">rename()</a></code>.</p>
 <p>For example, the following, returns a data frame with all 11 columns, where the column names for three columns specified within <code><a href="https://dplyr.tidyverse.org/reference/rename.html">rename()</a></code> function have been renamed.</p>
 <p></p>
-<div class="sourceCode" id="cb64"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb66"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">msleep</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">order</span> <span class="op">==</span> <span class="st">"Primates"</span>, <span class="va">sleep_total</span> <span class="op">&gt;</span> <span class="fl">10</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/rename.html">rename</a></span><span class="op">(</span>total <span class="op">=</span> <span class="va">sleep_total</span>, rem <span class="op">=</span> <span class="va">sleep_rem</span>, cycle <span class="op">=</span> <span class="va">sleep_cycle</span><span class="op">)</span></span></code></pre></div>
@@ -365,7 +428,7 @@ glimpse(msleep)</a></code></pre>
 </h4>
 <p>The <code><a href="https://dplyr.tidyverse.org/reference/select.html">select()</a></code> function is powerful. Not only will it filter and rename columns, but it can also be used to reorder your columns. Using our example from above, if you wanted <code>sleep_rem</code> to be the first sleep column and <code>sleep_total</code> to be the last column, all you have to do is reorder them within <code><a href="https://dplyr.tidyverse.org/reference/select.html">select()</a></code>. The output from <code><a href="https://dplyr.tidyverse.org/reference/select.html">select()</a></code> would then be reordered to match the order specified within <code><a href="https://dplyr.tidyverse.org/reference/select.html">select()</a></code>.</p>
 <p></p>
-<div class="sourceCode" id="cb66"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb68"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">msleep</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">order</span> <span class="op">==</span> <span class="st">"Primates"</span>, <span class="va">sleep_total</span> <span class="op">&gt;</span> <span class="fl">10</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">name</span>, <span class="va">sleep_rem</span>, <span class="va">sleep_cycle</span>, <span class="va">sleep_total</span><span class="op">)</span></span></code></pre></div>
@@ -386,7 +449,7 @@ glimpse(msleep)</a></code></pre>
 </h4>
 <p>Rows can also be reordered. To reorder a variable in ascending order , you’ll want to use <code><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange()</a></code>. Continuing on from our example above, to now sort our rows by the amount of total sleep each mammal gets, we would use the following syntax:</p>
 <p></p>
-<div class="sourceCode" id="cb68"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb70"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">msleep</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">order</span> <span class="op">==</span> <span class="st">"Primates"</span>, <span class="va">sleep_total</span> <span class="op">&gt;</span> <span class="fl">10</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">name</span>, <span class="va">sleep_rem</span>, <span class="va">sleep_cycle</span>, <span class="va">sleep_total</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
@@ -402,7 +465,7 @@ glimpse(msleep)</a></code></pre>
 <p></p>
 <p>While <code>arrange</code> sorts variables in ascending order, it’s also possible to sort in descending order. To do this you just use <code><a href="https://dplyr.tidyverse.org/reference/desc.html">desc()</a></code> with the following syntax:</p>
 <p></p>
-<div class="sourceCode" id="cb70"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb72"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">msleep</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">order</span> <span class="op">==</span> <span class="st">"Primates"</span>, <span class="va">sleep_total</span> <span class="op">&gt;</span> <span class="fl">10</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">name</span>, <span class="va">sleep_rem</span>, <span class="va">sleep_cycle</span>, <span class="va">sleep_total</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
@@ -419,7 +482,7 @@ glimpse(msleep)</a></code></pre>
 <p>By putting <code>sleep_total</code> within <code><a href="https://dplyr.tidyverse.org/reference/desc.html">desc()</a></code>, <code><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange()</a></code> will now sort your data from the primates with the longest total sleep to the shortest.</p>
 <p><code><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange()</a></code> can also be used to order non-numeric variables. For example, <code><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange()</a></code> will sort character vectors alphabetically.</p>
 <p></p>
-<div class="sourceCode" id="cb72"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb74"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">msleep</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">order</span> <span class="op">==</span> <span class="st">"Primates"</span>, <span class="va">sleep_total</span> <span class="op">&gt;</span> <span class="fl">10</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">name</span>, <span class="va">sleep_rem</span>, <span class="va">sleep_cycle</span>, <span class="va">sleep_total</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
@@ -436,7 +499,7 @@ glimpse(msleep)</a></code></pre>
 <p>If you would like to reorder rows based on information in multiple columns, you can specify them separated by commas. This is useful if you have repeated labels in one column and want to sort within a category based on information in another column.</p>
 <p>In the example here, if there were repeated primates, this would sort the repeats based on their total sleep.</p>
 <p></p>
-<div class="sourceCode" id="cb74"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb76"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">msleep</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">order</span> <span class="op">==</span> <span class="st">"Primates"</span>, <span class="va">sleep_total</span> <span class="op">&gt;</span> <span class="fl">10</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">name</span>, <span class="va">sleep_rem</span>, <span class="va">sleep_cycle</span>, <span class="va">sleep_total</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
@@ -462,7 +525,7 @@ glimpse(msleep)</a></code></pre>
 <p>The function <code><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate()</a></code> was <em>made</em> for <strong>all</strong> of these new-column-creating situations. This function has a lot of capabilities. We’ll cover the basics here.</p>
 <p>Returning to the <code>msleep</code> dataset, after filtering and re-ordering, we can create a new column with <code><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate()</a></code>. Within <code><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate()</a></code>, we will calculate the number of minutes each mammal sleeps by multiplying the number of hours each animal sleeps by 60 minutes.</p>
 <p></p>
-<div class="sourceCode" id="cb76"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb78"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">msleep</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">order</span> <span class="op">==</span> <span class="st">"Primates"</span>, <span class="va">sleep_total</span> <span class="op">&gt;</span> <span class="fl">10</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">name</span>, <span class="va">sleep_rem</span>, <span class="va">sleep_cycle</span>, <span class="va">sleep_total</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
@@ -478,7 +541,177 @@ glimpse(msleep)</a></code></pre>
 ## 5 Slow loris        NA         NA           11           660
 ## # … with abbreviated variable name ¹​sleep_total_min</code></pre>
 <p></p>
+</div>
+<div id="tasks-3" class="section level2" number="5.7">
+<h2>
+<span class="header-section-number">5.7</span> Tasks<a class="anchor" aria-label="anchor" href="#tasks-3"><i class="fas fa-link"></i></a>
+</h2>
+<div id="exercise-1-1" class="section level3" number="5.7.1">
+<h3>
+<span class="header-section-number">5.7.1</span> Exercise 1:<a class="anchor" aria-label="anchor" href="#exercise-1-1"><i class="fas fa-link"></i></a>
+</h3>
+<p><strong>Basic Data Manipulation</strong></p>
+<p>In this exercise, you’ll work with a toy data set showing product purchases from an electronics store. While the data set is small and simple, it still illustrates many of the challenges you have to address in real-world data wrangling!</p>
+<p>Clean this data set to make it easier to visualize and analyze.</p>
+<p><strong>download the data from <a href="https://github.com/africanobyamugisha/datasets/blob/main/guide_to_R_programming%20data/refine_original_toy_data.csv" title="downlod the data">HERE</a></strong></p>
+<p><strong>Problem 1</strong></p>
+<p><strong>Download the data, setup you workspace, i.e. set up working directory, add the dataset to the directory, create a project and r script or r markdown, install required packages, and Load the data in RStudio</strong></p>
+<p></p>
+<div class="sourceCode" id="cb80"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># required pacjkages</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://readr.tidyverse.org">readr</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyr.tidyverse.org">tidyr</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span></span></code></pre></div>
+<p></p>
+<p></p>
+<div class="sourceCode" id="cb81"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">dt</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"refine_original_toy_data"</span><span class="op">)</span></span></code></pre></div>
+<p></p>
+<p><strong>Problem 2</strong></p>
+<p><strong>1: Clean up brand names</strong> Clean up the ‘company’ column so all of the misspellings of the brand names are standardized. For example, you can transform the values in the column to be: philips, akzo, van houten and unilever (all lowercase).</p>
+<p></p>
+<div class="sourceCode" id="cb82"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">dt</span> <span class="op">&lt;-</span> <span class="va">dt</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>company <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/ifelse.html">ifelse</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/grep.html">grepl</a></span><span class="op">(</span><span class="st">"^phil|^fil|^phl"</span>, <span class="va">company</span>,</span>
+<span>        ignore.case <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>, <span class="st">"philips"</span>, <span class="va">company</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>company <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/ifelse.html">ifelse</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/grep.html">grepl</a></span><span class="op">(</span><span class="st">"^ak"</span>, <span class="va">company</span>, ignore.case <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span>
+<span>        <span class="st">"akzo"</span>, <span class="va">company</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>company <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/ifelse.html">ifelse</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/grep.html">grepl</a></span><span class="op">(</span><span class="st">"^van"</span>, <span class="va">company</span>, ignore.case <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span>
+<span>        <span class="st">"van_houten"</span>, <span class="va">company</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>company <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/ifelse.html">ifelse</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/grep.html">grepl</a></span><span class="op">(</span><span class="st">"^uni"</span>, <span class="va">company</span>, ignore.case <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span>
+<span>        <span class="st">"unilever"</span>, <span class="va">company</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<p></p>
+<p><strong>Problem 3</strong></p>
+<p><strong>2: Separate product code and number</strong> Separate the product code and product number into separate columns i.e. add two new columns called product_code and product_number, containing the product code and number respectively.</p>
+<p></p>
+<div class="sourceCode" id="cb83"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">dt</span> <span class="op">&lt;-</span> <span class="va">dt</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>    <span class="fu"><a href="https://tidyr.tidyverse.org/reference/separate.html">separate</a></span><span class="op">(</span><span class="va">`Product code / number`</span>, into <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"product_code"</span>,</span>
+<span>        <span class="st">"Product_number"</span><span class="op">)</span>, sep <span class="op">=</span> <span class="st">"-"</span><span class="op">)</span></span></code></pre></div>
+<p></p>
+<p><strong>Problem 4</strong></p>
+<p><strong>3: Add product categories</strong> You learn that the product codes actually represent the following product categories: p = Smartphone v = TV x = Laptop q = Tablet In order to make the data more readable, add a column with the product category for each record.</p>
+<p></p>
+<div class="sourceCode" id="cb84"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">dt</span> <span class="op">&lt;-</span> <span class="va">dt</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>product_category <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/ifelse.html">ifelse</a></span><span class="op">(</span><span class="va">product_code</span> <span class="op">==</span> <span class="st">"p"</span>, <span class="st">"Smartphone"</span>,</span>
+<span>        <span class="st">""</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>product_category <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/ifelse.html">ifelse</a></span><span class="op">(</span><span class="va">product_code</span> <span class="op">==</span> <span class="st">"x"</span>, <span class="st">"Laptop"</span>,</span>
+<span>        <span class="va">product_category</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>product_category <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/ifelse.html">ifelse</a></span><span class="op">(</span><span class="va">product_code</span> <span class="op">==</span> <span class="st">"v"</span>, <span class="st">"TV"</span>,</span>
+<span>        <span class="va">product_category</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>product_category <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/ifelse.html">ifelse</a></span><span class="op">(</span><span class="va">product_code</span> <span class="op">==</span> <span class="st">"q"</span>, <span class="st">"Tablet"</span>,</span>
+<span>        <span class="va">product_category</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<p></p>
+<p><strong>Problem 5</strong></p>
+<p><strong>4: Add full address for geocoding</strong> You’d like to view the customer information on a map. In order to do that, the addresses need to be in a form that can be easily geocoded. Create a new column full_address that concatenates the three address fields (address, city, country), separated by commas.</p>
+<p></p>
+<div class="sourceCode" id="cb85"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">dt</span> <span class="op">&lt;-</span> <span class="va">dt</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>    <span class="fu"><a href="https://tidyr.tidyverse.org/reference/unite.html">unite</a></span><span class="op">(</span><span class="va">full_address</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">address</span>, <span class="va">city</span>, <span class="va">country</span><span class="op">)</span>, sep <span class="op">=</span> <span class="st">","</span><span class="op">)</span></span></code></pre></div>
+<p></p>
+<p><strong>Problem 6</strong></p>
+<p><strong>5: Create dummy variables for company and product category</strong> Both the company name and product category are categorical variables i.e. they take only a fixed set of values. In order to use them in further analysis you need to create dummy variables. Create dummy binary variables for each of them with the prefix company_ and product_ i.e., *Add four binary (1 or 0) columns for company: company_philips, company_akzo, company_van_houten and company_unilever.</p>
+<p></p>
+<div class="sourceCode" id="cb86"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">dt</span> <span class="op">&lt;-</span> <span class="va">dt</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>company_philips <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/ifelse.html">ifelse</a></span><span class="op">(</span><span class="va">company</span> <span class="op">==</span> <span class="st">"philips"</span>, <span class="fl">1</span>,</span>
+<span>        <span class="fl">0</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>company_akzo <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/ifelse.html">ifelse</a></span><span class="op">(</span><span class="va">company</span> <span class="op">==</span> <span class="st">"akzo"</span>, <span class="fl">1</span>, <span class="fl">0</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>company_van_houten <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/ifelse.html">ifelse</a></span><span class="op">(</span><span class="va">company</span> <span class="op">==</span> <span class="st">"van_houten"</span>,</span>
+<span>        <span class="fl">1</span>, <span class="fl">0</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>company_unilever <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/ifelse.html">ifelse</a></span><span class="op">(</span><span class="va">company</span> <span class="op">==</span> <span class="st">"unilever"</span>, <span class="fl">1</span>,</span>
+<span>        <span class="fl">0</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<p></p>
+<p><strong>Problem 7</strong></p>
+<p><strong>6: Add four binary (1 or 0) columns for product category:</strong> product_smartphone, product_tv, product_laptop and product_tablet.</p>
+<p></p>
+<div class="sourceCode" id="cb87"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">dt</span> <span class="op">&lt;-</span> <span class="va">dt</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>product_smartphone <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/ifelse.html">ifelse</a></span><span class="op">(</span><span class="va">product_category</span> <span class="op">==</span> <span class="st">"Smartphone"</span>,</span>
+<span>        <span class="fl">1</span>, <span class="fl">0</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>product_TV <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/ifelse.html">ifelse</a></span><span class="op">(</span><span class="va">product_category</span> <span class="op">==</span> <span class="st">"TV"</span>, <span class="fl">1</span>, <span class="fl">0</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>product_laptop <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/ifelse.html">ifelse</a></span><span class="op">(</span><span class="va">product_category</span> <span class="op">==</span> <span class="st">"Laptop"</span>,</span>
+<span>        <span class="fl">1</span>, <span class="fl">0</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>product_tablet <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/ifelse.html">ifelse</a></span><span class="op">(</span><span class="va">product_category</span> <span class="op">==</span> <span class="st">"Tablet"</span>,</span>
+<span>        <span class="fl">1</span>, <span class="fl">0</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<p></p>
+</div>
+<div id="exercise-2-1" class="section level3" number="5.7.2">
+<h3>
+<span class="header-section-number">5.7.2</span> <strong>Exercise 2</strong><a class="anchor" aria-label="anchor" href="#exercise-2-1"><i class="fas fa-link"></i></a>
+</h3>
+<p><strong>The Challenge</strong></p>
+<div id="problem-statement" class="section level4" number="5.7.2.1">
+<h4>
+<span class="header-section-number">5.7.2.1</span> Problem Statement<a class="anchor" aria-label="anchor" href="#problem-statement"><i class="fas fa-link"></i></a>
+</h4>
+<p><strong>Policy Priority:</strong> The Department of Education is focused on ensuring that parents, students, and policymakers are able to use its publicly available data to take meaningful action to improve outcomes.Supporting Decision-Making for Student Sub-populations and their Families.</p>
+<p><strong>Problem:</strong> Certain mobile or disconnected student populations entering or reentering the community could greatly benefit from data and resources to support their wellbeing and success. Such students and families often lack information that is necessary to distinguish between their school options, access services, and identify affordable housing near high-quality school and in safe neighborhoods that have access to transit and employment.</p>
+</div>
+<div id="use-case" class="section level4" number="5.7.2.2">
+<h4>
+<span class="header-section-number">5.7.2.2</span> Use Case<a class="anchor" aria-label="anchor" href="#use-case"><i class="fas fa-link"></i></a>
+</h4>
+<p>Maria is a 25-year-old US Army veteran, newly returned to the civilian workforce. She has recently completed a six-year commitment with the Army. During her time in the Army, she worked in supply management and logistics. She has decided to pursue a degree in Management Systems and Information Technology.</p>
+<p>Maria has asked you to use your skill with data to help her search for the best school for her. She is willing to relocate anywhere in the continental United States, but she has a few criteria that her ideal schools must satisfy:</p>
+<ol style="list-style-type: decimal">
+<li><p>safety (low crime).</p></li>
+<li><p>urban -- Maria wants to live the big city life.</p></li>
+<li><p>start-ups -- the school should be in a metropolitan area that ranks highly in entrepreneurialism (she plans to find an internship at a startup while she studies).</p></li>
+</ol>
+<p>Maria would like you to help her narrow down her search to a list of schools that she can investigate more closely before making her decision.</p>
+</div>
+<div id="your-task" class="section level4" number="5.7.2.3">
+<h4>
+<span class="header-section-number">5.7.2.3</span> Your Task<a class="anchor" aria-label="anchor" href="#your-task"><i class="fas fa-link"></i></a>
+</h4>
+<ol style="list-style-type: decimal">
+<li><p>Produce a dataset of schools which satisfy all of Maria’s criteria</p></li>
+<li><p>Rank them from best to worst according to the same criteria.</p></li>
+</ol>
+<p>Maria’s schools must:</p>
+<ol style="list-style-type: decimal">
+<li><p>be in an urban/metropolitan area.</p></li>
+<li><p>be in a city that ranks 75th percentile or higher on Kauffman’s start-up rankings.</p></li>
+<li><p>be below 50th percentile in overall crime.</p></li>
+<li><p>offer a 2-year or 4-year degree in Information Technology/Science.</p></li>
+</ol>
+<p>All the data you need is provided <a href="https://github.com/africanobyamugisha/datasets/tree/main/data-wrangling-challange-data" title="Open data folder">HERE</a> (the respective data Dectionaries and descriptions in pdf files) with the exception of the entrepreneurial data, which can be accessed at <a href="http://www.kauffman.org/microsites/kauffman-index/about/archive/kauffman-index-of-entrepreneurial-activity-data-files" class="uri">http://www.kauffman.org/microsites/kauffman-index/about/archive/kauffman-index-of-entrepreneurial-activity-data-files</a> (Metro Area Components Data 2015)</p>
+<p>Faluire to download the data, contact the Author <a href="https://africanobyamugisha.github.io/guide_to_R_pragramming/about-the-author.html" title="view author contacts">HERE</a></p>
+</div>
+<div id="tips" class="section level4" number="5.7.2.4">
+<h4>
+<span class="header-section-number">5.7.2.4</span> Tips:<a class="anchor" aria-label="anchor" href="#tips"><i class="fas fa-link"></i></a>
+</h4>
+<ol style="list-style-type: decimal">
+<li><p>Read the data dictionaries to figure out what the variables mean and which ones you will need to use.</p></li>
+<li><p>Eliminate the columns that you dont need.</p></li>
+<li><p>Look for suitable columns to join the tables on.</p></li>
+<li><p>Perform any cleaning and standardization needed to facilitate the joins.</p></li>
+<li><p>Engineer a summary variable for school crime so that we can compare schools by levels of crime overall.</p></li>
+<li><p>Eliminate from the data all the data points that fail to satisfy Maria’s criteria.</p></li>
+<li><p>Engineer a method for ranking the schools in consideration of all of Maria’s criteria taken together.</p></li>
+</ol>
+</div>
+<div id="additional-credit" class="section level4" number="5.7.2.5">
+<h4>
+<span class="header-section-number">5.7.2.5</span> Additional Credit<a class="anchor" aria-label="anchor" href="#additional-credit"><i class="fas fa-link"></i></a>
+</h4>
+<ol style="list-style-type: decimal">
+<li><p>Maria doesn’t like the cold. Find and integrate temperature data. Eliminate any schools located in cities/areas below the 25th percentile in average temperature.</p></li>
+<li><p>Develop a simple presentation, that you will use to present the results to her.</p></li>
+</ol>
+</div>
+<div id="solution" class="section level4" number="5.7.2.6">
+<h4>
+<span class="header-section-number">5.7.2.6</span> Solution<a class="anchor" aria-label="anchor" href="#solution"><i class="fas fa-link"></i></a>
+</h4>
+<p><strong>Access the solution <a href="https://github.com/africanobyamugisha/guide_to_R_pragramming/tree/main/Data%20Wrangling%20Challange%20Solution" title="open the solution folder">HERE</a></strong></p>
+<p><strong>Failure to find the solution, contact the Author <a href="https://africanobyamugisha.github.io/guide_to_R_pragramming/about-the-author.html" title="view author contacts">HERE</a></strong></p>
 
+</div>
+</div>
 </div>
 </div>
   <div class="chapter-nav">
@@ -506,6 +739,12 @@ glimpse(msleep)</a></code></pre>
 <li><a class="nav-link" href="#renaming-columns"><span class="header-section-number">5.4</span> Renaming Columns</a></li>
 <li><a class="nav-link" href="#reordering"><span class="header-section-number">5.5</span> Reordering</a></li>
 <li><a class="nav-link" href="#creating-new-columns"><span class="header-section-number">5.6</span> Creating New Columns</a></li>
+<li>
+<a class="nav-link" href="#tasks-3"><span class="header-section-number">5.7</span> Tasks</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#exercise-1-1"><span class="header-section-number">5.7.1</span> Exercise 1:</a></li>
+<li><a class="nav-link" href="#exercise-2-1"><span class="header-section-number">5.7.2</span> Exercise 2</a></li>
+</ul>
+</li>
 </ul>
 
       <div class="book-extra">

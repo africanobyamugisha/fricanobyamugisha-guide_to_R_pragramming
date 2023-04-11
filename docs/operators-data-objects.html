@@ -22,7 +22,8 @@
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.2/transition.js"></script><script src="libs/bs3compat-0.4.2/tabs.js"></script><script src="libs/bs3compat-0.4.2/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
 <script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/htmlwidgets-1.6.1/htmlwidgets.js"></script><script src="libs/plotly-binding-4.10.1/plotly.js"></script><script src="libs/typedarray-0.1/typedarray.min.js"></script><link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet">
 <script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script><link href="libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet">
-<script src="libs/plotly-main-2.11.1/plotly-latest.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+<script src="libs/plotly-main-2.11.1/plotly-latest.min.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
     
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
   </style>
@@ -57,14 +58,11 @@
 <li><a class="" href="working-with-data.html"><span class="header-section-number">4</span> Working With Data</a></li>
 <li><a class="" href="data-wrangling.html"><span class="header-section-number">5</span> Data Wrangling</a></li>
 <li><a class="" href="data-visualisation.html"><span class="header-section-number">6</span> Data Visualisation</a></li>
-<li><a class="" href="practice-plotting-using-ggplot2.html"><span class="header-section-number">7</span> Practice plotting using ggplot2</a></li>
-<li><a class="" href="statistics-in-r.html"><span class="header-section-number">8</span> Statistics in R</a></li>
-<li><a class="" href="functions.html"><span class="header-section-number">9</span> Functions</a></li>
-<li><a class="" href="interactive-reporting-shiny-markdowm-quarto.html"><span class="header-section-number">10</span> Interactive Reporting (Shiny, Markdowm, Quarto)</a></li>
+<li><a class="" href="statistics-in-r.html"><span class="header-section-number">7</span> Statistics in R</a></li>
+<li><a class="" href="functions.html"><span class="header-section-number">8</span> Functions</a></li>
+<li><a class="" href="reproducible-results-markdown-quarto-notebooks.html"><span class="header-section-number">9</span> Reproducible Results (Markdown, Quarto &amp; Notebooks)</a></li>
+<li><a class="" href="r-shiny.html"><span class="header-section-number">10</span> R Shiny</a></li>
 <li><a class="" href="github_r.html"><span class="header-section-number">11</span> Version control with Git and GitHub</a></li>
-<li><a class="" href="survey-sampling.html"><span class="header-section-number">12</span> Survey Sampling</a></li>
-<li><a class="" href="text-mining-for-qualitative-analysis.html"><span class="header-section-number">13</span> Text Mining for Qualitative Analysis</a></li>
-<li><a class="" href="machine-learning.html"><span class="header-section-number">14</span> Machine Learning</a></li>
 <li><a class="" href="additional-resources.html">Additional Resources</a></li>
 </ul>
 
@@ -77,20 +75,17 @@
 <h1>
 <span class="header-section-number">3</span> Operators &amp; Data Objects<a class="anchor" aria-label="anchor" href="#operators-data-objects"><i class="fas fa-link"></i></a>
 </h1>
+<div class="inline-figure"><img src="images/operators.jpg" style="width:95.0%"></div>
 <div id="operators" class="section level2" number="3.1">
 <h2>
 <span class="header-section-number">3.1</span> Operators<a class="anchor" aria-label="anchor" href="#operators"><i class="fas fa-link"></i></a>
 </h2>
-<p>R has a wide range of operators for performing mathematical and logical operations.
-In this section, we’ll cover arithmetic operators, logical operators, comparison operators, and more.</p>
+<p>R has a wide range of operators for performing mathematical and logical operations. In this section, we’ll cover arithmetic operators, logical operators, comparison operators, and more.</p>
 <div id="assignment-operators" class="section level3" number="3.1.1">
 <h3>
 <span class="header-section-number">3.1.1</span> Assignment Operators<a class="anchor" aria-label="anchor" href="#assignment-operators"><i class="fas fa-link"></i></a>
 </h3>
-<p>Assignment operators are used to assigning values to various data objects in R.
-The objects may be integers, vectors, or functions.
-These values are then stored by the assigned variable names.
-There are two kinds of assignment operators: Left and Right</p>
+<p>Assignment operators are used to assigning values to various data objects in R. The objects may be integers, vectors, or functions. These values are then stored by the assigned variable names. There are two kinds of assignment operators: Left and Right</p>
 <p><strong>Left Assignment (<code>\&lt;-</code> or <code>&lt;&lt;-</code> or <code>=</code>)</strong></p>
 <p><strong>Right Assignment (<code>-&gt;</code> or <code>-&gt;&gt;</code>)</strong></p>
 <p>The operators <code>&lt;-</code> and <code>=</code> can be used, almost interchangeably, to assign to variable in the same environment.</p>
@@ -232,16 +227,14 @@ There are two kinds of assignment operators: Left and Right</p>
 <h3>
 <span class="header-section-number">3.1.4</span> Logical Operators<a class="anchor" aria-label="anchor" href="#logical-operators"><i class="fas fa-link"></i></a>
 </h3>
-<p>It is applicable only to vectors of type logical, numeric or complex.
-All numbers greater than 1 are considered as logical value TRUE.</p>
-<p>Each element of the first vector is compared with the corresponding element of the second vector.
-The result of comparison is a Boolean value.</p>
+<p>It is applicable only to vectors of type logical, numeric or complex. All numbers greater than 1 are considered as logical value TRUE.</p>
+<p>Each element of the first vector is compared with the corresponding element of the second vector. The result of comparison is a Boolean value.</p>
 <p><em>Logical operators are used to combine conditional statements:</em></p>
 <div class="inline-table"><table class="table table-sm">
 <colgroup>
-<col width="22%">
-<col width="38%">
-<col width="38%">
+<col width="25%">
+<col width="31%">
+<col width="43%">
 </colgroup>
 <thead><tr class="header">
 <th align="left">Operator</th>
@@ -314,10 +307,7 @@ The result of comparison is a Boolean value.</p>
 <span class="header-section-number">3.2</span> Data Objects<a class="anchor" aria-label="anchor" href="#data-objects"><i class="fas fa-link"></i></a>
 </h2>
 <p>At almost everything you will do in R is the concept that everything in R is an <a href="https://journal.r-project.org/archive/2009-1/RJournal_2009-1_Chambers.pdf">object</a>.</p>
-<p>Generally, while doing programming, we need to use variables to store various information.
-Variables are reserved memory locations to store values i.e when we create a variable we allocate some memory space.
-In R the variable is an object.
-An object is a data structure having few attributes and methods which are applied to its attributes.</p>
+<p>Generally, while doing programming, we need to use variables to store various information. Variables are reserved memory locations to store values i.e when we create a variable we allocate some memory space. In R the variable is an object. An object is a data structure having few attributes and methods which are applied to its attributes.</p>
 <div id="data-types" class="section level3" number="3.2.1">
 <h3>
 <span class="header-section-number">3.2.1</span> Data Types<a class="anchor" aria-label="anchor" href="#data-types"><i class="fas fa-link"></i></a>
@@ -330,24 +320,21 @@ An object is a data structure having few attributes and methods which are applie
 <span><span class="fu"><a href="https://rdrr.io/r/base/character.html">as.character</a></span><span class="op">(</span><span class="op">)</span>  <span class="co"># convert to character</span></span></code></pre></div>
 <p></p>
 <p><strong>Numeric</strong></p>
-<p>Numeric are used to represent continuous variables.
-E.g. are Time taken by all the athletes for completing a single lap in a race.</p>
+<p>Numeric are used to represent continuous variables. E.g. are Time taken by all the athletes for completing a single lap in a race.</p>
 <p></p>
 <div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">a</span> <span class="op">&lt;-</span> <span class="fl">20.4</span></span>
 <span><span class="va">a</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span><span class="op">(</span><span class="fl">20</span><span class="op">)</span>  <span class="co"># convert to numeric</span></span></code></pre></div>
 <p></p>
 <p><strong>Integer</strong></p>
-<p>Integers are natural numbers.
-They can be used to represent counting variables</p>
+<p>Integers are natural numbers. They can be used to represent counting variables</p>
 <p></p>
 <div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">a</span> <span class="op">&lt;-</span> <span class="fl">20</span></span>
 <span><span class="va">a</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/integer.html">as.integer</a></span><span class="op">(</span><span class="fl">20.345</span><span class="op">)</span>  <span class="co"># convert to integer</span></span></code></pre></div>
 <p></p>
 <p><strong>Complex</strong></p>
-<p>To represent complex numbers object of type complex is used.
-For creating object of type complex use <strong><code><a href="https://rdrr.io/r/base/complex.html">as.complex()</a></code></strong> or <strong><code>complex</code></strong> functions.</p>
+<p>To represent complex numbers object of type complex is used. For creating object of type complex use <strong><code><a href="https://rdrr.io/r/base/complex.html">as.complex()</a></code></strong> or <strong><code>complex</code></strong> functions.</p>
 <p></p>
 <div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/complex.html">as.complex</a></span><span class="op">(</span><span class="fl">35</span> <span class="op">+</span> <span class="op">(</span><span class="fl">0</span><span class="op">+</span><span class="fl">7i</span><span class="op">)</span><span class="op">)</span>  <span class="co"># convert to complex number</span></span>
@@ -365,8 +352,7 @@ For creating object of type complex use <strong><code><a href="https://rdrr.io/r
 <span class="header-section-number">3.2.2</span> Data Structures<a class="anchor" aria-label="anchor" href="#data-structures"><i class="fas fa-link"></i></a>
 </h3>
 <p><strong>Vectors</strong></p>
-<p>Used to store objects of the same type (think of them as arrays)
-Vector can be constructed using <strong><code><a href="https://rdrr.io/r/base/c.html">c()</a></code></strong></p>
+<p>Used to store objects of the same type (think of them as arrays) Vector can be constructed using <strong><code><a href="https://rdrr.io/r/base/c.html">c()</a></code></strong></p>
 <p></p>
 <div class="sourceCode" id="cb23"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/vector.html">vector</a></span><span class="op">(</span><span class="op">)</span>  <span class="co">#declares an empty vector</span></span>
@@ -378,8 +364,7 @@ Vector can be constructed using <strong><code><a href="https://rdrr.io/r/base/c.
 <p></p>
 <p><strong>Lists</strong></p>
 <p>A list is like a vector.</p>
-<p>However, an element of a list can be an object of any type and structure.
-Consequently, a list can contain another list and therefore it can be used to construct arbitrary data structures.<br></p>
+<p>However, an element of a list can be an object of any type and structure. Consequently, a list can contain another list and therefore it can be used to construct arbitrary data structures.<br></p>
 <p>A list can also be constructed by using the function <strong><code><a href="https://rdrr.io/r/base/list.html">list()</a></code></strong></p>
 <p></p>
 <div class="sourceCode" id="cb24"><pre class="downlit sourceCode r">
@@ -394,8 +379,7 @@ Consequently, a list can contain another list and therefore it can be used to co
 <p></p>
 <p><strong>Factors</strong></p>
 <p>The factor data type is used to represent categorical data.</p>
-<p>In factor variables mostly few possible values will be seen.
-These values are called LEVELS.</p>
+<p>In factor variables mostly few possible values will be seen. These values are called LEVELS.</p>
 <p>For example: variable ‘Gender’ with values male and female.<br></p>
 <p>If a variable is having just two levels it is called as Dichotomous.</p>
 <p></p>
@@ -407,19 +391,14 @@ These values are called LEVELS.</p>
 <span>    <span class="st">"good"</span>, <span class="st">"Extremely good"</span>, <span class="st">"Extremely poor"</span>, <span class="st">"good"</span>, <span class="st">"moderate"</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/levels.html">levels</a></span><span class="op">(</span><span class="va">satisfaction</span><span class="op">)</span></span></code></pre></div>
 <p></p>
-<p><strong>Matrices</strong>
-A matrix can be regarded as a generalization of a vector.
-All the elements of a matrix must be of the same data type.</p>
-<p>i.e.
-Is a multi dimensional vector, they follow all the matrix algebraic operators and properties</p>
+<p><strong>Matrices</strong> A matrix can be regarded as a generalization of a vector. All the elements of a matrix must be of the same data type.</p>
+<p>i.e. Is a multi dimensional vector, they follow all the matrix algebraic operators and properties</p>
 <p></p>
 <div class="sourceCode" id="cb26"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">mat1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/matrix.html">matrix</a></span><span class="op">(</span>nrow <span class="op">=</span> <span class="fl">3</span>, ncol <span class="op">=</span> <span class="fl">3</span><span class="op">)</span>  <span class="co"># creating a 3 x 3 empty matrix</span></span></code></pre></div>
 <p></p>
-<p><strong>Data Frames</strong>
-Data frames can also be regarded as an extension to matrices.</p>
-<p>Data frames can have columns of different data types and are the most convenient data structure for data analysis in R.
-In fact, most statistical modeling routines in R require a data frame as input.</p>
+<p><strong>Data Frames</strong> Data frames can also be regarded as an extension to matrices.</p>
+<p>Data frames can have columns of different data types and are the most convenient data structure for data analysis in R. In fact, most statistical modeling routines in R require a data frame as input.</p>
 <p>Data frame can be created using <strong><code><a href="https://rdrr.io/r/base/data.frame.html">data.frame()</a></code></strong></p>
 <p></p>
 <div class="sourceCode" id="cb27"><pre class="downlit sourceCode r">
@@ -433,8 +412,7 @@ In fact, most statistical modeling routines in R require a data frame as input.<
 <h3>
 <span class="header-section-number">3.2.3</span> <strong>Mixing Objects</strong><a class="anchor" aria-label="anchor" href="#mixing-objects"><i class="fas fa-link"></i></a>
 </h3>
-<p>This brings in coercion.
-Coercion happens in R when the type of objects are changed during computation either implicitly or by using functions for explicit coercion</p>
+<p>This brings in coercion. Coercion happens in R when the type of objects are changed during computation either implicitly or by using functions for explicit coercion</p>
 <p></p>
 <div class="sourceCode" id="cb28"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fl">1</span><span class="op">:</span><span class="fl">3</span></span>
@@ -442,12 +420,9 @@ Coercion happens in R when the type of objects are changed during computation ei
 <span><span class="va">x</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="st">"hi"</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/typeof.html">typeof</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span></code></pre></div>
 <p></p>
-<p>Notice that at first, <code>x</code> is of type <code>integer</code>.
-But when we assigned <code>x[2] = "hi"</code>, all the elements of <code>x</code> were coerced into <code>character</code> as vectors in R can only hold data of single type.</p>
-<p><strong>Implicit Coercion</strong>
-Coercion happens with data types in R, often implicitly, so that the data can accommodate all the values, This is done by R with out the knowledge of the programmer.</p>
-<p><strong>Explicit Coercion</strong>
-In explicit coercion , The use can change one data type to another data type by applying function by the programmer.</p>
+<p>Notice that at first, <code>x</code> is of type <code>integer</code>. But when we assigned <code>x[2] = "hi"</code>, all the elements of <code>x</code> were coerced into <code>character</code> as vectors in R can only hold data of single type.</p>
+<p><strong>Implicit Coercion</strong> Coercion happens with data types in R, often implicitly, so that the data can accommodate all the values, This is done by R with out the knowledge of the programmer.</p>
+<p><strong>Explicit Coercion</strong> In explicit coercion , The use can change one data type to another data type by applying function by the programmer.</p>
 <p></p>
 <div class="sourceCode" id="cb29"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Examples of conversions</span></span>
@@ -479,12 +454,12 @@ In explicit coercion , The use can change one data type to another data type by 
 <p></p>
 </div>
 </div>
-<div id="task-2.1" class="section level2" number="3.3">
+<div id="tasks-1" class="section level2" number="3.3">
 <h2>
-<span class="header-section-number">3.3</span> Task 2.1:<a class="anchor" aria-label="anchor" href="#task-2.1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.3</span> Tasks<a class="anchor" aria-label="anchor" href="#tasks-1"><i class="fas fa-link"></i></a>
 </h2>
 <ol style="list-style-type: decimal">
-<li>Can you spot the difference between a character string and a number? Here's a test: Which of these are character strings and which are numbers? <code>1</code>, <code>"1"</code>, <code>"one"</code>.</li>
+<li>Can you spot the difference between a character string and a number? Here’s a test: Which of these are character strings and which are numbers? <code>1</code>, <code>"1"</code>, <code>"one"</code>.</li>
 <li>Create an atomic vector of Character type, double type, logical type , integer type, complex type and raw type</li>
 <li>Check whether each of the created data structure is of vector type as well as check the class of each of the data.</li>
 <li>Create a List of heterogeneous data, which include numeric, character and logical vectors and print the lists.</li>
@@ -517,7 +492,7 @@ In explicit coercion , The use can change one data type to another data type by 
 <li><a class="nav-link" href="#object-attributes"><span class="header-section-number">3.2.4</span> Object Attributes</a></li>
 </ul>
 </li>
-<li><a class="nav-link" href="#task-2.1"><span class="header-section-number">3.3</span> Task 2.1:</a></li>
+<li><a class="nav-link" href="#tasks-1"><span class="header-section-number">3.3</span> Tasks</a></li>
 </ul>
 
       <div class="book-extra">
